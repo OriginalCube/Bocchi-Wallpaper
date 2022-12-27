@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,130 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Main{
+  height: 100vh;
+  width: 100vw;
+}
+
+.mainClock{
+  padding: 2rem;
+}
+
+.mainSecond{
+  top: 1.5vh;
+}
+
+.mainCanvas{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.mainImage{
+  position: absolute;
+  height: 65%;
+  top: 15.5%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.navigation{
+  position: absolute;
+  top: 5.5%;
+  right: 3vh;
+  width: 5vh;
+  height: 5vh;
+  animation: boxRotate 5s infinite;
+}
+
+.optionBar{
+  position: absolute;
+  top: 15%;
+  right: 1.5vh;
+  width: 8vh;
+  height: 37vh;
+}
+
+.optionIcon{
+  position: relative;
+  margin: auto; 
+  width: 5vh;
+  height: 5vh;
+  animation: boxTurn 9s infinite;
+}
+
+@keyframes boxTurn {
+  33% {transform: rotate(45deg);}
+  66% {transform: rotate(-45deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes boxRotate {
+  50% {transform: rotate(180deg);}
+}
+
+.player{
+  position: absolute;
+  color: white;
+  width: 25vw;
+  height: 12vh;
+  left: 37.5vw;
+  top: 83.5vh;
+  text-align: center;
+} 
+
+.audioProgress{
+  position: relative;
+  margin-top: 1.5vh; 
+  width: 80%;
+  height: 1vh;
+  -webkit-appearance: none;
+  border-radius: 5px;  
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s; 
+}
+
+.audioProgress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 50%; 
+  background: rgba(30,106,225,.7);
+  cursor: pointer;
+}
+
+.audioProgress::-moz-range-thumb {
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 50%;
+  background: rgba(30,106,225,.7);
+  cursor: pointer;
+}
+
+.audioIcon{
+  position: relative;
+  top: 8%;
+  display: inline;
+  width: 3vh;
+  height: 3vh;
+  margin-left: 6%;
 }
