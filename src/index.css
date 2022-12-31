@@ -28,10 +28,14 @@ code {
 
 .mainClock{
   padding: 2rem;
+  font-size: 8rem; /* 128px */
+  line-height: 1;
 }
 
 .mainSecond{
   top: 1.5vh;
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
 }
 
 .mainCanvas{
@@ -100,6 +104,11 @@ code {
   text-align: center;
 } 
 
+.player p{
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */ 
+}
+
 .audioProgress{
   position: relative;
   margin-top: 1.5vh; 
@@ -139,4 +148,69 @@ code {
   width: 3vh;
   height: 3vh;
   margin-left: 6%;
+}
+
+.playlist{
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  color: white;
+  width: 30vh;
+  height: 40%;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  border-radius: 2px;
+}
+
+.playlistNavigation{
+  display: flex;
+}
+
+.playlistNavigation p{
+  flex: 1;
+  padding: 2.5px; 
+  opacity: .8;
+  width: 100%;
+  text-align: center;
+}
+
+.playlistItemWrapper{
+  overflow-y: scroll;
+  padding: 3px;
+  height: 36vh;
+}
+
+.playlistItemWrapper::-webkit-scrollbar{
+  width: 10px;
+}
+
+.playlistItemWrapper::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255, .75);
+}
+
+.playlistItem{
+  width: 90%;
+  margin: auto;
+}
+
+@media screen and (min-width:1px) and (max-width:1367px) {
+  .mainClock{
+    font-size: 4.5rem; /* 72px */
+    line-height: 1;
+  }
+
+  .mainSecond{
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  .player p{
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+  }
+
+  .playlist p{
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+  }
 }

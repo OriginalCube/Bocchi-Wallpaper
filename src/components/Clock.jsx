@@ -14,10 +14,10 @@ const Clock = (props) => {
     },[]) 
 
     return (
-        <p className={`mainClock absolute text-9xl opacity-80`} style={{top:'79vh', right:'2vw', color:`white`, 
+        <p className={`mainClock absolute opacity-80`} style={{top:'79vh', right:'2vw', color:`white`, 
         textShadow:`${props.textShadow}`}}>{hour + ':'} 
         { minute>9? minute: '0' + minute}
-        <span className={`mainSecond relative text-3xl top-2/3`} style={{color:`white`}}>{ second>9? second: '0' + second}</span></p>
+        <span className={`mainSecond relative top-2/3`} style={{color:`white`}}>{ second>9? second: '0' + second}</span></p>
   )
 }
 

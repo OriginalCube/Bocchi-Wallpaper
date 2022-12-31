@@ -1,9 +1,8 @@
 import React from 'react'
+import SongData from './SongData.json';
 
 const Player = (props) => {
-    const songList = ['Guitar, Loneliness and Blue Planet','That band', 'If I could be a constellation', 'Never forget',
-    'Secret base','Rockn Roll, Morning Light Falls on You', 'What is wrong with', "I can't sing a love song",
-    'Karakara', 'The Little Sea', 'Seisyun Complex', 'Distortion!!', 'Flashbacker','Hitoribocchi Tokyo'];
+    let keypress = new Audio();
     const [isPlaying, setPlaying] = React.useState(false);
     const [trackProgress, setProgress] = React.useState(0);
     const [volume, setVolume] = React.useState(localStorage.getItem('volume')!==null?+(localStorage.getItem('volume')):.2);
@@ -13,12 +12,18 @@ const Player = (props) => {
     const isReady = React.useRef(true);
     const { duration } = audioRef.current;
 
+    const clickAudio = (e) =>{
+      keypress.src = './assets/audios/keypress.mp3';
+      keypress.volume = .5;
+      keypress.play();
+    }
+
     const startTimer = () => {
      // Clear any timers already running
      clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       if (audioRef.current.ended) {
-        skipButton();
+        skipButton(false);
       } else {
       setProgress(audioRef.current.currentTime);
     }
@@ -44,26 +49,32 @@ const Player = (props) => {
       }
 
       if(props.songIndex === 0){
-        props.changeSong(songList.length-1);
+        props.changeSong(SongData.length-1);
       }
+      clickAudio();
     }
 
-    const skipButton = () => {
-      if (props.songIndex < songList.length - 1) {
+    const skipButton = (e) => {
+      if (props.songIndex < SongData.length - 1) {
        props.changeSong(1);
       }else {
         props.changeSong(0);
+      }
+      if(e){
+        clickAudio();
       }
   };
 
   const playButton = () =>{
     setPlaying(false);
     audioRef.current.play();
+    clickAudio();
   }
 
   const pauseButton = () =>{
     setPlaying(true);
     audioRef.current.pause();
+    clickAudio();
   }
 
   const lessVolume = () =>{
@@ -72,12 +83,14 @@ const Player = (props) => {
     }else{
       setVolume(0);
     }
+    clickAudio();
   }
 
   const addVolume = () =>{
     if(volume>=0 && volume+.1<=1){
       setVolume(volume+.1);
     }
+    clickAudio();
   }
 
   React.useEffect(()=>{
@@ -96,7 +109,7 @@ const Player = (props) => {
 
   React.useEffect(()=>{
     audioRef.current.pause();
-    audioRef.current = new Audio(`./assets/songs/${songList[props.songIndex]}.mp3`);
+    audioRef.current = new Audio(`./assets/songs/${SongData[props.songIndex].name}.mp3`);
     audioRef.current.volume = volume;
     if (isReady.current) {
       audioRef.current.play();
@@ -118,7 +131,7 @@ const Player = (props) => {
 
   return (
     <div className='player'>
-        <p className='text-xl' style={{textShadow:`${props.playerTextShadow}`}}>{`${songList[props.songIndex]}`}</p>
+        <p className='playerText' style={{textShadow:`${props.playerTextShadow}`}}>{`${SongData[props.songIndex].name}`}</p>
         <div><input
             type='range'
             step='1'
@@ -134,7 +147,7 @@ const Player = (props) => {
         <img className='audioIcon' onClick={prevButton} alt='' src='./assets/icons/backward.png' />
         {isPlaying?<img className='audioIcon' onClick={playButton} alt='' src='./assets/icons/play.png' />
         :<img className='audioIcon' onClick={pauseButton} alt='' src='./assets/icons/pause.png' />}
-        <img className='audioIcon' onClick={skipButton} alt='' src='./assets/icons/forward.png' />
+        <img className='audioIcon' onClick={()=>skipButton(true)} alt='' src='./assets/icons/forward.png' />
         <img className='audioIcon' onClick={addVolume} alt='' src='./assets/icons/volumePlus.png' />
     </div>
   )

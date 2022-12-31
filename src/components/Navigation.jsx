@@ -12,7 +12,7 @@ const Navigation = (props) => {
     }
     return (
     <div>
-        {activate?<Optionbar playerHandler={props.playerHandler} clockHandler={props.clockHandler}
+        {activate?<Optionbar playerHandler={props.playerHandler} clockHandler={props.clockHandler} playlistHandler={props.playlistHandler}
         visualizerHandler={props.visualizerHandler} changeSong={props.changeSong} songIndex={props.songIndex}/>:null}
         <img src={`./assets/icons/darksetting.png`}
         width='5vh' height='5vh' className='navigation opacity-70' onClick={onActivate} alt=''/>
