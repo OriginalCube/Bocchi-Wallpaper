@@ -44,22 +44,14 @@ const Player = (props) => {
      };
 
     const prevButton = () => {
-      if(props.songIndex > 0) {
-        props.changeSong(-1);
-      }
-
-      if(props.songIndex === 0){
-        props.changeSong(SongData.length-1);
-      }
+      //Just send False
+      props.changeSong(false);
       clickAudio();
     }
 
     const skipButton = (e) => {
-      if (props.songIndex < SongData.length - 1) {
-       props.changeSong(1);
-      }else {
-        props.changeSong(0);
-      }
+      //Just send True
+      props.changeSong(true); 
       if(e){
         clickAudio();
       }

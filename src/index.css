@@ -177,7 +177,7 @@ code {
 .playlistItemWrapper{
   overflow-y: scroll;
   padding: 3px;
-  height: 36vh;
+  height: 33vh;
 }
 
 .playlistItemWrapper::-webkit-scrollbar{
