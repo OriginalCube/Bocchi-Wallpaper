@@ -5,11 +5,7 @@ const Optionbar = (props) => {
   let keypress = new Audio();
   
   const skipButton = () => {
-   if (props.songIndex < SongData.length - 1) {
-     props.changeSong(1);
-    }else {
-      props.changeSong(0);
-    }
+    props.changeSong(true)
     keypress.src = './assets/audios/keypress.mp3';
     keypress.volume = .5;
     keypress.play();

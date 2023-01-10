@@ -17,7 +17,7 @@ const Playlist = (props) => {
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`}} 
             >Playlist 2</p> 
         </div>
-        <div className='playlistItemWrapper' style={{borderBottom: `4.5px solid ${SongData[props.songIndex].lineColor}`}}>
+        <div className='playlistItemWrapper'>
         <div className='playlistItem'>
             {props.mode===0?SongData.map((e, index)=>(
                 <PlaylistItem key={index} id={e.id} index={index+1}
@@ -47,10 +47,11 @@ const Playlist = (props) => {
              
         </div>
         </div>
-        <div className='playlistNavigation'>
+        <div className='playlistNavigation' style={{borderTop:`4.5px solid ${SongData[props.songIndex].lineColor}`
+            ,position:'relative'}}>
         {props.mode===0?<>
             <p onClick={()=>props.addSong(props.songIndex + 1, 1)} style={{textShadow: SongData[props.songIndex].playerTextShadow, 
-            borderRight: `3px solid ${SongData[props.songIndex].lineColor}`}} 
+            borderRight: `3px solid ${SongData[props.songIndex].lineColor}`, height:'100%'}} 
             >+Playlist 1</p>
             <p onClick={()=>props.addSong(props.songIndex + 1, 2)} style={{textShadow: SongData[props.songIndex].playerTextShadow, 
             }} 

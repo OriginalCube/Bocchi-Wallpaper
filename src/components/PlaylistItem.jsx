@@ -10,9 +10,6 @@ const PlaylistItem = (props) => {
     keypress.play(); 
   }
 
-  const addSong = () =>{
-    props.addSong(props.songIndex, props.mode);
-  }
   return (
     <div>
         <p onClick={clickHandle} style={{borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`, 

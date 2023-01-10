@@ -97,10 +97,11 @@ code {
 .player{
   position: absolute;
   color: white;
-  width: 25vw;
-  height: 12vh;
-  left: 37.5vw;
-  top: 83.5vh;
+  overflow: visible;
+  width: 25%;
+  height: 12%;
+  left: 37.5%;
+  top: 83.5%;
   text-align: center;
 } 
 
@@ -152,11 +153,13 @@ code {
 
 .playlist{
   position: absolute;
+  display: flex;
+  flex-direction: column;
   right: 10%;
   top: 30%;
   color: white;
   width: 30vh;
-  height: 40%;
+  height: 39.5%;
   font-size: 1rem; /* 16px */
   line-height: 1.5rem; /* 24px */
   border-radius: 2px;
@@ -164,6 +167,7 @@ code {
 
 .playlistNavigation{
   display: flex;
+  flex:1;
 }
 
 .playlistNavigation p{
@@ -175,9 +179,10 @@ code {
 }
 
 .playlistItemWrapper{
+  position: relative;
   overflow-y: scroll;
   padding: 3px;
-  height: 33vh;
+  height: 82%;
 }
 
 .playlistItemWrapper::-webkit-scrollbar{
