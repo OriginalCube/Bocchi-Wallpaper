@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+#How to edit and add your stuff manually Things you'll need: ~Node That's pretty much it.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Step 1: The thing that you'll only need to change would be the SongData.json. Structure of SongData.json { id - Rpresents the unique code for the song. name - This will be used to find the source of the song and image, will also be used as the display text for the song name. background color - Background color :> clockTextShadow - Text shadow of Clock text same value with playerTextShadow but has a bigger px because of the text size. lineColor - It is the audio responsive bar colors playerTextShadow - Same values as the others but with a smaller px }
 
-## Available Scripts
+Step 2: Change the files according to the name that you have written in the SongData.json Where to change files? public/assets/audios - where the audio cues are located. public/assets/icons - where all of the images are located icons/thumbnail pics. public/assets/songs - where the songs are located.
 
-In the project directory, you can run:
+Step 3: Locate the file path with a terminal then run "npm run build" so node can compile it and make it into a static html where Wallpaper engine can read.
 
-### `npm start`
+Step 4: Enjoy.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you have any bugs regarding this method please DM me.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+~This version has repeat and shuffle, I haven't debug it yet so it might lead into problems if you ever use this. Please do use a previous version to be able to use this without any problem. :>
 
-### `npm test`
+QnA:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Why use a framework to create a simple wallpaper/ -Because, it looks easier to me and manage.
 
-### `npm run build`
+Can I use this to create my own wallpaper? -Sure, just give me some credits thanks. <3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+What project are you currently working on? -I'm currently working on Genshin Impact wallpaper
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Sources of images are from youtube and flaticon.
