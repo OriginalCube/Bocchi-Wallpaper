@@ -27,7 +27,7 @@ const Player = (props) => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       if (audioRef.current.ended) {
-        if (props.replay === "true") {
+        if (props.replay === true) {
           audioRef.current.play();
         } else {
           skipButton(false);
@@ -94,12 +94,12 @@ const Player = (props) => {
   };
 
   const onReplay = () => {
-    props.reShuffle("replay", props.replay === "true" ? "false" : "true");
+    props.reShuffle("replay", props.replay === true ? false : true);
     clickAudio();
   };
 
   const shuffle = () => {
-    props.reShuffle("shuffle", props.shuffle === "true" ? "false" : "true");
+    props.reShuffle("shuffle", props.shuffle === true ? false : true);
     clickAudio();
   };
 
@@ -162,11 +162,11 @@ const Player = (props) => {
       </div>
       <img
         className="audioIcon"
-        onClick={onReplay}
+        onClick={() => onReplay()}
         style={{ marginLeft: "0%", opacity: ".85" }}
         alt=""
         src={
-          props.replay === "true"
+          props.replay
             ? "./assets/icons/replayToggle.png"
             : "./assets/icons/replay.png"
         }
@@ -212,11 +212,11 @@ const Player = (props) => {
       />
       <img
         className="audioIcon"
-        onClick={shuffle}
+        onClick={() => shuffle()}
         style={{ opacity: ".85" }}
         alt=""
         src={
-          props.shuffle === "true"
+          props.shuffle
             ? "./assets/icons/shuffleToggle.png"
             : "./assets/icons/shuffle.png"
         }

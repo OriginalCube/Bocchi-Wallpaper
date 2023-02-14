@@ -13,8 +13,8 @@ const Main = () => {
   const [audioVis, setAudioVis] = React.useState("true");
   const [mode, setMode] = React.useState(0);
   const [playlist, setPlaylist] = React.useState("true");
-  const [shuffle, setShuffle] = React.useState("true");
-  const [replay, setReplay] = React.useState("true");
+  const [shuffle, setShuffle] = React.useState(true);
+  const [replay, setReplay] = React.useState(true);
   const [key, setKey] = React.useState(0); //Foreign key for other modes
   const [songList, setSongList] = React.useState([[], []]);
   const playerHandler = () => {
@@ -45,10 +45,12 @@ const Main = () => {
     //Replay and Shuffle
     if (x === "shuffle") {
       setShuffle(y);
-      setReplay(!y);
+      setReplay(false);
+      localStorage.setItem("bocchi-14", `[${false}, ${y}]`);
     } else {
       setReplay(y);
-      setShuffle(!y);
+      setShuffle(false);
+      localStorage.setItem("bocchi-14", `[${y}, ${false}]`);
     }
   };
 
@@ -193,6 +195,14 @@ const Main = () => {
         ? JSON.parse(localStorage.getItem("playlistBocchi"))
         : [[], []]
     );
+    if (localStorage.getItem("bocchi-14") !== null) {
+      let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
+      setReplay(temp14[0]);
+      setShuffle(temp14[1]);
+    } else {
+      setReplay(false);
+      setShuffle(true);
+    }
   }, []);
 
   return (
