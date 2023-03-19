@@ -4,17 +4,33 @@ import SongData from "./SongData.json";
 
 const Playlist = (props) => {
   const [playlistPages, setPlaylistPages] = React.useState(1);
+  let keypress = new Audio();
+
+  const audioPlay = (e) => {
+    keypress.src = `./assets/audios/${e === 0 ? "notes" : "keypress"}.mp3`;
+    keypress.volume = 0.5;
+    keypress.play(); //ADD AUDIO IN FOOTER PART!!!!
+  };
+
+  const onFooter = (x, y) => {
+    if (x === true) {
+      props.addSong(props.songIndex + 1, y);
+    } else {
+      props.removeSong();
+    }
+    audioPlay(0);
+  };
 
   const onPages = (e) => {
     if (props.mode === 0) {
-      if (playlistPages + e < SongData.length / 7 && playlistPages + e > 0) {
+      if (playlistPages + e < SongData.length / 5 && playlistPages + e > 0) {
         setPlaylistPages(playlistPages + 1);
       } else {
         setPlaylistPages(0);
       }
     } else if (props.mode === 1 || props.mode === 2) {
       if (
-        playlistPages + e < props.songList[props.mode - 1].length / 7 &&
+        playlistPages + e < props.songList[props.mode - 1].length / 5 &&
         playlistPages + e > 0
       ) {
         setPlaylistPages(playlistPages + 1);
@@ -22,6 +38,12 @@ const Playlist = (props) => {
         setPlaylistPages(0);
       }
     }
+    audioPlay(1);
+  };
+
+  const onChangeMode = (e) => {
+    props.changeMode(e);
+    audioPlay(0);
   };
 
   React.useEffect(() => {
@@ -41,7 +63,7 @@ const Playlist = (props) => {
     >
       <div className="playlistNavigation">
         <p
-          onClick={() => props.changeMode(0)}
+          onClick={() => onChangeMode(0)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
@@ -51,7 +73,7 @@ const Playlist = (props) => {
           Default
         </p>
         <p
-          onClick={() => props.changeMode(1)}
+          onClick={() => onChangeMode(1)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
@@ -61,7 +83,7 @@ const Playlist = (props) => {
           Playlist 1
         </p>
         <p
-          onClick={() => props.changeMode(2)}
+          onClick={() => onChangeMode(2)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
@@ -73,12 +95,12 @@ const Playlist = (props) => {
       <div className="playlist-container">
         <div className="playlist-item-container">
           {props.mode === 0
-            ? SongData.slice(playlistPages * 7, playlistPages * 7 + 7).map(
+            ? SongData.slice(playlistPages * 5, playlistPages * 5 + 5).map(
                 (e, index) => (
                   <PlaylistItem
                     key={index}
                     id={e.id}
-                    index={playlistPages * 7 + index + 1}
+                    index={playlistPages * 5 + index + 1}
                     songIndex={props.songIndex}
                     changeId={props.changeId}
                     mode={props.mode}
@@ -90,14 +112,14 @@ const Playlist = (props) => {
           {props.mode === 1
             ? props.songList[0] !== null
               ? props.songList[0]
-                  .slice(playlistPages * 7, playlistPages * 7 + 7)
+                  .slice(playlistPages * 5, playlistPages * 5 + 5)
                   .map((e, index) => (
                     <PlaylistItem
                       key={index}
                       id={e}
                       addSong={props.addSong}
                       songIndex={props.songIndex}
-                      index={playlistPages * 7 + index + 1}
+                      index={playlistPages * 5 + index + 1}
                       changeId={props.changeId}
                       mode={props.mode}
                     />
@@ -108,14 +130,14 @@ const Playlist = (props) => {
           {props.mode === 2
             ? props.songList[1] !== null
               ? props.songList[1]
-                  .slice(playlistPages * 7, playlistPages * 7 + 7)
+                  .slice(playlistPages * 5, playlistPages * 5 + 5)
                   .map((e, index) => (
                     <PlaylistItem
                       key={index}
                       id={e}
                       addSong={props.addSong}
                       songIndex={props.songIndex}
-                      index={playlistPages * 7 + index + 1}
+                      index={playlistPages * 5 + index + 1}
                       changeId={props.changeId}
                       mode={props.mode}
                     />
@@ -155,7 +177,7 @@ const Playlist = (props) => {
         {props.mode === 0 ? (
           <>
             <p
-              onClick={() => props.addSong(props.songIndex + 1, 1)}
+              onClick={() => onFooter(true, 1)}
               style={{
                 textShadow: SongData[props.songIndex].playerTextShadow,
                 borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
@@ -165,7 +187,7 @@ const Playlist = (props) => {
               +Playlist 1
             </p>
             <p
-              onClick={() => props.addSong(props.songIndex + 1, 2)}
+              onClick={() => onFooter(true, 2)}
               style={{ textShadow: SongData[props.songIndex].playerTextShadow }}
             >
               +Playlist 2
@@ -174,7 +196,7 @@ const Playlist = (props) => {
         ) : (
           <>
             <p
-              onClick={props.removeSong}
+              onClick={() => onFooter(false, 0)}
               style={{
                 textShadow: SongData[props.songIndex].playerTextShadow,
                 padding: "0px",

@@ -15,6 +15,7 @@ const PlaylistItem = (props) => {
       <p
         onClick={clickHandle}
         style={{
+          opacity: ".85",
           borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
           textShadow: SongData[props.songIndex].playerTextShadow,
         }}
