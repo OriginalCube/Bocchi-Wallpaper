@@ -3,6 +3,34 @@ import PlaylistItem from "./PlaylistItem";
 import SongData from "./SongData.json";
 
 const Playlist = (props) => {
+  const [playlistPages, setPlaylistPages] = React.useState(1);
+
+  const onPages = (e) => {
+    if (props.mode === 0) {
+      if (playlistPages + e < SongData.length / 7 && playlistPages + e > 0) {
+        setPlaylistPages(playlistPages + 1);
+      } else {
+        setPlaylistPages(0);
+      }
+    } else if (props.mode === 1 || props.mode === 2) {
+      if (
+        playlistPages + e < props.songList[props.mode - 1].length / 7 &&
+        playlistPages + e > 0
+      ) {
+        setPlaylistPages(playlistPages + 1);
+      } else {
+        setPlaylistPages(0);
+      }
+    }
+  };
+
+  React.useEffect(() => {
+    console.log(playlistPages);
+  }, [playlistPages]);
+
+  React.useEffect(() => {
+    setPlaylistPages(0);
+  }, [props.mode]);
   return (
     <div
       className="playlist"
@@ -42,52 +70,79 @@ const Playlist = (props) => {
           Playlist 2
         </p>
       </div>
-      <div className="playlistItemWrapper">
-        <div className="playlistItem">
+      <div className="playlist-container">
+        <div className="playlist-item-container">
           {props.mode === 0
-            ? SongData.map((e, index) => (
-                <PlaylistItem
-                  key={index}
-                  id={e.id}
-                  index={index + 1}
-                  songIndex={props.songIndex}
-                  changeId={props.changeId}
-                  mode={props.mode}
-                />
-              ))
+            ? SongData.slice(playlistPages * 7, playlistPages * 7 + 7).map(
+                (e, index) => (
+                  <PlaylistItem
+                    key={index}
+                    id={e.id}
+                    index={playlistPages * 7 + index + 1}
+                    songIndex={props.songIndex}
+                    changeId={props.changeId}
+                    mode={props.mode}
+                  />
+                )
+              )
             : null}
 
           {props.mode === 1
             ? props.songList[0] !== null
-              ? props.songList[0].map((e, index) => (
-                  <PlaylistItem
-                    key={index}
-                    id={e}
-                    addSong={props.addSong}
-                    songIndex={props.songIndex}
-                    index={index + 1}
-                    changeId={props.changeId}
-                    mode={props.mode}
-                  />
-                ))
+              ? props.songList[0]
+                  .slice(playlistPages * 7, playlistPages * 7 + 7)
+                  .map((e, index) => (
+                    <PlaylistItem
+                      key={index}
+                      id={e}
+                      addSong={props.addSong}
+                      songIndex={props.songIndex}
+                      index={playlistPages * 7 + index + 1}
+                      changeId={props.changeId}
+                      mode={props.mode}
+                    />
+                  ))
               : null
             : null}
 
           {props.mode === 2
             ? props.songList[1] !== null
-              ? props.songList[1].map((e, index) => (
-                  <PlaylistItem
-                    key={index}
-                    id={e}
-                    addSong={props.addSong}
-                    songIndex={props.songIndex}
-                    index={index + 1}
-                    changeId={props.changeId}
-                    mode={props.mode}
-                  />
-                ))
+              ? props.songList[1]
+                  .slice(playlistPages * 7, playlistPages * 7 + 7)
+                  .map((e, index) => (
+                    <PlaylistItem
+                      key={index}
+                      id={e}
+                      addSong={props.addSong}
+                      songIndex={props.songIndex}
+                      index={playlistPages * 7 + index + 1}
+                      changeId={props.changeId}
+                      mode={props.mode}
+                    />
+                  ))
               : null
             : null}
+        </div>
+        <div
+          className="playlist-sroll"
+          style={{
+            border: `2px solid ${SongData[props.songIndex].lineColor}`,
+          }}
+        >
+          <div
+            className="playlist-scroll-img"
+            onClick={() => onPages(1)}
+            style={{ top: "12%" }}
+          >
+            <img src="./assets/icons/upBar.png" alt="" />
+          </div>
+          <div
+            className="playlist-scroll-img"
+            onClick={() => onPages(-1)}
+            style={{ bottom: "10%" }}
+          >
+            <img src="./assets/icons/downBar.png" alt="" />
+          </div>
         </div>
       </div>
       <div

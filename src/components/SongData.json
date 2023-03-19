@@ -1,103 +1,114 @@
 [
-	{
-		"id" : 1,
-		"name": "Guitar, Loneliness and Blue Planet",
-		"backgroundColor": "#4C2633",
-		"clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-		"lineColor": "rgba(237, 112 ,154 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(237, 112 ,154 ,.7)"
-	},
-	{
-		"id" : 2,
-		"name": "That band",
-		"backgroundColor": "#0C3958",
-		"clockTextShadow": "3px 3px rgba(26, 124 ,195 ,.7)",
-		"lineColor": "rgba(26, 124 ,195 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(26, 124 ,195 ,.7)"
-	},{
-		"id" : 3,
-		"name": "If I could be a constellation",
-		"backgroundColor": "#580D24",
-		"clockTextShadow": "3px 3px rgba(232, 26 ,91 ,.7)",
-		"lineColor": "rgba(232, 26 ,91,.9)",
-		"playerTextShadow" : "2px 2px rgba(232, 26 ,91,.7)"
-	},{
-		"id" : 4,
-		"name": "Never forget",
-		"backgroundColor": "#59420E",
-		"clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
-		"lineColor": "rgba(247, 180 ,27 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(247, 180 ,27,.7)"
-	} ,{
-		"id" : 5,
-		"name": "Secret base",
-		"backgroundColor": "#40292F",
-		"clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-		"lineColor": "rgba(255, 255 ,255 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(0, 0 ,0,.7)"
-	},{
-		"id" : 6,
-		"name": "Rockn Roll, Morning Light Falls on You",
-		"backgroundColor": "#40292F",
-		"clockTextShadow": "3px 3px rgba(237, 112 ,154,.7)",
-		"lineColor": "rgba(237, 112 ,154,.9)",
-		"playerTextShadow" : "2px 2px rgba(237, 112 ,154,.7)" 
-	}  ,{
-		"id" : 7,
-		"name": "What is wrong with",
-		"backgroundColor": "#59420E",
-		"clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
-		"lineColor": "rgba(247, 180 ,27 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(247, 180 ,27,.7)"
-	} ,{
-		"id" : 8,
-		"name": "I can't sing a love song",
-		"backgroundColor": "#40292F",
-		"clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-		"lineColor": "rgba(255, 255 ,255 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(0, 0 ,0,.7)"
-	} ,{
-		"id" : 9,
-		"name": "Karakara",
-		"backgroundColor": "#0C3958",
-		"clockTextShadow": "3px 3px rgba(26,124,195,.7)",
-		"lineColor": "rgba(26,124,195 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(26,124,195,.7)"
-	} ,{
-		"id" : 10,
-		"name": "The Little Sea",
-		"backgroundColor": "#40292F",
-		"clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-		"lineColor": "rgba(255, 255 ,255 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(0, 0 ,0,.7)"
-	}  ,{
-		"id" : 11,
-		"name": "Seisyun Complex",
-		"backgroundColor": "#4D2E2C",
-		"clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
-		"lineColor": "rgba(21,6,37,.9)",
-		"playerTextShadow" : "2px 2px rgba(21,6,37,.7)"
-	} ,{
-		"id" : 12,
-		"name": "Distortion!!",
-		"backgroundColor": "#580D22",
-		"clockTextShadow": "3px 3px rgba(232,26,91,.7)",
-		"lineColor": "rgba(232,26,91,.9)",
-		"playerTextShadow" : "2px 2px rgba(232,26,91,.7)"
-	} ,{
-		"id" : 13,
-		"name": "Flashbacker",
-		"backgroundColor": "#40292F",
-		"clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-		"lineColor": "rgba(255, 255 ,255 ,.9)",
-		"playerTextShadow" : "2px 2px rgba(0, 0 ,0,.7)"
-	}  ,{
-		"id" : 14,
-		"name": "Hitoribocchi Tokyo",
-		"backgroundColor": "#4D2E2C",
-		"clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
-		"lineColor": "rgba(21,6,37,.9)",
-		"playerTextShadow" : "2px 2px rgba(21,6,37,.7)"
-	}
-
+  {
+    "id": 1,
+    "name": "Guitar, Loneliness and Blue Planet",
+    "backgroundColor": "#4C2633",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
+    "lineColor": "rgba(237, 112 ,154 ,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+  },
+  {
+    "id": 2,
+    "name": "That band",
+    "backgroundColor": "#0C3958",
+    "clockTextShadow": "3px 3px rgba(26, 124 ,195 ,.7)",
+    "lineColor": "rgba(26, 124 ,195 ,.9)",
+    "playerTextShadow": "2px 2px rgba(26, 124 ,195 ,.7)"
+  },
+  {
+    "id": 3,
+    "name": "If I could be a constellation",
+    "backgroundColor": "#580D24",
+    "clockTextShadow": "3px 3px rgba(232, 26 ,91 ,.7)",
+    "lineColor": "rgba(232, 26 ,91,.9)",
+    "playerTextShadow": "2px 2px rgba(232, 26 ,91,.7)"
+  },
+  {
+    "id": 4,
+    "name": "Never forget",
+    "backgroundColor": "#59420E",
+    "clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
+    "lineColor": "rgba(247, 180 ,27 ,.9)",
+    "playerTextShadow": "2px 2px rgba(247, 180 ,27,.7)"
+  },
+  {
+    "id": 5,
+    "name": "Secret base",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 6,
+    "name": "Rockn' Roll, Morning Light Falls on You",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154,.7)",
+    "lineColor": "rgba(237, 112 ,154,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154,.7)"
+  },
+  {
+    "id": 7,
+    "name": "What is wrong with",
+    "backgroundColor": "#59420E",
+    "clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
+    "lineColor": "rgba(247, 180 ,27 ,.9)",
+    "playerTextShadow": "2px 2px rgba(247, 180 ,27,.7)"
+  },
+  {
+    "id": 8,
+    "name": "I can't sing a love song",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 9,
+    "name": "Karakara",
+    "backgroundColor": "#0C3958",
+    "clockTextShadow": "3px 3px rgba(26,124,195,.7)",
+    "lineColor": "rgba(26,124,195 ,.9)",
+    "playerTextShadow": "2px 2px rgba(26,124,195,.7)"
+  },
+  {
+    "id": 10,
+    "name": "The Little Sea",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 11,
+    "name": "Seisyun Complex",
+    "backgroundColor": "#4D2E2C",
+    "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
+    "lineColor": "rgba(21,6,37,.9)",
+    "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
+  },
+  {
+    "id": 12,
+    "name": "Distortion!!",
+    "backgroundColor": "#580D22",
+    "clockTextShadow": "3px 3px rgba(232,26,91,.7)",
+    "lineColor": "rgba(232,26,91,.9)",
+    "playerTextShadow": "2px 2px rgba(232,26,91,.7)"
+  },
+  {
+    "id": 13,
+    "name": "Flashbacker",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 14,
+    "name": "Hitoribocchi Tokyo",
+    "backgroundColor": "#4D2E2C",
+    "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
+    "lineColor": "rgba(21,6,37,.9)",
+    "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
+  }
 ]

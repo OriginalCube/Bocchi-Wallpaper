@@ -120,7 +120,7 @@ const Player = (props) => {
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current = new Audio(
-      `./assets/songs/${SongData[props.songIndex].name}.mp3`
+      `./assets/songs/${SongData[props.songIndex].name}.flac`
     );
     audioRef.current.volume = volume;
     if (isReady.current) {
@@ -154,7 +154,7 @@ const Player = (props) => {
           min="0"
           value={trackProgress}
           max={duration ? duration : `${duration}`}
-          className="audioProgress"
+          className="audio-progress"
           onChange={(e) => onScrub(e.target.value)}
           onMouseUp={onScrubEnd}
           onKeyUp={onScrubEnd}

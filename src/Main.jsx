@@ -58,7 +58,7 @@ const Main = () => {
     //Changes the song using conditions ~from player
     if (mode === 0) {
       //Default Playlist
-      if (shuffle === "false") {
+      if (shuffle === false) {
         //Shuffle Scuffed mech
         if (e === true) {
           //Skip Button
@@ -84,7 +84,7 @@ const Main = () => {
       songList[mode - 1].length
     ) {
       //Check if array is empty
-      if (shuffle === "false") {
+      if (shuffle === false) {
         if (e === true) {
           if (key + 1 < songList[mode - 1].length) {
             setIndex(songList[mode - 1][key + 1] - 1);
@@ -165,43 +165,61 @@ const Main = () => {
 
   React.useEffect(() => {
     //Loads and sets data onstart
-    setAudioVis(
-      localStorage.getItem("audioVis") !== null
-        ? localStorage.getItem("audioVis")
-        : "true"
-    );
-    setClock(
-      localStorage.getItem("clock") !== null
-        ? localStorage.getItem("clock")
-        : "true"
-    );
-    setPlayer(
-      localStorage.getItem("player") !== null
-        ? localStorage.getItem("player")
-        : "true"
-    );
-    setPlaylist(
-      localStorage.getItem("playlistH") !== null
-        ? localStorage.getItem("playlistH")
-        : "true"
-    );
-    setMode(
-      localStorage.getItem("mode") !== null
-        ? parseInt(localStorage.getItem("mode"))
-        : 0
-    );
-    setSongList(
-      localStorage.getItem("playlistBocchi") !== null
-        ? JSON.parse(localStorage.getItem("playlistBocchi"))
-        : [[], []]
-    );
-    if (localStorage.getItem("bocchi-14") !== null) {
-      let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
-      setReplay(temp14[0]);
-      setShuffle(temp14[1]);
-    } else {
+    try {
+      setAudioVis(
+        localStorage.getItem("audioVis") !== null
+          ? localStorage.getItem("audioVis")
+          : "true"
+      );
+      setClock(
+        localStorage.getItem("clock") !== null
+          ? localStorage.getItem("clock")
+          : "true"
+      );
+      setPlayer(
+        localStorage.getItem("player") !== null
+          ? localStorage.getItem("player")
+          : "true"
+      );
+      setPlaylist(
+        localStorage.getItem("playlistH") !== null
+          ? localStorage.getItem("playlistH")
+          : "true"
+      );
+      setMode(
+        localStorage.getItem("mode") !== null
+          ? parseInt(localStorage.getItem("mode"))
+          : 0
+      );
+      setSongList(
+        localStorage.getItem("playlistBocchi") !== null
+          ? JSON.parse(localStorage.getItem("playlistBocchi"))
+          : [[], []]
+      );
+      if (localStorage.getItem("bocchi-14") !== null) {
+        let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
+        setReplay(temp14[0]);
+        setShuffle(temp14[1]);
+      } else {
+        setReplay(false);
+        setShuffle(true);
+      }
+    } catch (e) {
+      setAudioVis("true");
+      localStorage.setItem("audioVis", "true");
+      setClock("true");
+      localStorage.setItem("clock", "true");
+      setPlayer("true");
+      localStorage.setItem("player", "true");
+      setPlaylist("true");
+      localStorage.setItem("playlistH", "true");
+      setMode(0);
+      localStorage.setItem("mode", 0);
+      setSongList([[], []]);
+      localStorage.setItem("playlistBocchi", JSON.stringify([[], []]));
       setReplay(false);
       setShuffle(true);
+      localStorage.setItem("bocchi-14", JSON.stringify([true, false]));
     }
   }, []);
 
