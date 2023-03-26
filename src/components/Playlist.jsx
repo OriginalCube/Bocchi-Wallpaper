@@ -156,14 +156,14 @@ const Playlist = (props) => {
         >
           <div
             className="playlist-scroll-img"
-            onClick={() => onPages(1)}
+            onClick={() => onPages(-1)}
             style={{ top: "12%" }}
           >
             <img src="./assets/icons/upBar.png" alt="" />
           </div>
           <div
             className="playlist-scroll-img"
-            onClick={() => onPages(-1)}
+            onClick={() => onPages(1)}
             style={{ bottom: "10%" }}
           >
             <img src="./assets/icons/downBar.png" alt="" />
