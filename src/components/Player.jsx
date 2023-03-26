@@ -18,7 +18,7 @@ const Player = (props) => {
 
   const clickAudio = (e) => {
     keypress.src = "./assets/audios/keypress.mp3";
-    keypress.volume = 0.5;
+    keypress.volume = props.uiVolume;
     keypress.play();
   };
 

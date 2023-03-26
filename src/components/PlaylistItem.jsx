@@ -6,7 +6,7 @@ const PlaylistItem = (props) => {
   const clickHandle = () => {
     props.changeId(props.id - 1);
     keypress.src = "./assets/audios/keypress.mp3";
-    keypress.volume = 0.5;
+    keypress.volume = props.uiVolume;
     keypress.play();
   };
 

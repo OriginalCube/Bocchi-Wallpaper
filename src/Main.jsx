@@ -17,6 +17,8 @@ const Main = () => {
   const [replay, setReplay] = React.useState(true);
   const [key, setKey] = React.useState(0); //Foreign key for other modes
   const [songList, setSongList] = React.useState([[], []]);
+  const [uiVolume, setUiVolume] = React.useState(0.5);
+
   const playerHandler = () => {
     //Changes and sets the music player
     setPlayer(player === "true" ? "false" : "true");
@@ -223,6 +225,17 @@ const Main = () => {
     }
   }, []);
 
+  //Wallpaper Engine Functions
+  try {
+    window.wallpaperPropertyListener = {
+      applyUserProperties: function (properties) {
+        setUiVolume(properties.uiVolume.value * 0.1);
+      },
+    };
+  } catch (e) {
+    console.log(e);
+  }
+
   return (
     <div
       className="Main"
@@ -238,6 +251,7 @@ const Main = () => {
         style={{ boxShadow: "1px 1px 12px #150625" }}
       />
       <Navigation
+        uiVolume={uiVolume}
         playerHandler={playerHandler}
         clockHandler={clockHandler}
         playlistHandler={playlistHandler}
@@ -247,6 +261,7 @@ const Main = () => {
       />
       {playlist === "true" ? (
         <Playlist
+          uiVolume={uiVolume}
           songIndex={songIndex}
           changeId={changeId}
           songList={songList}
@@ -261,6 +276,7 @@ const Main = () => {
       ) : null}
       {player === "true" ? (
         <Player
+          uiVolume={uiVolume}
           playerTextShadow={SongData[songIndex].playerTextShadow}
           songIndex={songIndex}
           changeSong={changeSong}

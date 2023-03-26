@@ -8,7 +8,7 @@ const Playlist = (props) => {
 
   const audioPlay = (e) => {
     keypress.src = `./assets/audios/${e === 0 ? "notes" : "keypress"}.mp3`;
-    keypress.volume = 0.5;
+    keypress.volume = props.uiVolume;
     keypress.play(); //ADD AUDIO IN FOOTER PART!!!!
   };
 
@@ -98,6 +98,7 @@ const Playlist = (props) => {
             ? SongData.slice(playlistPages * 5, playlistPages * 5 + 5).map(
                 (e, index) => (
                   <PlaylistItem
+                    uiVolume={props.uiVolume}
                     key={index}
                     id={e.id}
                     index={playlistPages * 5 + index + 1}
@@ -115,6 +116,7 @@ const Playlist = (props) => {
                   .slice(playlistPages * 5, playlistPages * 5 + 5)
                   .map((e, index) => (
                     <PlaylistItem
+                      uiVolume={props.uiVolume}
                       key={index}
                       id={e}
                       addSong={props.addSong}
@@ -133,6 +135,7 @@ const Playlist = (props) => {
                   .slice(playlistPages * 5, playlistPages * 5 + 5)
                   .map((e, index) => (
                     <PlaylistItem
+                      uiVolume={props.uiVolume}
                       key={index}
                       id={e}
                       addSong={props.addSong}
