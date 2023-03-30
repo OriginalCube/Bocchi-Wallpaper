@@ -157,6 +157,7 @@ code {
 
 .playlist-item-container {
   width: 90%;
+  padding-top: 15px;
   height: 100%;
   display: flex;
   flex-direction: column;
