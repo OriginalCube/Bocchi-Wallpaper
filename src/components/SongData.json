@@ -110,5 +110,13 @@
     "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
     "lineColor": "rgba(21,6,37,.9)",
     "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
+  },
+  {
+    "id": 15,
+    "name": "Watashi Dake Yuurei",
+    "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
   }
 ]

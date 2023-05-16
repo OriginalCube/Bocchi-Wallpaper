@@ -5,6 +5,7 @@ import Player from "./components/Player";
 import AudioVisualizer from "./components/AudioVisualizer";
 import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
+import { list } from "postcss";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -97,8 +98,12 @@ const Main = () => {
           }
         } else if (e === false) {
           if (key - 1 < 0) {
-            setIndex(songList[mode - 1][songList[mode - 1].length - 1 - 1]);
-            setKey(songList[mode - 1].length - 1);
+            const tempSong = songList[mode - 1];
+            const tempId = SongData.findIndex(
+              (e) => e.id === tempSong[tempSong.length - 1]
+            );
+            setIndex(tempId);
+            setKey(tempSong.length - 1);
           } else {
             setIndex(songList[mode - 1][key - 1] - 1);
             setKey(key - 1);

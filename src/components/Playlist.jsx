@@ -23,20 +23,48 @@ const Playlist = (props) => {
 
   const onPages = (e) => {
     if (props.mode === 0) {
-      if (playlistPages + e < SongData.length / 5 && playlistPages + e > 0) {
-        setPlaylistPages(playlistPages + 1);
-      } else {
-        setPlaylistPages(0);
+      if (e === -1) {
+        if (playlistPages + e >= 0) {
+          setPlaylistPages(playlistPages + e);
+        } else {
+          setPlaylistPages(SongData.length / 5 - 1);
+        }
+      } else if (e === 1) {
+        if (playlistPages + e < SongData.length / 5) {
+          setPlaylistPages(playlistPages + e);
+        } else {
+          setPlaylistPages(0);
+        }
       }
+      // if (playlistPages + e < SongData.length / 5 && playlistPages + e > 0) {
+      //   setPlaylistPages(playlistPages + 1);
+      // } else {
+      //   setPlaylistPages(0);
+      // }
     } else if (props.mode === 1 || props.mode === 2) {
-      if (
-        playlistPages + e < props.songList[props.mode - 1].length / 5 &&
-        playlistPages + e > 0
-      ) {
-        setPlaylistPages(playlistPages + 1);
-      } else {
-        setPlaylistPages(0);
+      if (e === -1) {
+        if (playlistPages + e >= 0) {
+          setPlaylistPages(playlistPages + e);
+        } else {
+          setPlaylistPages(
+            Math.trunc((props.songList[props.mode - 1].length - 1) / 5)
+          );
+        }
+      } else if (e === 1) {
+        if (playlistPages + e < props.songList[props.mode - 1].length / 5) {
+          setPlaylistPages(playlistPages + e);
+        } else {
+          setPlaylistPages(0);
+        }
       }
+      // if (
+      //   playlistPages + e < props.songList[props.mode - 1].length / 5 &&
+      //   playlistPages + e > 0
+      // ) {
+      //   setPlaylistPages(playlistPages + 1);
+      // } else {
+      //   setPlaylistPages(0);
+      // }
     }
     audioPlay(1);
   };
@@ -47,7 +75,7 @@ const Playlist = (props) => {
   };
 
   React.useEffect(() => {
-    console.log(playlistPages);
+    //console.log(playlistPages);
   }, [playlistPages]);
 
   React.useEffect(() => {
@@ -187,13 +215,13 @@ const Playlist = (props) => {
                 height: "100%",
               }}
             >
-              +Playlist 1
+              Playlist 1
             </p>
             <p
               onClick={() => onFooter(true, 2)}
               style={{ textShadow: SongData[props.songIndex].playerTextShadow }}
             >
-              +Playlist 2
+              Playlist 2
             </p>
           </>
         ) : (
