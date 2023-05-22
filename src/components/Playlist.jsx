@@ -27,7 +27,7 @@ const Playlist = (props) => {
         if (playlistPages + e >= 0) {
           setPlaylistPages(playlistPages + e);
         } else {
-          setPlaylistPages(SongData.length / 5 - 1);
+          setPlaylistPages(Math.trunc((SongData.length - 1) / 5));
         }
       } else if (e === 1) {
         if (playlistPages + e < SongData.length / 5) {

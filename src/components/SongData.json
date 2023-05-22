@@ -113,8 +113,24 @@
   },
   {
     "id": 15,
-    "name": "Watashi Dake Yuurei",
+    "name": "I'm the Only Ghost",
     "backgroundColor": "#40292F",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 16,
+    "name": "Into the Light",
+    "backgroundColor": "#4E441A",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 17,
+    "name": "Blue Spring and Western Sky",
+    "backgroundColor": "#4E441A",
     "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
     "lineColor": "rgba(255, 255 ,255 ,.9)",
     "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
