@@ -156,7 +156,7 @@ const Player = (props) => {
           max={duration ? duration : `${duration}`}
           className="audio-progress"
           onChange={(e) => onScrub(e.target.value)}
-          onMouseUp={onScrubEnd}
+          onClick={onScrubEnd}
           onKeyUp={onScrubEnd}
         />
       </div>
