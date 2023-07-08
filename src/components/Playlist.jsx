@@ -4,6 +4,7 @@ import SongData from "./SongData.json";
 
 const Playlist = (props) => {
   const [playlistPages, setPlaylistPages] = React.useState(1);
+  const [titleSize, setTitleSize] = React.useState(1);
   let keypress = new Audio();
 
   const audioPlay = (e) => {
@@ -81,16 +82,27 @@ const Playlist = (props) => {
   React.useEffect(() => {
     setPlaylistPages(0);
   }, [props.mode]);
+
+  React.useEffect(() => {
+    if (window.innerWidth <= 1370) {
+      setTitleSize(0.875); //0.875
+    } else {
+      setTitleSize(1);
+    }
+  }, [window.innerWidth]);
+
   return (
     <div
       className="playlist"
       style={{
+        fontSize: `${titleSize * props.textSize}rem`,
         border: `4.5px solid ${SongData[props.songIndex].lineColor}`,
         boxShadow: "1px 1px 6px #150625",
       }}
     >
-      <div className="playlistNavigation">
-        <p
+      <div className="playlistNavigation" style={{ height: "10%" }}>
+        <button
+          className="h-full w-1/3"
           onClick={() => onChangeMode(0)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
@@ -99,8 +111,9 @@ const Playlist = (props) => {
           }}
         >
           Default
-        </p>
-        <p
+        </button>
+        <button
+          className="h-full w-1/3"
           onClick={() => onChangeMode(1)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
@@ -109,8 +122,9 @@ const Playlist = (props) => {
           }}
         >
           Playlist 1
-        </p>
-        <p
+        </button>
+        <button
+          className="w-1/3 h-full"
           onClick={() => onChangeMode(2)}
           style={{
             textShadow: SongData[props.songIndex].playerTextShadow,
@@ -118,9 +132,9 @@ const Playlist = (props) => {
           }}
         >
           Playlist 2
-        </p>
+        </button>
       </div>
-      <div className="playlist-container">
+      <div className="playlist-container" style={{ height: "80%" }}>
         <div className="playlist-item-container">
           {props.mode === 0
             ? SongData.slice(playlistPages * 5, playlistPages * 5 + 5).map(
@@ -201,13 +215,15 @@ const Playlist = (props) => {
       <div
         className="playlistNavigation"
         style={{
+          height: "10%",
           borderTop: `4.5px solid ${SongData[props.songIndex].lineColor}`,
           position: "relative",
         }}
       >
         {props.mode === 0 ? (
           <>
-            <p
+            <button
+              className="w-1/2 h-full"
               onClick={() => onFooter(true, 1)}
               style={{
                 textShadow: SongData[props.songIndex].playerTextShadow,
@@ -216,17 +232,19 @@ const Playlist = (props) => {
               }}
             >
               Playlist 1
-            </p>
-            <p
+            </button>
+            <button
+              className="w-1/2 h-full"
               onClick={() => onFooter(true, 2)}
               style={{ textShadow: SongData[props.songIndex].playerTextShadow }}
             >
               Playlist 2
-            </p>
+            </button>
           </>
         ) : (
           <>
-            <p
+            <button
+              className="h-full w-full"
               onClick={() => onFooter(false, 0)}
               style={{
                 textShadow: SongData[props.songIndex].playerTextShadow,
@@ -234,7 +252,7 @@ const Playlist = (props) => {
               }}
             >
               Remove Current Song
-            </p>
+            </button>
           </>
         )}
       </div>

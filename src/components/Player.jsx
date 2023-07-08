@@ -141,86 +141,112 @@ const Player = (props) => {
     };
   }, []);
 
+  //July 2023 Resizing Update
+  const [titleSize, setTitleSize] = React.useState(1.25);
+
+  React.useEffect(() => {
+    if (window.innerWidth <= 1370) {
+      setTitleSize(0.875);
+    } else {
+      setTitleSize(1.25);
+    }
+  }, [window.innerWidth]);
+
   return (
     <div className="player">
-      <p
-        className="playerText"
-        style={{ textShadow: `${props.playerTextShadow}` }}
-      >{`${SongData[props.songIndex].name}`}</p>
-      <div>
-        <input
-          type="range"
-          step="1"
-          min="0"
-          value={trackProgress}
-          max={duration ? duration : `${duration}`}
-          className="audio-progress"
-          onChange={(e) => onScrub(e.target.value)}
-          onClick={onScrubEnd}
-          onKeyUp={onScrubEnd}
-        />
+      <div className="h-full w-full flex-col">
+        <div className="w-full" style={{ height: "30%" }}>
+          <p
+            className="playerText"
+            style={{
+              textShadow: `${props.playerTextShadow}`,
+              fontSize: `${titleSize * props.textSize}rem`,
+            }}
+          >{`${SongData[props.songIndex].name}`}</p>
+        </div>{" "}
+        <div
+          className="w-full flex items-center justify-center"
+          style={{ height: "25%" }}
+        >
+          <input
+            type="range"
+            step="1"
+            min="0"
+            value={trackProgress}
+            max={duration ? duration : `${duration}`}
+            className="audio-progress"
+            onChange={(e) => onScrub(e.target.value)}
+            onClick={onScrubEnd}
+            onKeyUp={onScrubEnd}
+          />
+        </div>
+        <div
+          className="flex items-center justify-evenly"
+          style={{ height: "45%" }}
+        >
+          <img
+            className="audioIcon"
+            onClick={() => onReplay()}
+            style={{ marginLeft: "0%", opacity: ".85" }}
+            alt=""
+            src={
+              props.replay
+                ? "./assets/icons/replayToggle.png"
+                : "./assets/icons/replay.png"
+            }
+          />
+          <img
+            className="audioIcon"
+            onClick={lessVolume}
+            alt=""
+            src="./assets/icons/volumeMinus.png"
+          />
+          <img
+            className="audioIcon"
+            onClick={prevButton}
+            alt=""
+            src="./assets/icons/backward.png"
+          />
+          {isPlaying ? (
+            <img
+              className="audioIcon"
+              onClick={playButton}
+              alt=""
+              src="./assets/icons/play.png"
+            />
+          ) : (
+            <img
+              className="audioIcon"
+              onClick={pauseButton}
+              alt=""
+              src="./assets/icons/pause.png"
+            />
+          )}
+          <img
+            className="audioIcon"
+            onClick={() => skipButton(true)}
+            alt=""
+            src="./assets/icons/forward.png"
+          />
+          <img
+            className="audioIcon"
+            onClick={addVolume}
+            alt=""
+            src="./assets/icons/volumePlus.png"
+          />
+          <img
+            className="audioIcon"
+            onClick={() => shuffle()}
+            style={{ opacity: ".85" }}
+            alt=""
+            src={
+              props.shuffle
+                ? "./assets/icons/shuffleToggle.png"
+                : "./assets/icons/shuffle.png"
+            }
+          />{" "}
+        </div>
       </div>
-      <img
-        className="audioIcon"
-        onClick={() => onReplay()}
-        style={{ marginLeft: "0%", opacity: ".85" }}
-        alt=""
-        src={
-          props.replay
-            ? "./assets/icons/replayToggle.png"
-            : "./assets/icons/replay.png"
-        }
-      />
-      <img
-        className="audioIcon"
-        onClick={lessVolume}
-        alt=""
-        src="./assets/icons/volumeMinus.png"
-      />
-      <img
-        className="audioIcon"
-        onClick={prevButton}
-        alt=""
-        src="./assets/icons/backward.png"
-      />
-      {isPlaying ? (
-        <img
-          className="audioIcon"
-          onClick={playButton}
-          alt=""
-          src="./assets/icons/play.png"
-        />
-      ) : (
-        <img
-          className="audioIcon"
-          onClick={pauseButton}
-          alt=""
-          src="./assets/icons/pause.png"
-        />
-      )}
-      <img
-        className="audioIcon"
-        onClick={() => skipButton(true)}
-        alt=""
-        src="./assets/icons/forward.png"
-      />
-      <img
-        className="audioIcon"
-        onClick={addVolume}
-        alt=""
-        src="./assets/icons/volumePlus.png"
-      />
-      <img
-        className="audioIcon"
-        onClick={() => shuffle()}
-        style={{ opacity: ".85" }}
-        alt=""
-        src={
-          props.shuffle
-            ? "./assets/icons/shuffleToggle.png"
-            : "./assets/icons/shuffle.png"
-        }
-      />
     </div>
   );
 };

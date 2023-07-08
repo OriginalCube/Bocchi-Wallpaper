@@ -19,6 +19,7 @@ const Main = () => {
   const [key, setKey] = React.useState(0); //Foreign key for other modes
   const [songList, setSongList] = React.useState([[], []]);
   const [uiVolume, setUiVolume] = React.useState(0.5);
+  const [textSize, setTextSize] = React.useState(1);
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -234,7 +235,8 @@ const Main = () => {
   try {
     window.wallpaperPropertyListener = {
       applyUserProperties: function (properties) {
-        setUiVolume(properties.uiVolume.value * 0.1);
+        if (properties.volume) setUiVolume(properties.uiVolume.value * 0.1);
+        if (properties.textsize) setTextSize(properties.textsize.value / 10);
       },
     };
   } catch (e) {
@@ -266,6 +268,7 @@ const Main = () => {
       />
       {playlist === "true" ? (
         <Playlist
+          textSize={textSize}
           uiVolume={uiVolume}
           songIndex={songIndex}
           changeId={changeId}
@@ -277,7 +280,10 @@ const Main = () => {
         />
       ) : null}
       {clock === "true" ? (
-        <Clock textShadow={SongData[songIndex].clockTextShadow} />
+        <Clock
+          textShadow={SongData[songIndex].clockTextShadow}
+          textSize={textSize}
+        />
       ) : null}
       {player === "true" ? (
         <Player
@@ -288,6 +294,7 @@ const Main = () => {
           shuffle={shuffle}
           replay={replay}
           reShuffle={reShuffle}
+          textSize={textSize}
         />
       ) : null}
     </div>
