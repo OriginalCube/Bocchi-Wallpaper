@@ -235,7 +235,7 @@ const Main = () => {
   try {
     window.wallpaperPropertyListener = {
       applyUserProperties: function (properties) {
-        if (properties.volume) setUiVolume(properties.uiVolume.value * 0.1);
+        if (properties.uiVolume) setUiVolume(properties.uiVolume.value * 0.1);
         if (properties.textsize) setTextSize(properties.textsize.value / 10);
       },
     };
