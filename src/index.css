@@ -111,10 +111,6 @@ code {
   text-align: center;
 }
 
-.player p {
-  line-height: 1.75rem; /* 28px */
-}
-
 .audio-progress {
   position: relative;
   width: 100%;
@@ -136,7 +132,6 @@ code {
   display: flex;
   flex-direction: column;
   color: white;
-  line-height: 1.5rem; /* 24px */
   border-radius: 2px;
   top: 27.5%;
   right: 8%;
@@ -205,19 +200,4 @@ code {
 }
 
 @media screen and (min-width: 1px) and (max-width: 1360px) {
-  .mainClock {
-    line-height: 1;
-  }
-
-  .mainSecond {
-    line-height: 1.75rem; /* 28px */
-  }
-
-  .player p {
-    line-height: 1.25rem; /* 20px */
-  }
-
-  .playlist p {
-    line-height: 1.25rem; /* 20px */
-  }
 }

@@ -153,7 +153,7 @@ const Player = (props) => {
   }, [window.innerWidth]);
 
   return (
-    <div className="player">
+    <div className="player ">
       <div className="h-full w-full flex-col">
         <div className="w-full" style={{ height: "30%" }}>
           <p
