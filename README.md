@@ -5,7 +5,7 @@ and create their own custom playlist.
 <img src="https://i.imgur.com/zaBnTLU.png" />
 
 ##  Steam Workshop Link:
-
+[Bocchi the Rock! ぼっち・ざ・ろっく！(Album)](https://steamcommunity.com/sharedfiles/filedetails/?id=2905017768)
 
 ## To create your own custom playlist
 You need to have Node/NPM to be installed in your system to be able to build the file into a static HTML file. Every song in the playlist is stored in the SongData.json, which is the file
