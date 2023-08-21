@@ -2,7 +2,11 @@
 This is a web-based wallpaper inspired from the anime Bocchi the rock. This website features a music player and a playlist that allows users to browse the playlist
 and create their own custom playlist.
 
+##  Thumbnail
 <img src="https://i.imgur.com/zaBnTLU.png" />
+
+##  Other song & playlist
+<img src="https://i.imgur.com/jeMMXyU.png" />
 
 ##  Steam Workshop Link:
 [Bocchi the Rock! ぼっち・ざ・ろっく！(Album)](https://steamcommunity.com/sharedfiles/filedetails/?id=2905017768)
