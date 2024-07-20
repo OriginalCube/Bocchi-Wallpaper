@@ -52,8 +52,16 @@ const Player = (props) => {
   };
 
   const prevButton = () => {
-    //Just send False
-    props.changeSong(false);
+    if (audioRef.current.currentTime >= 3) {
+      audioRef.current.currentTime = 0;
+      setProgress(audioRef.current.currentTime);
+      startTimer();
+    }
+    else {
+      //Just send False
+      props.changeSong(false);
+    }
+
     clickAudio();
   };
 
