@@ -134,5 +134,21 @@
     "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
     "lineColor": "rgba(255, 255 ,255 ,.9)",
     "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 18,
+    "name": "Now, Im going from underground",
+    "backgroundColor": "#0e0e0e",
+    "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
+  },
+  {
+    "id": 19,
+    "name": "Shine as usual",
+    "backgroundColor": "#0e0e0e",
+    "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
   }
 ]

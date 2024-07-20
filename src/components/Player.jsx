@@ -8,7 +8,7 @@ const Player = (props) => {
   const [volume, setVolume] = React.useState(
     localStorage.getItem("volume") !== null
       ? +localStorage.getItem("volume")
-      : 0.2
+      : 0.2,
   );
 
   const intervalRef = React.useRef();
@@ -56,8 +56,7 @@ const Player = (props) => {
       audioRef.current.currentTime = 0;
       setProgress(audioRef.current.currentTime);
       startTimer();
-    }
-    else {
+    } else {
       //Just send False
       props.changeSong(false);
     }
@@ -128,7 +127,7 @@ const Player = (props) => {
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current = new Audio(
-      `./assets/songs/${SongData[props.songIndex].name}.flac`
+      `./assets/songs/${SongData[props.songIndex].name}.flac`,
     );
     audioRef.current.volume = volume;
     if (isReady.current) {
@@ -168,7 +167,6 @@ const Player = (props) => {
           <p
             className="playerText"
             style={{
-              textShadow: `${props.playerTextShadow}`,
               fontSize: `${titleSize * props.textSize}rem`,
             }}
           >{`${SongData[props.songIndex].name}`}</p>

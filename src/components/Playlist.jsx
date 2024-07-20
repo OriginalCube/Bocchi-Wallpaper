@@ -48,7 +48,7 @@ const Playlist = (props) => {
           setPlaylistPages(playlistPages + e);
         } else {
           setPlaylistPages(
-            Math.trunc((props.songList[props.mode - 1].length - 1) / 5)
+            Math.trunc((props.songList[props.mode - 1].length - 1) / 5),
           );
         }
       } else if (e === 1) {
@@ -105,7 +105,6 @@ const Playlist = (props) => {
           className="h-full w-1/3"
           onClick={() => onChangeMode(0)}
           style={{
-            textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
             borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
           }}
@@ -116,7 +115,6 @@ const Playlist = (props) => {
           className="h-full w-1/3"
           onClick={() => onChangeMode(1)}
           style={{
-            textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
             borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
           }}
@@ -127,7 +125,6 @@ const Playlist = (props) => {
           className="w-1/3 h-full"
           onClick={() => onChangeMode(2)}
           style={{
-            textShadow: SongData[props.songIndex].playerTextShadow,
             borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
           }}
         >
@@ -148,7 +145,7 @@ const Playlist = (props) => {
                     changeId={props.changeId}
                     mode={props.mode}
                   />
-                )
+                ),
               )
             : null}
 
@@ -226,18 +223,13 @@ const Playlist = (props) => {
               className="w-1/2 h-full"
               onClick={() => onFooter(true, 1)}
               style={{
-                textShadow: SongData[props.songIndex].playerTextShadow,
                 borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
                 height: "100%",
               }}
             >
               Playlist 1
             </button>
-            <button
-              className="w-1/2 h-full"
-              onClick={() => onFooter(true, 2)}
-              style={{ textShadow: SongData[props.songIndex].playerTextShadow }}
-            >
+            <button className="w-1/2 h-full" onClick={() => onFooter(true, 2)}>
               Playlist 2
             </button>
           </>
@@ -247,7 +239,6 @@ const Playlist = (props) => {
               className="h-full w-full"
               onClick={() => onFooter(false, 0)}
               style={{
-                textShadow: SongData[props.songIndex].playerTextShadow,
                 padding: "0px",
               }}
             >

@@ -130,9 +130,10 @@ code {
 .playlist {
   position: absolute;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
   flex-direction: column;
   color: white;
-  border-radius: 2px;
+  border-radius: 16px;
   top: 27.5%;
   right: 8%;
   width: 18%;
