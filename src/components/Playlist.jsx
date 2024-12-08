@@ -80,6 +80,13 @@ const Playlist = (props) => {
   }, [playlistPages]);
 
   React.useEffect(() => {
+    if (props.mode === 0)
+      setPlaylistPages(Math.trunc(props.songIndex / 5));
+    else
+      setPlaylistPages(Math.trunc(props.songList[props.mode - 1].findIndex((x) => x === props.songIndex + 1) / 5));
+  }, [props.mode, props.songIndex, props.songList]);
+
+  React.useEffect(() => {
     setPlaylistPages(0);
   }, [props.mode]);
 
