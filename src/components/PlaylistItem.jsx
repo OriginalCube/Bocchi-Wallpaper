@@ -17,6 +17,8 @@ const PlaylistItem = (props) => {
         style={{
           opacity: ".85",
           borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
+          backgroundColor: props.songIndex === props.id - 1 ? `gray` : `transparent`,
+          padding: `5px`,
         }}
       >
         {props.index}. {SongData[props.id - 1].name}
