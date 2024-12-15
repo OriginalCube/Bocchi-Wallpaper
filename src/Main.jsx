@@ -101,7 +101,7 @@ const Main = () => {
           if (key - 1 < 0) {
             const tempSong = songList[mode - 1];
             const tempId = SongData.findIndex(
-              (e) => e.id === tempSong[tempSong.length - 1]
+              (e) => e.id === tempSong[tempSong.length - 1],
             );
             setIndex(tempId);
             setKey(tempSong.length - 1);
@@ -115,7 +115,7 @@ const Main = () => {
         setIndex(
           songList[mode - 1][
             Math.floor(songList[mode - 1].length * Math.random())
-          ] - 1
+          ] - 1,
         );
       }
     }
@@ -157,7 +157,7 @@ const Main = () => {
         setIndex(
           songList[mode - 1][
             Math.floor(songList[mode - 1].length * Math.random())
-          ] - 1
+          ] - 1,
         );
       } else {
       }
@@ -177,32 +177,32 @@ const Main = () => {
       setAudioVis(
         localStorage.getItem("audioVis") !== null
           ? localStorage.getItem("audioVis")
-          : "true"
+          : "true",
       );
       setClock(
         localStorage.getItem("clock") !== null
           ? localStorage.getItem("clock")
-          : "true"
+          : "true",
       );
       setPlayer(
         localStorage.getItem("player") !== null
           ? localStorage.getItem("player")
-          : "true"
+          : "true",
       );
       setPlaylist(
         localStorage.getItem("playlistH") !== null
           ? localStorage.getItem("playlistH")
-          : "true"
+          : "true",
       );
       setMode(
         localStorage.getItem("mode") !== null
           ? parseInt(localStorage.getItem("mode"))
-          : 0
+          : 0,
       );
       setSongList(
         localStorage.getItem("playlistBocchi") !== null
           ? JSON.parse(localStorage.getItem("playlistBocchi"))
-          : [[], []]
+          : [[], []],
       );
       if (localStorage.getItem("bocchi-14") !== null) {
         let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
@@ -253,7 +253,9 @@ const Main = () => {
       ) : null}
       <img
         className="mainImage"
-        src={`./assets/icons/${SongData[songIndex].name}.jpg`}
+        src={`./assets/icons/${
+          SongData[songIndex].album ?? SongData[songIndex].name
+        }.jpg`}
         alt=""
         style={{ boxShadow: "1px 1px 12px #150625" }}
       />

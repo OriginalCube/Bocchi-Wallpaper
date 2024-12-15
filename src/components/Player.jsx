@@ -127,7 +127,9 @@ const Player = (props) => {
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current = new Audio(
-      `./assets/songs/${SongData[props.songIndex].name}.flac`,
+      `./assets/songs/${SongData[props.songIndex].name}${
+        SongData[props.songIndex]?.audioType ?? ".flac"
+      }`,
     );
     audioRef.current.volume = volume;
     if (isReady.current) {
@@ -169,7 +171,9 @@ const Player = (props) => {
             style={{
               fontSize: `${titleSize * props.textSize}rem`,
             }}
-          >{`${SongData[props.songIndex].name}`}</p>
+          >{`${
+            SongData[props.songIndex]?.label ?? SongData[props.songIndex].name
+          }`}</p>
         </div>{" "}
         <div
           className="w-full flex items-center justify-center"

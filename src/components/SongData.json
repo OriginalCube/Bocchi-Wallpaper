@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "Seisyun Complex",
-    "backgroundColor": "#4D2E2C",
+    "backgroundColor": "#3d7ec2",
     "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
     "lineColor": "rgba(21,6,37,.9)",
     "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
@@ -106,7 +106,7 @@
   {
     "id": 14,
     "name": "Hitoribocchi Tokyo",
-    "backgroundColor": "#4D2E2C",
+    "backgroundColor": "#3d7ec2",
     "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
     "lineColor": "rgba(21,6,37,.9)",
     "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
@@ -136,6 +136,7 @@
     "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
   },
   {
+    "NOTES": "Patch v2.0",
     "id": 18,
     "name": "Now, Im going from underground",
     "backgroundColor": "#0e0e0e",
@@ -150,5 +151,76 @@
     "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
     "lineColor": "rgba(255, 255 ,255 ,.9)",
     "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
+  },
+  {
+    "id": 20,
+    "name": "Chronostasis",
+    "audioType": ".mp3",
+    "album": "Re",
+    "backgroundColor": "#4C2633",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
+    "lineColor": "rgba(237, 112 ,154 ,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+  },
+  {
+    "id": 21,
+    "name": "Doppelganger",
+    "audioType": ".mp3",
+    "album": "Re",
+    "backgroundColor": "#4C2633",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
+    "lineColor": "rgba(237, 112 ,154 ,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+  },
+  {
+    "id": 22,
+    "name": "Me and the three primary colors",
+    "audioType": ".mp3",
+    "album": "Re",
+    "backgroundColor": "#4C2633",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
+    "lineColor": "rgba(237, 112 ,154 ,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+  },
+  {
+    "id": 23,
+    "label": "RE:RE:",
+    "name": "ReRe",
+    "audioType": ".mp3",
+    "album": "Re",
+    "backgroundColor": "#4C2633",
+    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
+    "lineColor": "rgba(237, 112 ,154 ,.9)",
+    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+  },
+  {
+    "id": 24,
+    "name": "Planet",
+    "audioType": ".mp3",
+    "album": "We_Will",
+    "backgroundColor": "#4E441A",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 25,
+    "name": "UNITE",
+    "audioType": ".mp3",
+    "album": "We_Will",
+    "backgroundColor": "#4E441A",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+  },
+  {
+    "id": 26,
+    "name": "Bundle up your dreams",
+    "audioType": ".mp3",
+    "album": "We_Will",
+    "backgroundColor": "#4E441A",
+    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
+    "lineColor": "rgba(255, 255 ,255 ,.9)",
+    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
   }
 ]
