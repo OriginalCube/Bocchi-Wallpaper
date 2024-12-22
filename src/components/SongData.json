@@ -82,10 +82,10 @@
   {
     "id": 11,
     "name": "Seisyun Complex",
-    "backgroundColor": "#3d7ec2",
-    "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
-    "lineColor": "rgba(21,6,37,.9)",
-    "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
+    "backgroundColor": "#4D2E2C",
+    "clockTextShadow": "3px 3px rgba(255, 255, 255, .7)",
+    "lineColor": "rgba(255, 255, 255,.9)",
+    "playerTextShadow": "2px 2px rgba(255, 255, 255, .7)"
   },
   {
     "id": 12,
@@ -106,10 +106,10 @@
   {
     "id": 14,
     "name": "Hitoribocchi Tokyo",
-    "backgroundColor": "#3d7ec2",
-    "clockTextShadow": "3px 3px rgba(21, 6 ,37,.7)",
-    "lineColor": "rgba(21,6,37,.9)",
-    "playerTextShadow": "2px 2px rgba(21,6,37,.7)"
+    "backgroundColor": "#4D2E2C",
+    "clockTextShadow": "3px 3px rgba(255, 255, 255, .7)",
+    "lineColor": "rgba(255, 255, 255, .9)",
+    "playerTextShadow": "2px 2px rgba(255, 255, 255,.7)"
   },
   {
     "id": 15,
@@ -139,6 +139,7 @@
     "NOTES": "Patch v2.0",
     "id": 18,
     "name": "Now, Im going from underground",
+    "album": "shine",
     "backgroundColor": "#0e0e0e",
     "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
     "lineColor": "rgba(255, 255 ,255 ,.9)",
@@ -147,12 +148,14 @@
   {
     "id": 19,
     "name": "Shine as usual",
+    "album": "shine",
     "backgroundColor": "#0e0e0e",
     "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
     "lineColor": "rgba(255, 255 ,255 ,.9)",
     "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
   },
   {
+    "NOTES": "Patch v3.0",
     "id": 20,
     "name": "Chronostasis",
     "audioType": ".mp3",
