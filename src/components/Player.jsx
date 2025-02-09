@@ -1,5 +1,6 @@
 import React from "react";
 import SongData from "./SongData.json";
+import TitleDisplay from "../TitleDisplay";
 
 const Player = (props) => {
   let keypress = new Audio();
@@ -162,6 +163,21 @@ const Player = (props) => {
     }
   }, [window.innerWidth]);
 
+  let title;
+  
+  switch (props.titleDisplay)
+  {
+    case TitleDisplay.English:
+      title = SongData[props.songIndex].name;
+      break;
+    case TitleDisplay.Original:
+      title = SongData[props.songIndex].nameOriginal ?? SongData[props.songIndex].name;
+      break;
+    case TitleDisplay.Romanized:
+      title = SongData[props.songIndex].nameRomanized ?? SongData[props.songIndex].name;
+      break;
+  }
+
   return (
     <div className="player ">
       <div className="h-full w-full flex-col">
@@ -172,7 +188,7 @@ const Player = (props) => {
               fontSize: `${titleSize * props.textSize}rem`,
             }}
           >{`${
-            SongData[props.songIndex].name
+            title
           }`}</p>
         </div>{" "}
         <div

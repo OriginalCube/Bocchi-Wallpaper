@@ -6,6 +6,7 @@ import AudioVisualizer from "./components/AudioVisualizer";
 import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
 import { list } from "postcss";
+import TitleDisplay from "./TitleDisplay";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -20,6 +21,7 @@ const Main = () => {
   const [songList, setSongList] = React.useState([[], []]);
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
+  const [titleDisplay, setTitleDisplay] = React.useState(TitleDisplay.English);
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -237,6 +239,7 @@ const Main = () => {
       applyUserProperties: function (properties) {
         if (properties.uiVolume) setUiVolume(properties.uiVolume.value * 0.1);
         if (properties.textsize) setTextSize(properties.textsize.value / 10);
+        if (properties.titledisplay) setTitleDisplay(properties.titledisplay.value)
       },
     };
   } catch (e) {
@@ -279,6 +282,7 @@ const Main = () => {
           mode={mode}
           addSong={addSong}
           removeSong={removeSong}
+          titleDisplay={titleDisplay}
         />
       ) : null}
       {clock === "true" ? (
@@ -297,6 +301,7 @@ const Main = () => {
           replay={replay}
           reShuffle={reShuffle}
           textSize={textSize}
+          titleDisplay={titleDisplay}
         />
       ) : null}
     </div>
