@@ -138,7 +138,7 @@
   {
     "NOTES": "Patch v2.0",
     "id": 18,
-    "name": "Now, Im going from underground",
+    "name": "Now, I'm going from underground",
     "album": "shine",
     "backgroundColor": "#0e0e0e",
     "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
@@ -187,8 +187,8 @@
   },
   {
     "id": 23,
-    "label": "RE:RE:",
-    "name": "ReRe",
+    "filename": "Re_Re_",
+    "name": "Re:Re:",
     "audioType": ".mp3",
     "album": "Re",
     "backgroundColor": "#4C2633",
