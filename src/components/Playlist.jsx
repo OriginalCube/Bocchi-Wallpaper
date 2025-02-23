@@ -17,7 +17,7 @@ const Playlist = (props) => {
     if (x === true) {
       props.addSong(props.songIndex + 1, y);
     } else {
-      props.removeSong();
+      props.removeSong(y);
     }
     audioPlay(0);
   };
@@ -74,6 +74,8 @@ const Playlist = (props) => {
     props.changeMode(e);
     audioPlay(0);
   };
+
+  const includedInPlaylist = (index) => props.songList[index - 1].includes(props.songIndex + 1);
 
   React.useEffect(() => {
     //console.log(playlistPages);
@@ -231,23 +233,23 @@ const Playlist = (props) => {
           <>
             <button
               className="w-1/2 h-full"
-              onClick={() => onFooter(true, 1)}
+              onClick={() => onFooter(!includedInPlaylist(1), 1)}
               style={{
                 borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
                 height: "100%",
               }}
             >
-              Playlist 1
+              {includedInPlaylist(1) ? "-" : "+"} Playlist 1
             </button>
-            <button className="w-1/2 h-full" onClick={() => onFooter(true, 2)}>
-              Playlist 2
+            <button className="w-1/2 h-full" onClick={() => onFooter(!includedInPlaylist(2), 2)}>
+              {includedInPlaylist(2) ? "-" : "+"} Playlist 2
             </button>
           </>
         ) : (
           <>
             <button
               className="h-full w-full"
-              onClick={() => onFooter(false, 0)}
+              onClick={() => onFooter(false, props.mode)}
               style={{
                 padding: "0px",
               }}
