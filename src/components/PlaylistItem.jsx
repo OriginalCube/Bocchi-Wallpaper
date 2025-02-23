@@ -1,5 +1,6 @@
 import React from "react";
 import SongData from "./SongData.json";
+import TitleDisplay from "../TitleDisplay";
 
 const PlaylistItem = (props) => {
   let keypress = new Audio();
@@ -9,6 +10,22 @@ const PlaylistItem = (props) => {
     keypress.volume = props.uiVolume;
     keypress.play();
   };
+
+  let title;
+  
+  switch (props.titleDisplay)
+  {
+    case TitleDisplay.English:
+      title = SongData[props.id - 1].name;
+      break;
+    case TitleDisplay.Original:
+      title = SongData[props.id - 1].nameOriginal ?? SongData[props.id - 1].name;
+      break;
+    case TitleDisplay.Romanized:
+      title = SongData[props.id - 1].nameRomanized ?? SongData[props.id - 1].name;
+      break;
+  }
+
 
   return (
     <div className="playlist-item">
@@ -30,7 +47,7 @@ const PlaylistItem = (props) => {
           borderRadius: props.songIndex === props.id - 1 ? "5px" : "0px",
         }}
       >
-        {props.index}. {SongData[props.id - 1].name}
+        {props.index}. {title}
       </p>
     </div>
   );

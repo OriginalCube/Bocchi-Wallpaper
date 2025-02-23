@@ -151,6 +151,7 @@ const Playlist = (props) => {
                     songIndex={props.songIndex}
                     changeId={props.changeId}
                     mode={props.mode}
+                    titleDisplay={props.titleDisplay}
                   />
                 ),
               )
@@ -170,6 +171,7 @@ const Playlist = (props) => {
                       index={playlistPages * 5 + index + 1}
                       changeId={props.changeId}
                       mode={props.mode}
+                      titleDisplay={props.titleDisplay}
                     />
                   ))
               : null
@@ -189,6 +191,7 @@ const Playlist = (props) => {
                       index={playlistPages * 5 + index + 1}
                       changeId={props.changeId}
                       mode={props.mode}
+                      titleDisplay={props.titleDisplay}
                     />
                   ))
               : null
