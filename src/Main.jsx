@@ -127,15 +127,15 @@ const Main = () => {
     if (songList[y - 1].includes(x)) {
       //Op check
     } else {
-      let tempArray = songList;
+      let tempArray = [...songList];
       tempArray[y - 1].push(x);
       setSongList(tempArray);
       localStorage.setItem("playlistBocchi", JSON.stringify(tempArray));
     }
   };
 
-  const removeSong = () => {
-    songList[mode - 1].splice(key, 1);
+  const removeSong = (y) => {
+    songList[y - 1].splice(key, 1);
     setSongList([...songList]);
     localStorage.setItem("playlistBocchi", JSON.stringify(songList));
   };
