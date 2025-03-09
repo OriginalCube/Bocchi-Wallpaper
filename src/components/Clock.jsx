@@ -27,19 +27,18 @@ const Clock = (props) => {
 
   return (
     <p
-      className={`mainClock absolute opacity-80`}
+      className={`p-8 leading-none absolute opacity-80 overflow-visible`}
       style={{
         fontSize: `${mainSize * props.textSize}rem`,
         top: "79vh",
         right: "2vw",
-        color: `white`,
-        textShadow: `${props.textShadow}`,
+        color: `white`
       }}
     >
       {hour + ":"}
       {minute > 9 ? minute : "0" + minute}
       <span
-        className={`mainSecond relative top-2/3`}
+        className={`absolute bottom-[2.5vh]`}
         style={{
           fontSize: `${secondSize * props.textSize}rem`,
           color: `white`,

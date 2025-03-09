@@ -5,9 +5,7 @@
     "nameOriginal": "ギターと孤独と蒼い惑星",
     "nameRomanized": "Guitar to Kodoku to Aoi Hoshi",
     "backgroundColor": "#4C2633",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-    "lineColor": "rgba(237, 112 ,154 ,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+    "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 2,
@@ -15,9 +13,7 @@
     "nameOriginal": "あのバンド",
     "nameRomanized": "Ano Band",
     "backgroundColor": "#0C3958",
-    "clockTextShadow": "3px 3px rgba(26, 124 ,195 ,.7)",
-    "lineColor": "rgba(26, 124 ,195 ,.9)",
-    "playerTextShadow": "2px 2px rgba(26, 124 ,195 ,.7)"
+    "lineColor": "rgba(26, 124 ,195 ,.9)"
   },
   {
     "id": 3,
@@ -25,9 +21,7 @@
     "nameOriginal": "星座になれたら",
     "nameRomanized": "Seiza ni Naretara",
     "backgroundColor": "#580D24",
-    "clockTextShadow": "3px 3px rgba(232, 26 ,91 ,.7)",
-    "lineColor": "rgba(232, 26 ,91,.9)",
-    "playerTextShadow": "2px 2px rgba(232, 26 ,91,.7)"
+    "lineColor": "rgba(232, 26 ,91,.9)"
   },
   {
     "id": 4,
@@ -35,9 +29,7 @@
     "nameOriginal": "忘れてやらない",
     "nameRomanized": "Wasurete Yaranai",
     "backgroundColor": "#59420E",
-    "clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
-    "lineColor": "rgba(247, 180 ,27 ,.9)",
-    "playerTextShadow": "2px 2px rgba(247, 180 ,27,.7)"
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 5,
@@ -45,9 +37,7 @@
     "nameOriginal": "ひみつ基地",
     "nameRomanized": "Himitsu Kichi",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 6,
@@ -55,9 +45,7 @@
     "nameOriginal": "転がる岩、君に朝が降る",
     "nameRomanized": "Korogaru Iwa, Kimi ni Asa ga Furu",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154,.7)",
-    "lineColor": "rgba(237, 112 ,154,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154,.7)"
+    "lineColor": "rgba(237, 112 ,154,.9)"
   },
   {
     "id": 7,
@@ -65,9 +53,7 @@
     "nameOriginal": "なにが悪い",
     "nameRomanized": "Nani ga Warui",
     "backgroundColor": "#59420E",
-    "clockTextShadow": "3px 3px rgba(247, 180 ,27 ,.7)",
-    "lineColor": "rgba(247, 180 ,27 ,.9)",
-    "playerTextShadow": "2px 2px rgba(247, 180 ,27,.7)"
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 8,
@@ -75,18 +61,14 @@
     "nameOriginal": "ラブソングが歌えない",
     "nameRomanized": "Love Song ga Utaenai",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 9,
     "name": "Karakara",
     "nameOriginal": "カラカラ",
     "backgroundColor": "#0C3958",
-    "clockTextShadow": "3px 3px rgba(26,124,195,.7)",
-    "lineColor": "rgba(26,124,195 ,.9)",
-    "playerTextShadow": "2px 2px rgba(26,124,195,.7)"
+    "lineColor": "rgba(26,124,195 ,.9)"
   },
   {
     "id": 10,
@@ -94,44 +76,34 @@
     "nameOriginal": "小さな海",
     "nameRomanized": "Chiisana Umi",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 11,
     "name": "Seisyun Complex",
     "nameOriginal": "青春コンプレックス",
     "backgroundColor": "#4D2E2C",
-    "clockTextShadow": "3px 3px rgba(255, 255, 255, .7)",
-    "lineColor": "rgba(255, 255, 255,.9)",
-    "playerTextShadow": "2px 2px rgba(255, 255, 255, .7)"
+    "lineColor": "rgba(255, 255, 255,.9)"
   },
   {
     "id": 12,
     "name": "Distortion!!",
     "backgroundColor": "#580D22",
-    "clockTextShadow": "3px 3px rgba(232,26,91,.7)",
-    "lineColor": "rgba(232,26,91,.9)",
-    "playerTextShadow": "2px 2px rgba(232,26,91,.7)"
+    "lineColor": "rgba(232,26,91,.9)"
   },
   {
     "id": 13,
     "name": "Flashbacker",
     "nameOriginal": "フラッシュバッカ",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 14,
     "name": "Hitoribocchi Tokyo",
     "nameOriginal": "ひとりぼっち東京",
     "backgroundColor": "#4D2E2C",
-    "clockTextShadow": "3px 3px rgba(255, 255, 255, .7)",
-    "lineColor": "rgba(255, 255, 255, .9)",
-    "playerTextShadow": "2px 2px rgba(255, 255, 255,.7)"
+    "lineColor": "rgba(255, 255, 255, .9)"
   },
   {
     "id": 15,
@@ -139,9 +111,7 @@
     "nameOriginal": "ワタシダケユウレイ",
     "nameRomanized": "Watashi Dake Yuurei",
     "backgroundColor": "#40292F",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 16,
@@ -149,9 +119,7 @@
     "nameOriginal": "光の中へ",
     "nameRomanized": "Hikari no Naka e",
     "backgroundColor": "#4E441A",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 17,
@@ -159,9 +127,7 @@
     "nameOriginal": "青い春と西の空",
     "nameRomanized": "Aoi Haru to Nishi no Sora", 
     "backgroundColor": "#4E441A",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "NOTES": "Patch v2.0",
@@ -171,9 +137,7 @@
     "nameRomanized": "Ima, Boku, Underground Kara",
     "album": "shine",
     "backgroundColor": "#0e0e0e",
-    "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 19,
@@ -182,9 +146,7 @@
     "nameRomanized": "Tsukinami ni Kagayake",
     "album": "shine",
     "backgroundColor": "#0e0e0e",
-    "clockTextShadow": "3px 3px rgba(255, 255 ,255,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(255, 255 ,255,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "NOTES": "Patch v3.0",
@@ -195,9 +157,7 @@
     "audioType": ".mp3",
     "album": "Re",
     "backgroundColor": "#4C2633",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-    "lineColor": "rgba(237, 112 ,154 ,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+    "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 21,
@@ -206,9 +166,7 @@
     "audioType": ".mp3",
     "album": "Re",
     "backgroundColor": "#4C2633",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-    "lineColor": "rgba(237, 112 ,154 ,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+    "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 22,
@@ -218,9 +176,7 @@
     "audioType": ".mp3",
     "album": "Re",
     "backgroundColor": "#4C2633",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-    "lineColor": "rgba(237, 112 ,154 ,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+    "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 23,
@@ -229,9 +185,7 @@
     "audioType": ".mp3",
     "album": "Re",
     "backgroundColor": "#4C2633",
-    "clockTextShadow": "3px 3px rgba(237, 112 ,154 ,.7)",
-    "lineColor": "rgba(237, 112 ,154 ,.9)",
-    "playerTextShadow": "2px 2px rgba(237, 112 ,154 ,.7)"
+    "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 24,
@@ -241,9 +195,7 @@
     "audioType": ".mp3",
     "album": "We_Will",
     "backgroundColor": "#4E441A",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 25,
@@ -251,9 +203,7 @@
     "audioType": ".mp3",
     "album": "We_Will",
     "backgroundColor": "#4E441A",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 26,
@@ -263,8 +213,6 @@
     "audioType": ".mp3",
     "album": "We_Will",
     "backgroundColor": "#4E441A",
-    "clockTextShadow": "3px 3px rgba(0, 0 ,0 ,.7)",
-    "lineColor": "rgba(255, 255 ,255 ,.9)",
-    "playerTextShadow": "2px 2px rgba(0, 0 ,0,.7)"
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   }
 ]
