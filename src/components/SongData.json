@@ -214,5 +214,65 @@
     "album": "We_Will",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
+  },
+  {
+    "id": 27,
+    "name": "Milky Way",
+    "nameOriginal": "天の川",
+    "nameRomanized": "Amanogawa",
+    "audioType": ".mp3",
+    "album": "We_Will",
+    "backgroundColor": "#4E441A",
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
+  },
+  {
+    "id": 28,
+    "name": "Cagayake!GIRLS",
+    "nameOriginal": "かがやけ!ガールズ",
+    "nameRomanized": "Kagayake! Gāruzu",
+    "audioType": ".mp3",
+    "album": "kirara_tribute",
+    "backgroundColor": "#59420E",
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
+  },
+  {
+    "id": 29,
+    "name": "Daydream cafe",
+    "nameOriginal": "デイドリームカフェ",
+    "nameRomanized": "Deidorīmukafe",
+    "audioType": ".mp3",
+    "album": "kirara_tribute",
+    "backgroundColor": "#59420E",
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
+  },
+  {
+    "id": 30,
+    "name": "KIRUMII NO BEIBEE!",
+    "nameOriginal": "キルミーのベイビー！",
+    "nameRomanized": "Kirumī no beibī!",
+    "audioType": ".mp3",
+    "album": "kirara_tribute",
+    "backgroundColor": "#59420E",
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
+  },
+  {
+    "id": 31,
+    "name": "SHINY DAYS",
+    "nameOriginal": "輝かしい日々",
+    "nameRomanized": "Kagayakashī hibi",
+    "audioType": ".mp3",
+    "album": "kirara_tribute",
+    "backgroundColor": "#59420E",
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
+  },
+  {
+    "id": 32,
+    "name": "Won (3) Chu KissMe!",
+    "nameOriginal": "優勝(3) Chu KissMe!",
+    "nameRomanized": "Yūshō (3) Chu KissMe!",
+    "audioType": ".mp3",
+    "album": "kirara_tribute",
+    "backgroundColor": "#59420E",
+    "lineColor": "rgba(247, 180 ,27 ,.9)"
   }
 ]
