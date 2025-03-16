@@ -1,6 +1,7 @@
 import React from "react";
 import SongData from "./SongData.json";
 import TitleDisplay from "../TitleDisplay";
+import { toFilename } from "../helpers";
 
 const Player = (props) => {
   let keypress = new Audio();
@@ -128,7 +129,7 @@ const Player = (props) => {
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current = new Audio(
-      `./assets/songs/${SongData[props.songIndex].filename ?? SongData[props.songIndex].name}${
+      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${
         SongData[props.songIndex]?.audioType ?? ".flac"
       }`,
     );
