@@ -110,7 +110,7 @@ code {
 .audio-progress {
   position: relative;
   width: 100%;
-  margin: 0 5px 0 5px;
+  margin: 0 5px;
   outline: none;
 }
 

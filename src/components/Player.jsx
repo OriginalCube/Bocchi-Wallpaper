@@ -91,7 +91,7 @@ const Player = (props) => {
 
   const toReadableTime = (seconds) => {
     if (isNaN(seconds)) return;
-    var date = new Date(0);
+    const date = new Date(0);
     date.setSeconds(seconds);
     return date.toISOString().substring(15, 19);
   };
