@@ -7,6 +7,7 @@ import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
 import { list } from "postcss";
 import TitleDisplay from "./TitleDisplay";
+import { toFilename } from "./helpers";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -257,7 +258,7 @@ const Main = () => {
       <img
         className="mainImage"
         src={`./assets/icons/${
-          SongData[songIndex].album ?? SongData[songIndex].name
+          toFilename(SongData[songIndex].album ?? SongData[songIndex].name)
         }.jpg`}
         alt=""
         style={{ boxShadow: "1px 1px 12px #150625" }}

@@ -155,7 +155,7 @@
     "nameOriginal": "秒針少女",
     "nameRomanized": "Byoushin Shoujo",
     "audioType": ".mp3",
-    "album": "Re",
+    "album": "Re:Kessoku Band",
     "backgroundColor": "#4C2633",
     "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
@@ -164,7 +164,7 @@
     "name": "Doppelganger",
     "nameOriginal": "ドッペルゲンガー",
     "audioType": ".mp3",
-    "album": "Re",
+    "album": "Re:Kessoku Band",
     "backgroundColor": "#4C2633",
     "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
@@ -174,16 +174,15 @@
     "nameOriginal": "僕と三原色",
     "nameRomanized": "Boku to Sangenshoku",
     "audioType": ".mp3",
-    "album": "Re",
+    "album": "Re:Kessoku Band",
     "backgroundColor": "#4C2633",
     "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
   {
     "id": 23,
-    "filename": "Re_Re_",
     "name": "Re:Re:",
     "audioType": ".mp3",
-    "album": "Re",
+    "album": "Re:Kessoku Band",
     "backgroundColor": "#4C2633",
     "lineColor": "rgba(237, 112 ,154 ,.9)"
   },
@@ -193,7 +192,7 @@
     "nameOriginal": "惑う星",
     "nameRomanized": "Madou Hoshi",
     "audioType": ".mp3",
-    "album": "We_Will",
+    "album": "We will",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -201,7 +200,7 @@
     "id": 25,
     "name": "UNITE",
     "audioType": ".mp3",
-    "album": "We_Will",
+    "album": "We will",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -211,67 +210,57 @@
     "nameOriginal": "夢を束ねて",
     "nameRomanized": "Yume wo Tabanete",
     "audioType": ".mp3",
-    "album": "We_Will",
+    "album": "We will",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 27,
-    "name": "Milky Way",
-    "nameOriginal": "天の川",
-    "nameRomanized": "Amanogawa",
+    "name": "milky way",
     "audioType": ".mp3",
-    "album": "We_Will",
+    "album": "We will",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 28,
     "name": "Cagayake!GIRLS",
-    "nameOriginal": "かがやけ!ガールズ",
-    "nameRomanized": "Kagayake! Gāruzu",
     "audioType": ".mp3",
-    "album": "kirara_tribute",
+    "album": "Kirara Tribute Collection",
     "backgroundColor": "#59420E",
     "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 29,
-    "name": "Daydream cafe",
-    "nameOriginal": "デイドリームカフェ",
-    "nameRomanized": "Deidorīmukafe",
+    "name": "Daydream café",
     "audioType": ".mp3",
-    "album": "kirara_tribute",
+    "album": "Kirara Tribute Collection",
     "backgroundColor": "#59420E",
     "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 30,
-    "name": "KIRUMII NO BEIBEE!",
-    "nameOriginal": "キルミーのベイビー！",
-    "nameRomanized": "Kirumī no beibī!",
+    "name": "Kill Me no Baby!",
+    "nameOriginal": "キルミーのベイベー！",
+    "nameRomanized": "KIRUMII NO BEIBEE!",
     "audioType": ".mp3",
-    "album": "kirara_tribute",
+    "album": "Kirara Tribute Collection",
     "backgroundColor": "#59420E",
     "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 31,
     "name": "SHINY DAYS",
-    "nameOriginal": "輝かしい日々",
-    "nameRomanized": "Kagayakashī hibi",
     "audioType": ".mp3",
-    "album": "kirara_tribute",
+    "album": "Kirara Tribute Collection",
     "backgroundColor": "#59420E",
     "lineColor": "rgba(247, 180 ,27 ,.9)"
   },
   {
     "id": 32,
-    "name": "Won (3) Chu KissMe!",
-    "nameOriginal": "優勝(3) Chu KissMe!",
-    "nameRomanized": "Yūshō (3) Chu KissMe!",
+    "name": "Won(*3*)Chu KissMe!",
     "audioType": ".mp3",
-    "album": "kirara_tribute",
+    "album": "Kirara Tribute Collection",
     "backgroundColor": "#59420E",
     "lineColor": "rgba(247, 180 ,27 ,.9)"
   }
