@@ -155,7 +155,11 @@ const Player = (props) => {
   };
 
   audioRef.current.onended = () => {
-    skipButton(false);
+    if (props.replay === true) {
+      audioRef.current.play();
+    } else {
+      skipButton(false);
+    }
   };
 
   let title;
