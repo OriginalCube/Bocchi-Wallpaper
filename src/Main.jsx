@@ -18,7 +18,6 @@ const Main = () => {
   const [playlist, setPlaylist] = React.useState("true");
   const [shuffle, setShuffle] = React.useState(true);
   const [replay, setReplay] = React.useState(true);
-  const [key, setKey] = React.useState(0); //Foreign key for other modes
   const [songList, setSongList] = React.useState([[], []]);
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
@@ -61,6 +60,8 @@ const Main = () => {
     }
   };
 
+  const getKey = (m) => songList[m - 1].findIndex((x) => x === songIndex + 1);
+
   const changeSong = (e) => {
     //Changes the song using conditions ~from player
     if (mode === 0) {
@@ -92,13 +93,12 @@ const Main = () => {
     ) {
       //Check if array is empty
       if (shuffle === false) {
+        const key = getKey(mode);
         if (e === true) {
           if (key + 1 < songList[mode - 1].length) {
             setIndex(songList[mode - 1][key + 1] - 1);
-            setKey(key + 1);
           } else {
             setIndex(songList[mode - 1][0] - 1);
-            setKey(0);
           }
         } else if (e === false) {
           if (key - 1 < 0) {
@@ -107,10 +107,8 @@ const Main = () => {
               (e) => e.id === tempSong[tempSong.length - 1],
             );
             setIndex(tempId);
-            setKey(tempSong.length - 1);
           } else {
             setIndex(songList[mode - 1][key - 1] - 1);
-            setKey(key - 1);
           }
         }
       } else {
@@ -136,7 +134,7 @@ const Main = () => {
   };
 
   const removeSong = (y) => {
-    songList[y - 1].splice(key, 1);
+    songList[y - 1].splice(getKey(y), 1);
     setSongList([...songList]);
     localStorage.setItem("playlistBocchi", JSON.stringify(songList));
   };
@@ -166,13 +164,6 @@ const Main = () => {
       }
     }
   }, [mode]);
-
-  React.useEffect(() => {
-    //Sets key anchor
-    if (mode === 1 || mode === 2) {
-      setKey(songList[mode - 1].findIndex((x) => x === songIndex + 1));
-    }
-  }, [songIndex]);
 
   React.useEffect(() => {
     //Loads and sets data onstart
