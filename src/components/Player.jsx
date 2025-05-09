@@ -171,6 +171,7 @@ const Player = (props) => {
   
   switch (props.titleDisplay)
   {
+    default:
     case TitleDisplay.English:
       title = SongData[props.songIndex].name;
       break;
