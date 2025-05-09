@@ -60,7 +60,7 @@ const Main = () => {
     }
   };
 
-  const getKey = () => songList[mode - 1].findIndex((x) => x === songIndex + 1);
+  const getKey = (m) => songList[m - 1].findIndex((x) => x === songIndex + 1);
 
   const changeSong = (e) => {
     //Changes the song using conditions ~from player
@@ -93,7 +93,7 @@ const Main = () => {
     ) {
       //Check if array is empty
       if (shuffle === false) {
-        const key = getKey();
+        const key = getKey(mode);
         if (e === true) {
           if (key + 1 < songList[mode - 1].length) {
             setIndex(songList[mode - 1][key + 1] - 1);
@@ -134,7 +134,7 @@ const Main = () => {
   };
 
   const removeSong = (y) => {
-    songList[y - 1].splice(getKey(), 1);
+    songList[y - 1].splice(getKey(y), 1);
     setSongList([...songList]);
     localStorage.setItem("playlistBocchi", JSON.stringify(songList));
   };
