@@ -149,20 +149,20 @@ const Main = () => {
     localStorage.setItem("mode", e);
   };
 
-  React.useEffect(() => {
+  const [prevMode, setPrevMode] = React.useState();
+
+  if (mode !== prevMode) {
+    setPrevMode(mode);
     if (mode === 0) {
       setIndex(Math.floor(SongData.length * Math.random()));
-    } else {
-      if (Array.isArray(songList[mode - 1]) && songList[mode - 1].length) {
-        setIndex(
-          songList[mode - 1][
-            Math.floor(songList[mode - 1].length * Math.random())
-          ] - 1,
-        );
-      } else {
-      }
+    } else if (Array.isArray(songList[mode - 1]) && songList[mode - 1].length) {
+      setIndex(
+        songList[mode - 1][
+        Math.floor(songList[mode - 1].length * Math.random())
+        ] - 1,
+      );
     }
-  }, [mode]);
+  }
 
   React.useEffect(() => {
     //Loads and sets data onstart
