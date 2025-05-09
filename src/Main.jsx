@@ -5,7 +5,6 @@ import Player from "./components/Player";
 import AudioVisualizer from "./components/AudioVisualizer";
 import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
-import { list } from "postcss";
 import TitleDisplay from "./TitleDisplay";
 import { toFilename } from "./helpers";
 
