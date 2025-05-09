@@ -112,12 +112,8 @@ const Player = (props) => {
 
   React.useEffect(() => {
     audioRef.current.pause();
-    audioRef.current = new Audio(
-      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${
-        SongData[props.songIndex]?.audioType ?? ".flac"
-      }`,
-    );
-    audioRef.current.volume = volume;
+    audioRef.current.src =
+      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${SongData[props.songIndex]?.audioType ?? ".flac"}`;
     if (isReady.current) {
       audioRef.current.play();
       setPlaying(true);
@@ -130,8 +126,9 @@ const Player = (props) => {
   }, [props.songIndex]);
 
   React.useEffect(() => {
+    const audio = audioRef.current;
     return () => {
-      audioRef.current.pause();
+      audio.pause();
     };
   }, []);
 
