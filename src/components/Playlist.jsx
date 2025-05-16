@@ -3,7 +3,7 @@ import PlaylistItem from "./PlaylistItem";
 import SongData from "./SongData.json";
 
 const Playlist = (props) => {
-  const [playlistPages, setPlaylistPages] = React.useState(1);
+  const [playlistPages, setPlaylistPages] = React.useState(0);
   const [titleSize, setTitleSize] = React.useState(1);
   let keypress = new Audio();
 
@@ -78,27 +78,24 @@ const Playlist = (props) => {
   const includedInPlaylist = (index) => props.songList[index - 1].includes(props.songIndex + 1);
 
   React.useEffect(() => {
-    //console.log(playlistPages);
-  }, [playlistPages]);
-
-  React.useEffect(() => {
     if (props.mode === 0)
       setPlaylistPages(Math.trunc(props.songIndex / 5));
     else
       setPlaylistPages(Math.trunc(props.songList[props.mode - 1].findIndex((x) => x === props.songIndex + 1) / 5));
   }, [props.mode, props.songIndex, props.songList]);
 
-  React.useEffect(() => {
-    setPlaylistPages(0);
-  }, [props.mode]);
-
-  React.useEffect(() => {
-    if (window.innerWidth <= 1370) {
-      setTitleSize(0.875); //0.875
-    } else {
-      setTitleSize(1);
+  React.useLayoutEffect(() => {
+    const updateTitleSize = () => {
+      if (window.innerWidth <= 1370) {
+        setTitleSize(0.875); //0.875
+      } else {
+        setTitleSize(1);
+      }
     }
-  }, [window.innerWidth]);
+    updateTitleSize();
+    window.addEventListener("resize", updateTitleSize);
+    return () => window.removeEventListener("resize", updateTitleSize);
+  }, []);
 
   return (
     <div

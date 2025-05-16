@@ -15,15 +15,20 @@ const Clock = (props) => {
     }, 1000);
   }, []);
 
-  React.useEffect(() => {
-    if (window.innerWidth <= 1370) {
-      setMainSize(4.5);
-      setSecondSize(1.75);
-    } else {
-      setMainSize(8);
-      setSecondSize(1.875);
+  React.useLayoutEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth <= 1370) {
+        setMainSize(4.5);
+        setSecondSize(1.75);
+      } else {
+        setMainSize(8);
+        setSecondSize(1.875);
+      }
     }
-  }, [window.innerWidth]);
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   return (
     <p

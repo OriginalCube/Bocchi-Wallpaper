@@ -21,7 +21,6 @@ const AudioVisualizer = (props) => {
                 var height = tempHeight * Math.min(audioArray[i], 1);
                 ctx.globalAlpha = .7;
                 ctx.fillRect(barWidth * i*2 + 2, canvas.height - height, barWidth, height);
-                ctx.shadowColor = props.visualizer;
                 ctx.globalAlpha = .7;
                 ctx.shadowBlur = 2;
                 ctx.shadowOffsetX = 5;
