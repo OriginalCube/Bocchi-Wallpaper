@@ -8,6 +8,7 @@ import Playlist from "./components/Playlist";
 import { list } from "postcss";
 import TitleDisplay from "./TitleDisplay";
 import { toFilename } from "./helpers";
+import Lyrics from "./components/Lyrics";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -22,6 +23,7 @@ const Main = () => {
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
   const [titleDisplay, setTitleDisplay] = React.useState(TitleDisplay.English);
+  const audioRef = React.useRef(new Audio());
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -294,8 +296,14 @@ const Main = () => {
           reShuffle={reShuffle}
           textSize={textSize}
           titleDisplay={titleDisplay}
+          audioRef={audioRef}
         />
       ) : null}
+      <Lyrics
+        songIndex={songIndex}
+        audioRef={audioRef}
+        uiVolume={uiVolume}
+      />
     </div>
   );
 };
