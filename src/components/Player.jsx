@@ -138,13 +138,18 @@ const Player = (props) => {
   //July 2023 Resizing Update
   const [titleSize, setTitleSize] = React.useState(1.25);
 
-  React.useEffect(() => {
-    if (window.innerWidth <= 1370) {
-      setTitleSize(0.875);
-    } else {
-      setTitleSize(1.25);
+  React.useLayoutEffect(() => {
+    const updateTitleSize = () => {
+      if (window.innerWidth <= 1370) {
+        setTitleSize(0.875);
+      } else {
+        setTitleSize(1.25);
+      }
     }
-  }, [window.innerWidth]);
+    updateTitleSize();
+    window.addEventListener("resize", updateTitleSize);
+    return () => window.removeEventListener("resize", updateTitleSize);
+  }, []);
 
   audioRef.current.ontimeupdate = () => {
     setProgress(Math.floor(audioRef.current.currentTime));

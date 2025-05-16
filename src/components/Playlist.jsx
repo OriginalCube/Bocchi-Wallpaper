@@ -92,13 +92,18 @@ const Playlist = (props) => {
     setPlaylistPages(0);
   }, [props.mode]);
 
-  React.useEffect(() => {
-    if (window.innerWidth <= 1370) {
-      setTitleSize(0.875); //0.875
-    } else {
-      setTitleSize(1);
+  React.useLayoutEffect(() => {
+    const updateTitleSize = () => {
+      if (window.innerWidth <= 1370) {
+        setTitleSize(0.875); //0.875
+      } else {
+        setTitleSize(1);
+      }
     }
-  }, [window.innerWidth]);
+    updateTitleSize();
+    window.addEventListener("resize", updateTitleSize);
+    return () => window.removeEventListener("resize", updateTitleSize);
+  }, []);
 
   return (
     <div
