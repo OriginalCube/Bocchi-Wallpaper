@@ -8,6 +8,7 @@ import Playlist from "./components/Playlist";
 import { list } from "postcss";
 import TitleDisplay from "./TitleDisplay";
 import { toFilename } from "./helpers";
+import Lyrics from "./components/Lyrics";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -298,6 +299,11 @@ const Main = () => {
           audioRef={audioRef}
         />
       ) : null}
+      <Lyrics
+        songIndex={songIndex}
+        audioRef={audioRef}
+        uiVolume={uiVolume}
+      />
     </div>
   );
 };
