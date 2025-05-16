@@ -14,7 +14,7 @@ const Player = (props) => {
   );
   const [duration, setDuration] = React.useState(0);
 
-  const audioRef = React.useRef(new Audio());
+  const audioRef = React.useRef(props.audioRef.current);
   const isReady = React.useRef(true);
 
   const clickAudio = (e) => {

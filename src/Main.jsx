@@ -22,6 +22,7 @@ const Main = () => {
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
   const [titleDisplay, setTitleDisplay] = React.useState(TitleDisplay.English);
+  const audioRef = React.useRef(new Audio());
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -294,6 +295,7 @@ const Main = () => {
           reShuffle={reShuffle}
           textSize={textSize}
           titleDisplay={titleDisplay}
+          audioRef={audioRef}
         />
       ) : null}
     </div>
