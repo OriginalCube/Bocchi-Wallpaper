@@ -117,7 +117,6 @@ const Player = (props) => {
     if (isReady.current) {
       audioRef.current.play();
       setPlaying(true);
-      setProgress(audioRef.current.currentTime);
     } else {
       // Set the isReady ref as true for the next pass
       isReady.current = true;
