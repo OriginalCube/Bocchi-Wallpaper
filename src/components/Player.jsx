@@ -100,12 +100,12 @@ const Player = (props) => {
   }, [volume]);
 
   React.useEffect(() => {
-    if (userPaused) {
+    if (userPaused || props.wpePaused) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
     }
-  }, [userPaused]);
+  }, [userPaused, props.wpePaused]);
 
   React.useEffect(() => {
     audioRef.current.pause();
@@ -242,7 +242,7 @@ const Player = (props) => {
             alt=""
             src="./assets/icons/backward.png"
           />
-          {userPaused ? (
+          {userPaused || props.wpePaused ? (
             <img
               className="audioIcon"
               onClick={playButton}
