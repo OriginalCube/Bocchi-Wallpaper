@@ -1,7 +1,7 @@
 import React from "react";
 import SongData from "./SongData.json";
 import TitleDisplay from "../TitleDisplay";
-import { toFilename } from "../helpers";
+import { toFilename, useEffectEvent } from "../helpers";
 
 const Player = (props) => {
   let keypress = new Audio();
@@ -14,7 +14,7 @@ const Player = (props) => {
   );
   const [duration, setDuration] = React.useState(0);
 
-  const audioRef = React.useRef(new Audio());
+  const audioRef = React.useRef(props.audioRef.current);
   const isReady = React.useRef(true);
 
   const clickAudio = (e) => {
@@ -112,12 +112,8 @@ const Player = (props) => {
 
   React.useEffect(() => {
     audioRef.current.pause();
-    audioRef.current = new Audio(
-      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${
-        SongData[props.songIndex]?.audioType ?? ".flac"
-      }`,
-    );
-    audioRef.current.volume = volume;
+    audioRef.current.src =
+      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${SongData[props.songIndex]?.audioType ?? ".flac"}`;
     if (isReady.current) {
       audioRef.current.play();
       setPlaying(true);
@@ -130,8 +126,9 @@ const Player = (props) => {
   }, [props.songIndex]);
 
   React.useEffect(() => {
+    const audio = audioRef.current;
     return () => {
-      audioRef.current.pause();
+      audio.pause();
     };
   }, []);
 
@@ -146,21 +143,35 @@ const Player = (props) => {
     }
   }, [window.innerWidth]);
 
-  audioRef.current.ontimeupdate = () => {
-    setProgress(Math.floor(audioRef.current.currentTime));
-  };
+  React.useEffect(() => {
+    const audio = audioRef.current;
+    const updateProgress = () => setProgress(Math.floor(audio.currentTime))
+    audio.addEventListener("timeupdate", updateProgress);
+    return () => audio.removeEventListener("timeupdate", updateProgress);
+  }, [])
 
-  audioRef.current.ondurationchange = () => {
-    setDuration(audioRef.current.duration);
-  };
+  React.useEffect(() => {
+    const audio = audioRef.current;
+    const updateDuration = () => setDuration(audio.duration)
+    audio.addEventListener("durationchange", updateDuration);
+    return () => audio.removeEventListener("durationchange", updateDuration);
+  }, [])
 
-  audioRef.current.onended = () => {
+  const onSongEnded = useEffectEvent(() => {
     if (props.replay === true) {
       audioRef.current.play();
     } else {
       skipButton(false);
     }
-  };
+  });
+
+  React.useEffect(() => {
+    const audio = audioRef.current;
+    audio.addEventListener("ended", onSongEnded);
+    return () => audio.removeEventListener("ended", onSongEnded);
+  // TODO: can probably remove after useEffectEvent is native
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   let title;
   

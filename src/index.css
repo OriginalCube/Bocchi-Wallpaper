@@ -195,5 +195,33 @@ code {
   margin: auto;
 }
 
+.lrc-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 16px;
+  top: 27.5%;
+  right: 72.5%;
+  width: 25%;
+  height: 45%;
+  text-align: center;
+  box-shadow: 1px 1px 6px #150625;
+}
+
+.lrc {
+  padding: 10px;
+  overflow: hidden !important;
+
+  /* firefox */
+  scrollbar-width: none;
+}
+
+/* webkit */
+.lrc::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 @media screen and (min-width: 1px) and (max-width: 1360px) {
 }
