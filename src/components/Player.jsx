@@ -5,7 +5,7 @@ import { toFilename, useEffectEvent } from "../helpers";
 
 const Player = (props) => {
   let keypress = new Audio();
-  const [isPlaying, setPlaying] = React.useState(false);
+  const [userPaused, setUserPaused] = React.useState(false);
   const [trackProgress, setProgress] = React.useState(0);
   const [volume, setVolume] = React.useState(
     localStorage.getItem("volume") !== null
@@ -15,7 +15,6 @@ const Player = (props) => {
   const [duration, setDuration] = React.useState(0);
 
   const audioRef = React.useRef(props.audioRef.current);
-  const isReady = React.useRef(true);
 
   const clickAudio = (e) => {
     keypress.src = "./assets/audios/keypress.mp3";
@@ -30,7 +29,7 @@ const Player = (props) => {
 
   const onScrubEnd = () => {
     // If not already playing, start
-    setPlaying(false);
+    setUserPaused(false);
   };
 
   const prevButton = () => {
@@ -53,14 +52,12 @@ const Player = (props) => {
   };
 
   const playButton = () => {
-    setPlaying(false);
-    audioRef.current.play();
+    setUserPaused(false);
     clickAudio();
   };
 
   const pauseButton = () => {
-    setPlaying(true);
-    audioRef.current.pause();
+    setUserPaused(true);
     clickAudio();
   };
 
@@ -103,26 +100,19 @@ const Player = (props) => {
   }, [volume]);
 
   React.useEffect(() => {
-    if (isPlaying) {
+    if (userPaused || props.wpePaused) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
     }
-  }, [isPlaying]);
+  }, [userPaused, props.wpePaused]);
 
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current.src =
       `./assets/songs/${toFilename(SongData[props.songIndex].name)}${SongData[props.songIndex]?.audioType ?? ".flac"}`;
-    if (isReady.current) {
-      audioRef.current.play();
-      setPlaying(true);
-      setProgress(audioRef.current.currentTime);
-    } else {
-      // Set the isReady ref as true for the next pass
-      isReady.current = true;
-    }
-    setPlaying(audioRef.isPlaying);
+    audioRef.current.play();
+    setUserPaused(false);
   }, [props.songIndex]);
 
   React.useEffect(() => {
@@ -252,7 +242,7 @@ const Player = (props) => {
             alt=""
             src="./assets/icons/backward.png"
           />
-          {isPlaying ? (
+          {userPaused || props.wpePaused ? (
             <img
               className="audioIcon"
               onClick={playButton}
