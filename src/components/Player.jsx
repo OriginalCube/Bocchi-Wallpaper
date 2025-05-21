@@ -15,7 +15,6 @@ const Player = (props) => {
   const [duration, setDuration] = React.useState(0);
 
   const audioRef = React.useRef(props.audioRef.current);
-  const isReady = React.useRef(true);
 
   const clickAudio = (e) => {
     keypress.src = "./assets/audios/keypress.mp3";
@@ -114,13 +113,7 @@ const Player = (props) => {
     audioRef.current.pause();
     audioRef.current.src =
       `./assets/songs/${toFilename(SongData[props.songIndex].name)}${SongData[props.songIndex]?.audioType ?? ".flac"}`;
-    if (isReady.current) {
-      audioRef.current.play();
-      setPlaying(true);
-    } else {
-      // Set the isReady ref as true for the next pass
-      isReady.current = true;
-    }
+    audioRef.current.play();
     setPlaying(audioRef.isPlaying);
   }, [props.songIndex]);
 
