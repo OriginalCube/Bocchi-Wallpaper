@@ -15,6 +15,7 @@ const PlaylistItem = (props) => {
   
   switch (props.titleDisplay)
   {
+    default:
     case TitleDisplay.English:
       title = SongData[props.id - 1].name;
       break;
