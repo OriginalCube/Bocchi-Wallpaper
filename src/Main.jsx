@@ -18,6 +18,7 @@ const Main = () => {
   const [playlist, setPlaylist] = React.useState("true");
   const [shuffle, setShuffle] = React.useState(true);
   const [replay, setReplay] = React.useState(true);
+  const [wpePaused, setWPEPaused] = React.useState(false);
   const [songList, setSongList] = React.useState([[], []]);
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
@@ -234,6 +235,9 @@ const Main = () => {
         if (properties.textsize) setTextSize(properties.textsize.value / 10);
         if (properties.titledisplay) setTitleDisplay(properties.titledisplay.value)
       },
+      setPaused: function (isPaused) {
+        setWPEPaused(isPaused);
+      },
     };
   } catch (e) {
     console.log(e);
@@ -296,6 +300,7 @@ const Main = () => {
           textSize={textSize}
           titleDisplay={titleDisplay}
           audioRef={audioRef}
+          wpePaused={wpePaused}
         />
       ) : null}
       <Lyrics
