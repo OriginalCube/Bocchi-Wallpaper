@@ -20,6 +20,8 @@ const Optionbar = (props) => {
       props.visualizerHandler();
     } else if (e === "playlist") {
       props.playlistHandler();
+    } else if (e === "lyrics") {
+      props.lyricsHandler();
     }
     keypress.src = "./assets/audios/keypress.mp3";
     keypress.volume = props.uiVolume;
@@ -59,6 +61,13 @@ const Optionbar = (props) => {
         src={`./assets/icons/playlist.png`}
         onClick={() => onPress("playlist")}
         style={{ top: "29%" }}
+        alt=""
+        className="optionIcon opacity-80"
+      />
+      <img
+        src={`./assets/icons/LyricsIcon.png`}
+        onClick={() => onPress("lyrics")}
+        style={{ top: "35.5%" }}
         alt=""
         className="optionIcon opacity-80"
       />

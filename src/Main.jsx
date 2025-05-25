@@ -16,6 +16,7 @@ const Main = () => {
   const [audioVis, setAudioVis] = React.useState("true");
   const [mode, setMode] = React.useState(0);
   const [playlist, setPlaylist] = React.useState("true");
+  const [hasLyrics, setHasLyrics] = React.useState("true");
   const [shuffle, setShuffle] = React.useState(true);
   const [replay, setReplay] = React.useState(true);
   const [songList, setSongList] = React.useState([[], []]);
@@ -46,6 +47,12 @@ const Main = () => {
     //Changes and sets the playlist
     setPlaylist(playlist === "true" ? "false" : "true");
     localStorage.setItem("playlistH", playlist === "true" ? "false" : "true");
+  };
+
+  const lyricsHandler = () => {
+    //Toggles the lyrics
+    setHasLyrics(hasLyrics === "true" ? "false" : "true");
+    localStorage.setItem("lyricsBocchi", hasLyrics === "true" ? "false" : "true");
   };
 
   const reShuffle = (x, y) => {
@@ -199,6 +206,11 @@ const Main = () => {
           ? JSON.parse(localStorage.getItem("playlistBocchi"))
           : [[], []],
       );
+      setHasLyrics(
+        localStorage.getItem("lyricsBocchi") !== null
+          ? localStorage.getItem("lyricsBocchi")
+          : "true",
+      );
       if (localStorage.getItem("bocchi-14") !== null) {
         let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
         setReplay(temp14[0]);
@@ -223,6 +235,7 @@ const Main = () => {
       setReplay(false);
       setShuffle(true);
       localStorage.setItem("bocchi-14", JSON.stringify([true, false]));
+      localStorage.setItem("lyricsBocchi", "true");
     }
   }, []);
 
@@ -263,6 +276,7 @@ const Main = () => {
         changeSong={changeSong}
         visualizerHandler={visualizerHandler}
         songIndex={songIndex}
+        lyricsHandler={lyricsHandler}
       />
       {playlist === "true" ? (
         <Playlist
@@ -298,12 +312,16 @@ const Main = () => {
           audioRef={audioRef}
         />
       ) : null}
-      <Lyrics
-        songIndex={songIndex}
-        audioRef={audioRef}
-        uiVolume={uiVolume}
-      />
-    </div>
+      {
+        hasLyrics === "true" && (
+          <Lyrics
+            songIndex={songIndex}
+            audioRef={audioRef}
+            uiVolume={uiVolume}
+          />
+        )
+      }
+   </div>
   );
 };
 
