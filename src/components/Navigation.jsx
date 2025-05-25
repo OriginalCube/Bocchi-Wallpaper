@@ -21,6 +21,7 @@ const Navigation = (props) => {
           visualizerHandler={props.visualizerHandler}
           changeSong={props.changeSong}
           songIndex={props.songIndex}
+          lyricsHandler={props.lyricsHandler}
         />
       ) : null}
       <img
