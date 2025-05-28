@@ -65,7 +65,7 @@ const Optionbar = (props) => {
         className="optionIcon opacity-80"
       />
       <img
-        src={`./assets/icons/LyricsIcon.png`}
+        src={`./assets/icons/lyricsIcon.png`}
         onClick={() => onPress("lyrics")}
         style={{ top: "35.5%" }}
         alt=""
