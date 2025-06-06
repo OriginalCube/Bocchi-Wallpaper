@@ -24,6 +24,7 @@ const Main = () => {
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
   const [titleDisplay, setTitleDisplay] = React.useState(TextDisplay.English);
+  const [lyricsDisplay, setLyricsDisplay] = React.useState(TextDisplay.Original);
   const audioRef = React.useRef(new Audio());
 
   const playerHandler = () => {
@@ -247,6 +248,7 @@ const Main = () => {
         if (properties.uiVolume) setUiVolume(properties.uiVolume.value * 0.1);
         if (properties.textsize) setTextSize(properties.textsize.value / 10);
         if (properties.titledisplay) setTitleDisplay(properties.titledisplay.value)
+        if (properties.lyricsdisplay) setLyricsDisplay(properties.lyricsdisplay.value)
       },
       setPaused: function (isPaused) {
         setWPEPaused(isPaused);
@@ -323,6 +325,7 @@ const Main = () => {
             songIndex={songIndex}
             audioRef={audioRef}
             uiVolume={uiVolume}
+            lyricsDisplay={lyricsDisplay}
           />
         )
       }
