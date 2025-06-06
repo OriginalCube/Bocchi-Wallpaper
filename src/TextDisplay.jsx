@@ -1,7 +1,7 @@
-const TitleDisplay = {
+const TextDisplay = {
     English: "english",
     Original: "original",
     Romanized: "romanized"
 }
 
-export default TitleDisplay;
+export default TextDisplay;

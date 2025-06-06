@@ -1,6 +1,6 @@
 import React from "react";
 import SongData from "./SongData.json";
-import TitleDisplay from "../TitleDisplay";
+import TextDisplay from "../TextDisplay";
 
 const PlaylistItem = (props) => {
   let keypress = new Audio();
@@ -16,13 +16,13 @@ const PlaylistItem = (props) => {
   switch (props.titleDisplay)
   {
     default:
-    case TitleDisplay.English:
+    case TextDisplay.English:
       title = SongData[props.id - 1].name;
       break;
-    case TitleDisplay.Original:
+    case TextDisplay.Original:
       title = SongData[props.id - 1].nameOriginal ?? SongData[props.id - 1].name;
       break;
-    case TitleDisplay.Romanized:
+    case TextDisplay.Romanized:
       title = SongData[props.id - 1].nameRomanized ?? SongData[props.id - 1].name;
       break;
   }
