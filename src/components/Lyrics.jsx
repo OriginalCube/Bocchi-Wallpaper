@@ -19,7 +19,7 @@ const Lyrics = (props) => {
 
   React.useEffect(() => {
     const abortController = new AbortController();
-    fetch(`./assets/lyrics/original/${toFilename(SongData[props.songIndex].name)}.lrc`, { signal: abortController.signal })
+    fetch(`./assets/lyrics/${props.lyricsDisplay}/${toFilename(SongData[props.songIndex].name)}.lrc`, { signal: abortController.signal })
       .then(res => res.text())
       .then(data => setLyrics(data.replace(/\r\n/g, '\n').replace(/\r/g, '\n')))
       .catch(function (err) {
@@ -29,7 +29,7 @@ const Lyrics = (props) => {
     return () => {
       abortController.abort();
     };
-  }, [props.songIndex])
+  }, [props.songIndex, props.lyricsDisplay])
 
   const onLineClicked = (startMillisecond) => {
     audioRef.current.currentTime = startMillisecond / 1000;
