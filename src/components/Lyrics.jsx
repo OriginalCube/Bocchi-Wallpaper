@@ -32,7 +32,8 @@ const Lyrics = (props) => {
   }, [props.songIndex, props.lyricsDisplay])
 
   const onLineClicked = (startMillisecond) => {
-    audioRef.current.currentTime = startMillisecond / 1000;
+    // Nudge value to fix floating-point issue
+    audioRef.current.currentTime = (startMillisecond + 1) / 1000;
     recoverAutoScrollImmediately();
     keyPress.src = "./assets/audios/keypress.mp3";
     keyPress.volume = props.uiVolume;
