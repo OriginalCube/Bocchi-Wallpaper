@@ -6,13 +6,18 @@ const Clock = (props) => {
   const [mainSize, setMainSize] = React.useState(8);
   const [secondSize, setSecondSize] = React.useState(1.875);
   const [second, setSecond] = React.useState("");
-  React.useEffect(() => {
-    setInterval(() => {
+  React.useLayoutEffect(() => {
+    let timeoutId;
+    const updateTime = () => {
       let currentTime = new Date();
       setHour(currentTime.getHours());
       setMinute(currentTime.getMinutes());
       setSecond(currentTime.getSeconds());
-    }, 1000);
+      // Account for setTimeout drift so seconds don't skip occasionally
+      timeoutId = setTimeout(() => updateTime(), 1000 - currentTime.getMilliseconds());
+    }
+    updateTime();
+    return () => clearTimeout(timeoutId);
   }, []);
 
   React.useLayoutEffect(() => {
