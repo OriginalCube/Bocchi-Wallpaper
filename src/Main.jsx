@@ -5,7 +5,8 @@ import Player from "./components/Player";
 import AudioVisualizer from "./components/AudioVisualizer";
 import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
-import TextDisplay from "./TextDisplay";
+import TitleDisplay from "./TitleDisplay";
+import LyricsDisplay from "./LyricsDisplay";
 import { toFilename } from "./helpers";
 import Lyrics from "./components/Lyrics";
 
@@ -23,8 +24,8 @@ const Main = () => {
   const [songList, setSongList] = React.useState([[], []]);
   const [uiVolume, setUiVolume] = React.useState(0.5);
   const [textSize, setTextSize] = React.useState(1);
-  const [titleDisplay, setTitleDisplay] = React.useState(TextDisplay.English);
-  const [lyricsDisplay, setLyricsDisplay] = React.useState(TextDisplay.Original);
+  const [titleDisplay, setTitleDisplay] = React.useState(TitleDisplay.English);
+  const [lyricsDisplay, setLyricsDisplay] = React.useState(LyricsDisplay.Original);
   const audioRef = React.useRef(new Audio());
 
   const playerHandler = () => {

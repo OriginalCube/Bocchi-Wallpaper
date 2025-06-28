@@ -1,6 +1,6 @@
 import React from "react";
 import SongData from "./SongData.json";
-import TextDisplay from "../TextDisplay";
+import TitleDisplay from "../TitleDisplay";
 import { toFilename, useEffectEvent } from "../helpers";
 
 const Player = (props) => {
@@ -173,13 +173,13 @@ const Player = (props) => {
   switch (props.titleDisplay)
   {
     default:
-    case TextDisplay.English:
+    case TitleDisplay.English:
       title = SongData[props.songIndex].name;
       break;
-    case TextDisplay.Original:
+    case TitleDisplay.Original:
       title = SongData[props.songIndex].nameOriginal ?? SongData[props.songIndex].name;
       break;
-    case TextDisplay.Romanized:
+    case TitleDisplay.Romanized:
       title = SongData[props.songIndex].nameRomanized ?? SongData[props.songIndex].name;
       break;
   }
