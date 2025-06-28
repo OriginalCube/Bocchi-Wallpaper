@@ -1,6 +1,7 @@
 const LyricsDisplay = {
     Original: "original",
-    Romanized: "romanized"
+    Romanized: "romanized",
+    Both: "both"
 }
 
 export default LyricsDisplay;
