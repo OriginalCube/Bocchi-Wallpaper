@@ -69,9 +69,13 @@ const Lyrics = (props) => {
       }}
       onClick={() => onLineClicked(startMillisecond)}
     >
-      {children.map(child => (
-        <div key={child.id}>{child.content}</div>
-      ))}
+      {
+        (children[0].content !== children[1]?.content)
+          ? children.map(child => (
+            <div key={child.id}>{child.content}</div>
+          ))
+          : children[0].content
+      }
     </div>
 
   return (
