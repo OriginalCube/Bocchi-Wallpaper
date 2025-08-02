@@ -45,7 +45,7 @@ const Clock = (props) => {
         color: `white`
       }}
     >
-      {hour + ":"}
+      {(props.use24HourClock ? hour : (hour === 0 || hour === 12 ? "12" : hour % 12)) + ":"}
       {minute > 9 ? minute : "0" + minute}
       <span
         className={`absolute bottom-[2.5vh]`}
@@ -55,6 +55,15 @@ const Clock = (props) => {
         }}
       >
         {second > 9 ? second : "0" + second}
+      </span>
+      <span
+        className={`absolute top-[5vh]`}
+        style={{
+          fontSize: `${secondSize * props.textSize}rem`,
+          color: `white`,
+        }}
+      >
+        {props.use24HourClock ? "" : (hour < 12 ? "AM" : "PM")}
       </span>
     </p>
   );
