@@ -54,7 +54,7 @@ const Clock = (props) => {
           color: `white`,
         }}
       >
-        {second > 9 ? second : "0" + second}
+        {props.showSeconds ? (second > 9 ? second : "0" + second) : ""}
       </span>
       <span
         className={`absolute top-[5vh]`}
