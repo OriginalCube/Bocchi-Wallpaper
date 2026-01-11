@@ -27,6 +27,7 @@ const Main = () => {
   const [titleDisplay, setTitleDisplay] = React.useState(TitleDisplay.English);
   const [lyricsDisplay, setLyricsDisplay] = React.useState(LyricsDisplay.Original);
   const [use24HourClock, set24HourClock] = React.useState(true);
+  const [showSeconds, setShowSeconds] = React.useState(true);
   const audioRef = React.useRef(new Audio());
 
   const playerHandler = () => {
@@ -252,6 +253,7 @@ const Main = () => {
         if (properties.titledisplay) setTitleDisplay(properties.titledisplay.value)
         if (properties.lyricsdisplay) setLyricsDisplay(properties.lyricsdisplay.value)
         if (properties.use24hourclock) set24HourClock(properties.use24hourclock.value)
+        if (properties.showseconds) setShowSeconds(properties.showseconds.value)
       },
       setPaused: function (isPaused) {
         setWPEPaused(isPaused);
@@ -306,6 +308,7 @@ const Main = () => {
           textShadow={SongData[songIndex].clockTextShadow}
           textSize={textSize}
           use24HourClock={use24HourClock}
+          showSeconds={showSeconds}
         />
       ) : null}
       {player === "true" ? (

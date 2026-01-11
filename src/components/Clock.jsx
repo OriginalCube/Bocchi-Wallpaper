@@ -46,7 +46,7 @@ const Clock = (props) => {
       }}
     >
       {(props.use24HourClock ? hour : (hour === 0 || hour === 12 ? "12" : hour % 12)) + ":"}
-      {minute > 9 ? minute : "0" + minute}
+      {minute.toString().padStart(2, "0")}
       <span
         className={`absolute bottom-[2.5vh]`}
         style={{
@@ -54,7 +54,7 @@ const Clock = (props) => {
           color: `white`,
         }}
       >
-        {second > 9 ? second : "0" + second}
+        {props.showSeconds ? second.toString().padStart(2, "0") : ""}
       </span>
       <span
         className={`absolute top-[5vh]`}
