@@ -102,7 +102,7 @@ const Playlist = (props) => {
       className="playlist"
       style={{
         fontSize: `${titleSize * props.textSize}rem`,
-        border: `4.5px solid ${SongData[props.songIndex].lineColor}`,
+        border: `4.5px solid ${props.lineColor}`,
         boxShadow: "1px 1px 6px #150625",
       }}
     >
@@ -111,8 +111,8 @@ const Playlist = (props) => {
           className="h-full w-1/3"
           onClick={() => onChangeMode(0)}
           style={{
-            borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
-            borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
+            borderBottom: `3px solid ${props.lineColor}`,
+            borderRight: `3px solid ${props.lineColor}`,
           }}
         >
           Default
@@ -121,8 +121,8 @@ const Playlist = (props) => {
           className="h-full w-1/3"
           onClick={() => onChangeMode(1)}
           style={{
-            borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
-            borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
+            borderBottom: `3px solid ${props.lineColor}`,
+            borderRight: `3px solid ${props.lineColor}`,
           }}
         >
           Playlist 1
@@ -131,7 +131,7 @@ const Playlist = (props) => {
           className="w-1/3 h-full"
           onClick={() => onChangeMode(2)}
           style={{
-            borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
+            borderBottom: `3px solid ${props.lineColor}`,
           }}
         >
           Playlist 2
@@ -151,6 +151,8 @@ const Playlist = (props) => {
                     changeId={props.changeId}
                     mode={props.mode}
                     titleDisplay={props.titleDisplay}
+                    backgroundColor={props.backgroundColor}
+                    lineColor={props.lineColor}
                   />
                 ),
               )
@@ -199,7 +201,7 @@ const Playlist = (props) => {
         <div
           className="playlist-sroll"
           style={{
-            border: `2px solid ${SongData[props.songIndex].lineColor}`,
+            border: `2px solid ${props.lineColor}`,
           }}
         >
           <div
@@ -222,7 +224,7 @@ const Playlist = (props) => {
         className="playlistNavigation"
         style={{
           height: "10%",
-          borderTop: `4.5px solid ${SongData[props.songIndex].lineColor}`,
+          borderTop: `4.5px solid ${props.lineColor}`,
           position: "relative",
         }}
       >
@@ -232,7 +234,7 @@ const Playlist = (props) => {
               className="w-1/2 h-full"
               onClick={() => onFooter(!includedInPlaylist(1), 1)}
               style={{
-                borderRight: `3px solid ${SongData[props.songIndex].lineColor}`,
+                borderRight: `3px solid ${props.lineColor}`,
                 height: "100%",
               }}
             >

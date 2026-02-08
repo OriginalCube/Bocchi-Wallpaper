@@ -60,10 +60,10 @@ const Lyrics = (props) => {
       style={{
         opacity: ".85",
         backgroundColor: active
-          ? SongData[props.songIndex].lineColor
+          ? props.lineColor
           : `transparent`,
         padding: `10px`,
-        color: active ? SongData[props.songIndex].backgroundColor : `white`,
+        color: active ? props.backgroundColor : `white`,
         fontWeight: active ? "500" : "normal",
         borderRadius: active ? "5px" : "0px",
       }}
@@ -81,7 +81,7 @@ const Lyrics = (props) => {
   return (
     <div
       className="lrc-container"
-      style={{ border: `4.5px solid ${SongData[props.songIndex].lineColor}` }}
+      style={{ border: `4.5px solid ${props.lineColor}` }}
     >
       <MultipleLrc
         className="lrc"
