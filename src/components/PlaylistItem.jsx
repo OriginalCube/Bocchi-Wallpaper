@@ -34,15 +34,15 @@ const PlaylistItem = (props) => {
         onClick={clickHandle}
         style={{
           opacity: ".85",
-          borderBottom: `3px solid ${SongData[props.songIndex].lineColor}`,
+          borderBottom: `3px solid ${props.lineColor}`,
           backgroundColor:
             props.songIndex === props.id - 1
-              ? SongData[props.songIndex].lineColor
+              ? props.lineColor
               : `transparent`,
           padding: `5px`,
           color:
             props.songIndex === props.id - 1
-              ? SongData[props.songIndex].backgroundColor
+              ? props.backgroundColor
               : "white",
           fontWeight: props.songIndex === props.id - 1 ? "500" : "normal",
           borderRadius: props.songIndex === props.id - 1 ? "5px" : "0px",

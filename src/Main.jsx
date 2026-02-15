@@ -7,7 +7,7 @@ import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
 import TitleDisplay from "./TitleDisplay";
 import LyricsDisplay from "./LyricsDisplay";
-import { toFilename } from "./helpers";
+import { convertWPEColorToCSS, toFilename } from "./helpers";
 import Lyrics from "./components/Lyrics";
 
 const Main = () => {
@@ -28,7 +28,14 @@ const Main = () => {
   const [lyricsDisplay, setLyricsDisplay] = React.useState(LyricsDisplay.Original);
   const [use24HourClock, set24HourClock] = React.useState(true);
   const [showSeconds, setShowSeconds] = React.useState(true);
+  const [overrideBackgroundColor, setOverrideBackgroundColor] = React.useState(false);
+  const [customBackgroundColor, setCustomBackgroundColor] = React.useState("#000000");
+  const [overrideLineColor, setOverrideLineColor] = React.useState(false);
+  const [customLineColor, setCustomLineColor] = React.useState("#ffffff");
   const audioRef = React.useRef(new Audio());
+
+  const backgroundColor = overrideBackgroundColor ? customBackgroundColor : SongData[songIndex].backgroundColor;
+  const lineColor = overrideLineColor ? customLineColor : SongData[songIndex].lineColor;
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -254,6 +261,12 @@ const Main = () => {
         if (properties.lyricsdisplay) setLyricsDisplay(properties.lyricsdisplay.value)
         if (properties.use24hourclock) set24HourClock(properties.use24hourclock.value)
         if (properties.showseconds) setShowSeconds(properties.showseconds.value)
+        if (properties.overridebackgroundcolor) setOverrideBackgroundColor(properties.overridebackgroundcolor.value)
+        if (properties.custombackgroundcolor) setCustomBackgroundColor(convertWPEColorToCSS(properties.custombackgroundcolor.value))
+        // Wallpaper Engine properties are named with "accent" instead of "line" as the color is being used in places other than border lines
+        // TODO: rename line color to accent color in another refactor
+        if (properties.overrideaccentcolor) setOverrideLineColor(properties.overrideaccentcolor.value)
+        if (properties.customaccentcolor) setCustomLineColor(convertWPEColorToCSS(properties.customaccentcolor.value, .9))
       },
       setPaused: function (isPaused) {
         setWPEPaused(isPaused);
@@ -266,10 +279,10 @@ const Main = () => {
   return (
     <div
       className="Main"
-      style={{ backgroundColor: SongData[songIndex].backgroundColor }}
+      style={{ backgroundColor: backgroundColor }}
     >
       {audioVis === "true" ? (
-        <AudioVisualizer lineColor={SongData[songIndex].lineColor} />
+        <AudioVisualizer lineColor={lineColor} />
       ) : null}
       <img
         className="mainImage"
@@ -301,6 +314,8 @@ const Main = () => {
           addSong={addSong}
           removeSong={removeSong}
           titleDisplay={titleDisplay}
+          backgroundColor={backgroundColor}
+          lineColor={lineColor}
         />
       ) : null}
       {clock === "true" ? (
@@ -333,6 +348,8 @@ const Main = () => {
             audioRef={audioRef}
             uiVolume={uiVolume}
             lyricsDisplay={lyricsDisplay}
+            backgroundColor={backgroundColor}
+            lineColor={lineColor}
           />
         )
       }
