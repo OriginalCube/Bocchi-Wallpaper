@@ -5,6 +5,24 @@
 	"file" : "index.html",
 	"general" : 
 	{
+		"localization" : 
+		{
+			"en-us" : 
+			{
+				"ui_24_hour_clock" : "24-hour clock",
+				"ui_both" : "Both",
+				"ui_english" : "English",
+				"ui_lyrics_display" : "Lyrics display",
+				"ui_original" : "Original",
+				"ui_override_accent_color" : "Override accent color",
+				"ui_override_background_color" : "Override background color",
+				"ui_romanized" : "Romanized",
+				"ui_show_seconds" : "Show seconds",
+				"ui_text_size" : "Text size",
+				"ui_title_display" : "Title display",
+				"ui_volume" : "UI volume"
+			}
+		},
 		"properties" : 
 		{
 			"customaccentcolor" : 
@@ -31,20 +49,20 @@
 				"options" : 
 				[
 					{
-						"label" : "Original",
+						"label" : "ui_original",
 						"value" : "original"
 					},
 					{
-						"label" : "Romanized",
+						"label" : "ui_romanized",
 						"value" : "romanized"
 					},
 					{
-						"label" : "Both",
+						"label" : "ui_both",
 						"value" : "both"
 					}
 				],
 				"order" : 103,
-				"text" : "Lyrics display",
+				"text" : "ui_lyrics_display",
 				"type" : "combo",
 				"value" : "original"
 			},
@@ -52,7 +70,7 @@
 			{
 				"index" : 8,
 				"order" : 108,
-				"text" : "Override accent color",
+				"text" : "ui_override_accent_color",
 				"type" : "bool",
 				"value" : false
 			},
@@ -60,7 +78,7 @@
 			{
 				"index" : 6,
 				"order" : 106,
-				"text" : "Override background color",
+				"text" : "ui_override_background_color",
 				"type" : "bool",
 				"value" : false
 			},
@@ -75,7 +93,7 @@
 			{
 				"index" : 5,
 				"order" : 105,
-				"text" : "Show seconds",
+				"text" : "ui_show_seconds",
 				"type" : "bool",
 				"value" : true
 			},
@@ -86,7 +104,7 @@
 				"max" : 20,
 				"min" : 1,
 				"order" : 101,
-				"text" : "Text size",
+				"text" : "ui_text_size",
 				"type" : "slider",
 				"value" : 10
 			},
@@ -96,20 +114,20 @@
 				"options" : 
 				[
 					{
-						"label" : "English",
+						"label" : "ui_english",
 						"value" : "english"
 					},
 					{
-						"label" : "Original",
+						"label" : "ui_original",
 						"value" : "original"
 					},
 					{
-						"label" : "Romanized",
+						"label" : "ui_romanized",
 						"value" : "romanized"
 					}
 				],
 				"order" : 102,
-				"text" : "Title display",
+				"text" : "ui_title_display",
 				"type" : "combo",
 				"value" : "english"
 			},
@@ -120,7 +138,7 @@
 				"max" : 10,
 				"min" : 0,
 				"order" : 100,
-				"text" : "UI volume",
+				"text" : "ui_volume",
 				"type" : "slider",
 				"value" : 3
 			},
@@ -128,7 +146,7 @@
 			{
 				"index" : 4,
 				"order" : 104,
-				"text" : "24-hour clock",
+				"text" : "ui_24_hour_clock",
 				"type" : "bool",
 				"value" : true
 			}
