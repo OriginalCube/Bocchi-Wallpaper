@@ -21,6 +21,21 @@
 				"ui_text_size" : "Text size",
 				"ui_title_display" : "Title display",
 				"ui_volume" : "UI volume"
+			},
+			"zh-chs" : 
+			{
+				"ui_24_hour_clock" : "24小时制时钟",
+				"ui_both" : "原文加罗马音",
+				"ui_english" : "英文",
+				"ui_lyrics_display" : "歌词语言",
+				"ui_original" : "原文",
+				"ui_override_accent_color" : "自定义主题颜色",
+				"ui_override_background_color" : "自定义背景颜色",
+				"ui_romanized" : "罗马音",
+				"ui_show_seconds" : "时钟显示秒数",
+				"ui_text_size" : "文字大小",
+				"ui_title_display" : "标题语言",
+				"ui_volume" : "界面音效"
 			}
 		},
 		"properties" : 
