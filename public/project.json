@@ -14,6 +14,8 @@
 				"ui_english" : "English",
 				"ui_lyrics_display" : "Lyrics display",
 				"ui_original" : "Original",
+				"ui_override_accent_color" : "Override accent color",
+				"ui_override_background_color" : "Override background color",
 				"ui_romanized" : "Romanized",
 				"ui_show_seconds" : "Show seconds",
 				"ui_text_size" : "Text size",
@@ -81,7 +83,7 @@
 			{
 				"index" : 8,
 				"order" : 108,
-				"text" : "Override accent color",
+				"text" : "ui_override_accent_color",
 				"type" : "bool",
 				"value" : false
 			},
@@ -89,7 +91,7 @@
 			{
 				"index" : 6,
 				"order" : 106,
-				"text" : "Override background color",
+				"text" : "ui_override_background_color",
 				"type" : "bool",
 				"value" : false
 			},
