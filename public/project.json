@@ -1,0 +1,148 @@
+{
+	"approved" : true,
+	"contentrating" : "Everyone",
+	"description" : "[img]https://media.tenor.com/igoHeWItt8oAAAAd/shujinkou-bocchi-the-rock.gif[/img]\r\nThis is a Web Wallpaper Design inspired by Bocchi the Rock! I released this before episode 12 to hype myself for the upcoming episode. I will of course update the songs that will be released in the album that the producers of Bocchi have mentioned. I will also release the GitHub repo and a file that other non-steam users can download. I hope you like the wallpaper that I created!\r\n\r\nList of people who contributed with this project to make it more awesome. <3\r\n> @Joehu contributed a lot of features and improvements.\r\n> @Fruity Trump\r\n> @Angelcr\r\n> And you who subscribed to my work, leave a comment to lmk what should I do more in the future, I always read them <3 Thanks and a have a great year ahead. -Cube 12/2024\r\n\r\nToaru Majutsu no Index (Album) Version: https://steamcommunity.com/sharedfiles/filedetails/?id=3439284812\r\n\r\nYou can see the change notes for a list of updates and improvements!\r\n\r\nUpdate Issues:\r\nWhen the wallpaper suddenly disappears and icons or images seem to be missing, it’s often due to a wallpaper  update, which is usually when this issue occurs.\r\n\r\nTo do:\r\n- Unsubscribe from the wallpaper\r\n- Close Wallpaper Engine\r\n- Close Steam, then open it afterwards\r\n- Resubscribe to the wallpaper\r\n- Then launch the wallpaper engine\r\n\r\nFAQ:\r\n1.) No sound when the music player is on.\r\n~If you hear clicks when using the player but no audio, the volume of the player could be at \"0\" which can be fixed by clicking on the icon that has a \"+\" symbol. If you hear no audio at all then the wallpaper engine itself is muted.\r\n\r\n2.) There are fewer functions from what I've seen from others.\r\n~If you click on the spinning setting icon on the top right corner of your monitor you can use it to pop up a navigation drop list where the functions can be turned on. \r\njavascript:ValidateForm()\r\n3.) Music player must be turned on to play the music. It is impossible to play music without the player turned on, it is to prevent users from having a difficult time muting the song if they accidentally tabbed.\r\n\r\nChinese translation for FAQ. ~Google Translate.\r\n1.) 音乐播放器打开时没有声音。\r\n~如果您在使用播放器时听到咔嗒声但没有音频，则播放器的音量可能为“0”，可以通过单击带有“+”符号的图标来修复。如果您根本听不到任何声音，则壁纸引擎本身已静音。\r\n\r\n2.) 我从别人那里看到的功能较少。\r\n~如果您单击显示器右上角的旋转设置图标，您可以使用它弹出一个导航下拉列表，可以在其中打开这些功能。\r\n\r\n3.) 必须打开音乐播放器才能播放音乐。没有打开播放器是不可能播放音乐的，这是为了防止用户在不小心点击时很难将歌曲静音。\r\n\r\nHow to change and remove visuals?\r\nYou can use the setting icon on the top right to change the visuals and other stuff it will automatically save any changes made.\r\n\r\nAdd your custom music.\r\n\r\n各位，想往里面加歌需要需要以下步骤：\r\n①将歌曲源文件放入下面路径：\\2905017768\\assets\\songs\\歌曲名称.flac（注意：必须是flac格式）\r\n②将歌曲封面放入：\\2905017768\\assets\\icons\\封面须与歌曲同名.jpg\r\n③前往『\\2905017768\\static\\js』路径下，用记事本和汇编软件打开『.js』文件，按住『Ctrl+F』输入『f = JSON.parse』文档自动索引，可以看到对应的『id：1』到『id：19』是已有的歌曲的歌单显示配置。你需要在id19的对象后添加新歌曲的显示配置，按照如下格式：\r\n[code]\r\n{\r\n\"id\": 下一个可用的ID号（从20开始）,\r\n\"name\": \"歌曲名称(须一致)\",\r\n\"backgroundColor\": \"背景颜色代码\",\r\n\"lineColor\": \"线条颜色\",\r\n}\r\n[/code]\r\n④保存，重加载壁纸。\r\n示例：\r\n[code]\r\n{\r\n\"id\": 19,\r\n\"name\": \"Shine as usual\",\r\n\"backgroundColor\": \"#0e0e0e\",\r\n\"lineColor\": \"rgba(255, 255 ,255 ,.9)\",\r\n},\r\n{\r\n\"id\": 20,\r\n\"name\": \"新添加的歌曲\",\r\n\"backgroundColor\": \"#4C2633\",\r\n\"lineColor\": \"rgba(237, 112, 154, 0.9)\",\r\n}\r\n[/code]\r\n\r\nSteam Group Link:\r\nhttp://steamcommunity.com/groups/WE_WeebGroup\r\nGitHub Link: \r\nhttps://github.com/OriginalCube/Bocchi-Wallpaper\r\nTwitter Link: If you have questions and stuff.\r\n@originalcubee\r\n\r\nOf course, I don't own any of the artwork or music used in this wallpaper.\r\nLink of the band: [url=https://www.youtube.com/channel/UC6IhDHJbJUoRJGUPnlh5GRQ]Kessoku Band! [/url]\r\n\r\nSpecial Thanks to \"MRKM\"!\r\nOther Works:\r\nhttps://steamcommunity.com/id/OriginalCube/myworkshopfiles/",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"customaccentcolor" : 
+			{
+				"condition" : "overrideaccentcolor.value == true",
+				"index" : 9,
+				"order" : 109,
+				"text" : "",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"custombackgroundcolor" : 
+			{
+				"condition" : "overridebackgroundcolor.value == true",
+				"index" : 7,
+				"order" : 107,
+				"text" : "",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"lyricsdisplay" : 
+			{
+				"index" : 3,
+				"options" : 
+				[
+					{
+						"label" : "Original",
+						"value" : "original"
+					},
+					{
+						"label" : "Romanized",
+						"value" : "romanized"
+					},
+					{
+						"label" : "Both",
+						"value" : "both"
+					}
+				],
+				"order" : 103,
+				"text" : "Lyrics display",
+				"type" : "combo",
+				"value" : "original"
+			},
+			"overrideaccentcolor" : 
+			{
+				"index" : 8,
+				"order" : 108,
+				"text" : "Override accent color",
+				"type" : "bool",
+				"value" : false
+			},
+			"overridebackgroundcolor" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "Override background color",
+				"type" : "bool",
+				"value" : false
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.9294117647058824 0.4392156862745098 0.6039215686274509"
+			},
+			"showseconds" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "Show seconds",
+				"type" : "bool",
+				"value" : true
+			},
+			"textsize" : 
+			{
+				"fraction" : false,
+				"index" : 1,
+				"max" : 20,
+				"min" : 1,
+				"order" : 101,
+				"text" : "Text size",
+				"type" : "slider",
+				"value" : 10
+			},
+			"titledisplay" : 
+			{
+				"index" : 2,
+				"options" : 
+				[
+					{
+						"label" : "English",
+						"value" : "english"
+					},
+					{
+						"label" : "Original",
+						"value" : "original"
+					},
+					{
+						"label" : "Romanized",
+						"value" : "romanized"
+					}
+				],
+				"order" : 102,
+				"text" : "Title display",
+				"type" : "combo",
+				"value" : "english"
+			},
+			"uiVolume" : 
+			{
+				"fraction" : false,
+				"index" : 0,
+				"max" : 10,
+				"min" : 0,
+				"order" : 100,
+				"text" : "UI volume",
+				"type" : "slider",
+				"value" : 3
+			},
+			"use24hourclock" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "24-hour clock",
+				"type" : "bool",
+				"value" : true
+			}
+		},
+		"supportsaudioprocessing" : true
+	},
+	"preview" : "preview.gif",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Anime" ],
+	"title" : "Bocchi the Rock! ぼっち・ざ・ろっく！(Album)",
+	"type" : "Web",
+	"version" : 40,
+	"visibility" : "public",
+	"workshopid" : "2905017768",
+	"workshopurl" : "steam://url/CommunityFilePage/2905017768"
+}
