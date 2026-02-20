@@ -22,6 +22,21 @@
 				"ui_title_display" : "Title display",
 				"ui_volume" : "UI volume"
 			},
+			"es-es" : 
+			{
+				"ui_24_hour_clock" : "Reloj de 24 horas",
+				"ui_both" : "Ambos",
+				"ui_english" : "Inglés",
+				"ui_lyrics_display" : "Mostrar letra",
+				"ui_original" : "Original",
+				"ui_override_accent_color" : "Cambiar color de acento",
+				"ui_override_background_color" : "Cambiar color de fondo",
+				"ui_romanized" : "Romanizado",
+				"ui_show_seconds" : "Mostrar segundos",
+				"ui_text_size" : "Tamaño del texto",
+				"ui_title_display" : "Mostrar título",
+				"ui_volume" : "Volumen de interfaz"
+			},
 			"zh-chs" : 
 			{
 				"ui_24_hour_clock" : "24小时制时钟",
