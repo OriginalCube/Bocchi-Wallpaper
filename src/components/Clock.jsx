@@ -42,7 +42,14 @@ const Clock = (props) => {
         fontSize: `${mainSize * props.textSize}rem`,
         top: "79vh",
         right: "2vw",
-        color: `white`
+        color: `white`,
+        textShadow: (() => {
+          const v = props.textShadow;
+          if (!v) return "3px 3px 0 rgba(0, 0, 0, 0.5)";
+          const tokens = String(v).trim().split(/\s+/);
+          const hasOffset = tokens.some((t) => /\d+px/.test(t));
+          return hasOffset ? v : `3px 3px 0 ${v}`;
+        })(),
       }}
     >
       {(props.use24HourClock ? hour : (hour === 0 || hour === 12 ? "12" : hour % 12)) + ":"}

@@ -1,6 +1,5 @@
 import React from "react";
 import PlaylistItem from "./PlaylistItem";
-import SongData from "./SongData.json";
 
 const Playlist = (props) => {
   const [playlistPages, setPlaylistPages] = React.useState(0);
@@ -28,10 +27,10 @@ const Playlist = (props) => {
         if (playlistPages + e >= 0) {
           setPlaylistPages(playlistPages + e);
         } else {
-          setPlaylistPages(Math.trunc((SongData.length - 1) / 5));
+          setPlaylistPages(Math.trunc((props.songData.length - 1) / 5));
         }
       } else if (e === 1) {
-        if (playlistPages + e < SongData.length / 5) {
+        if (playlistPages + e < props.songData.length / 5) {
           setPlaylistPages(playlistPages + e);
         } else {
           setPlaylistPages(0);
@@ -115,7 +114,7 @@ const Playlist = (props) => {
             borderRight: `3px solid ${props.lineColor}`,
           }}
         >
-          Default
+          默认歌单
         </button>
         <button
           className="h-full w-1/3"
@@ -125,7 +124,7 @@ const Playlist = (props) => {
             borderRight: `3px solid ${props.lineColor}`,
           }}
         >
-          Playlist 1
+          歌单1
         </button>
         <button
           className="w-1/3 h-full"
@@ -134,13 +133,13 @@ const Playlist = (props) => {
             borderBottom: `3px solid ${props.lineColor}`,
           }}
         >
-          Playlist 2
+          歌单2
         </button>
       </div>
       <div className="playlist-container" style={{ height: "80%" }}>
         <div className="playlist-item-container">
           {props.mode === 0
-            ? SongData.slice(playlistPages * 5, playlistPages * 5 + 5).map(
+            ? (props.songData || []).slice(playlistPages * 5, playlistPages * 5 + 5).map(
                 (e, index) => (
                   <PlaylistItem
                     uiVolume={props.uiVolume}
@@ -153,6 +152,7 @@ const Playlist = (props) => {
                     titleDisplay={props.titleDisplay}
                     backgroundColor={props.backgroundColor}
                     lineColor={props.lineColor}
+                    songData={props.songData}
                   />
                 ),
               )
@@ -173,6 +173,9 @@ const Playlist = (props) => {
                       changeId={props.changeId}
                       mode={props.mode}
                       titleDisplay={props.titleDisplay}
+                      songData={props.songData}
+                      backgroundColor={props.backgroundColor}
+                      lineColor={props.lineColor}
                     />
                   ))
               : null
@@ -193,6 +196,9 @@ const Playlist = (props) => {
                       changeId={props.changeId}
                       mode={props.mode}
                       titleDisplay={props.titleDisplay}
+                      songData={props.songData}
+                      backgroundColor={props.backgroundColor}
+                      lineColor={props.lineColor}
                     />
                   ))
               : null
@@ -238,10 +244,10 @@ const Playlist = (props) => {
                 height: "100%",
               }}
             >
-              {includedInPlaylist(1) ? "-" : "+"} Playlist 1
+              {includedInPlaylist(1) ? "-" : "+"} 歌单1
             </button>
             <button className="w-1/2 h-full" onClick={() => onFooter(!includedInPlaylist(2), 2)}>
-              {includedInPlaylist(2) ? "-" : "+"} Playlist 2
+              {includedInPlaylist(2) ? "-" : "+"} 歌单2
             </button>
           </>
         ) : (
@@ -253,7 +259,7 @@ const Playlist = (props) => {
                 padding: "0px",
               }}
             >
-              Remove Current Song
+              从歌单移除
             </button>
           </>
         )}

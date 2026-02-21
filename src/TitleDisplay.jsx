@@ -1,5 +1,5 @@
 const TitleDisplay = {
-    English: "english",
+    Chinese: "chinese",
     Original: "original",
     Romanized: "romanized"
 }

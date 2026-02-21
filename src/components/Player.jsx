@@ -1,5 +1,5 @@
 import React from "react";
-import SongData from "./SongData.json";
+// songData is passed via props.songData
 import TitleDisplay from "../TitleDisplay";
 import { toFilename, useEffectEvent } from "../helpers";
 
@@ -26,7 +26,6 @@ const Player = (props) => {
     // Clear any timers already running
     audioRef.current.currentTime = value;
   };
-
   const onScrubEnd = () => {
     // If not already playing, start
     setUserPaused(false);
@@ -110,10 +109,10 @@ const Player = (props) => {
   React.useEffect(() => {
     audioRef.current.pause();
     audioRef.current.src =
-      `./assets/songs/${toFilename(SongData[props.songIndex].name)}${SongData[props.songIndex]?.audioType ?? ".flac"}`;
+      `./assets/songs/${toFilename(props.songData[props.songIndex].name)}${props.songData[props.songIndex]?.audioType ?? ".flac"}`;
     audioRef.current.play();
     setUserPaused(false);
-  }, [props.songIndex]);
+  }, [props.songIndex, props.songData]);
 
   React.useEffect(() => {
     const audio = audioRef.current;
@@ -170,19 +169,26 @@ const Player = (props) => {
 
   let title;
   
-  switch (props.titleDisplay)
-  {
+  switch (props.titleDisplay) {
     default:
-    case TitleDisplay.English:
-      title = SongData[props.songIndex].name;
+    case TitleDisplay.Chinese:
+      title = props.songData[props.songIndex].name;
       break;
     case TitleDisplay.Original:
-      title = SongData[props.songIndex].nameOriginal ?? SongData[props.songIndex].name;
+      title = props.songData?.[props.songIndex].nameOriginal ?? props.songData[props.songIndex].name;
       break;
     case TitleDisplay.Romanized:
-      title = SongData[props.songIndex].nameRomanized ?? SongData[props.songIndex].name;
+      title = props.songData?.[props.songIndex].nameRomanized ?? props.songData[props.songIndex].name;
       break;
   }
+
+  const resolvedPlayerTextShadow = React.useMemo(() => {
+    const v = props.playerTextShadow;
+    if (!v) return "1.5px 1.5px 0 rgba(0, 0, 0, 0.5)";
+    const tokens = String(v).trim().split(/\s+/);
+    const hasOffset = tokens.some((t) => /\d+px/.test(t));
+    return hasOffset ? v : `1.5px 1.5px 0 ${v}`;
+  }, [props.playerTextShadow]);
 
   return (
     <div className="player ">
@@ -192,6 +198,7 @@ const Player = (props) => {
             className="playerText"
             style={{
               fontSize: `${titleSize * props.textSize}rem`,
+              textShadow: resolvedPlayerTextShadow
             }}
           >{`${
             title

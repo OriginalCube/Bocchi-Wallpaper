@@ -1,5 +1,5 @@
 import React from "react";
-import SongData from "./SongData.json";
+// song data is provided via props.songData
 import TitleDisplay from "../TitleDisplay";
 
 const PlaylistItem = (props) => {
@@ -13,17 +13,16 @@ const PlaylistItem = (props) => {
 
   let title;
   
-  switch (props.titleDisplay)
-  {
+  switch (props.titleDisplay) {
     default:
-    case TitleDisplay.English:
-      title = SongData[props.id - 1].name;
+    case TitleDisplay.Chinese:
+      title = props.songData[props.id - 1].name;
       break;
     case TitleDisplay.Original:
-      title = SongData[props.id - 1].nameOriginal ?? SongData[props.id - 1].name;
+      title = props.songData[props.id - 1].nameOriginal ?? props.songData[props.id - 1].name;
       break;
     case TitleDisplay.Romanized:
-      title = SongData[props.id - 1].nameRomanized ?? SongData[props.id - 1].name;
+      title = props.songData[props.id - 1].nameRomanized ?? props.songData[props.id - 1].name;
       break;
   }
 

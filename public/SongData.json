@@ -1,0 +1,220 @@
+[
+	{
+		"id": 1,
+		"name": "正因为是无法成为他人的我",
+		"nameOriginal": "誰にもなれない私だから",
+		"nameRomanized": "Dare ni mo Narenai Watashi Dakara",
+		"backgroundColor": "#5B6631",
+		"clockTextShadow": "3px 3px rgba(167, 187, 90,.7)",
+		"lineColor": "rgba(167, 187, 90,.9)",
+		"playerTextShadow": "2px 2px rgba(167, 187, 90,.7)"
+	},
+	{
+		"id": 2,
+		"name": "熙熙攘攘、我们的城市",
+		"nameOriginal": "雑踏、僕らの街",
+		"nameRomanized": "Zattou, Bokura no Machi",
+		"backgroundColor": "#74888d",
+		"clockTextShadow": "3px 3px rgba(158, 172, 175,.7)",
+		"lineColor": "rgba(158, 172, 175,.9)",
+		"playerTextShadow": "2px 2px rgba(158, 172, 175,.7)"
+	},
+	{
+		"id": 3,
+		"name": "空之箱",
+		"nameOriginal": "空の箱",
+		"nameRomanized": "Sora no Hako",
+		"album": "熙熙攘攘、我们的城市",
+		"backgroundColor": "#74888d",
+		"clockTextShadow": "3px 3px rgba(158, 172, 175,.7)",
+		"lineColor": "rgba(158, 172, 175,.9)",
+		"playerTextShadow": "2px 2px rgba(158, 172, 175,.7)"
+	},
+	{
+		"id": 4,
+		"name": "命运之花",
+		"nameOriginal": "運命の華",
+		"nameRomanized": "Unmei no Hana",
+		"album": "GBCOST",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 5,
+		"name": "空白与宣泄",
+		"nameOriginal": "空白とカタルシス",
+		"nameRomanized": "Kuuhaku to Katarushisu",
+		"album": "GBCOST",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 6,
+		"name": "无声之鱼",
+		"nameOriginal": "声なき魚",
+		"nameRomanized": "Koe naki Sakana",
+		"album": "GBCOST",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 7,
+		"name": "视野一隅腐朽之声",
+		"nameOriginal": "視界の隅 朽ちる音",
+		"nameRomanized": "Shikai no Sumi Kutsuru Oto",
+		"album": "GBCOST",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 8,
+		"name": "心象分形",
+		"nameOriginal": "心象的フラクタル",
+		"nameRomanized": "Shinshouteki Furakutaru",
+		"album": "GBCOST",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 9,
+		"name": "皆无其名",
+		"nameOriginal": "名もなき何もかも",
+		"nameRomanized": "Namonaki Nani mo Kamo",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 10,
+		"name": "虚伪之理",
+		"nameOriginal": "偽りの理",
+		"nameRomanized": "Guri no Ritsu",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 11,
+		"name": "忧郁、白浊",
+		"nameOriginal": "気鬱、白濁す",
+		"nameRomanized": "Kiutsu, Hakudaku su",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 12,
+		"name": "所谓理想的悖论",
+		"nameOriginal": "理想的パラドクスとは",
+		"nameRomanized": "Risouteki Paradox to wa",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 13,
+		"name": "爆裂绽放",
+		"nameOriginal": "爆ぜて咲く",
+		"nameRomanized": "Hazete Saku",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 14,
+		"name": "穿破黎明",
+		"nameOriginal": "黎明を穿つ",
+		"nameRomanized": "Reimei wo Ugatsu",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 15,
+		"name": "极具自我色彩的答复",
+		"nameOriginal": "極私的極彩色アンサー",
+		"nameRomanized": "Gokushiteki Gokusaiiro Answer",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 16,
+		"name": "互相伤害、痛苦交加",
+		"nameOriginal": "傷つき傷つけ痛くて辛い",
+		"nameRomanized": "Kizutsuki Kizutsuke Itakute Tsurai",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 17,
+		"name": "赌上命运的理论",
+		"nameOriginal": "運命に賭けたい論理",
+		"nameRomanized": "Unmei ni Kaketai Ronri",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 18,
+		"name": "再见再见再见",
+		"nameOriginal": "サヨナラサヨナラサヨナラ",
+		"nameRomanized": "Sayonara Sayonara Sayonara",
+		"album": "棘アリ",
+		"backgroundColor": "#49454b",
+		"clockTextShadow": "3px 3px rgba(147,125,127,.7)",
+		"lineColor": "rgba(147,125,127,.9)",
+		"playerTextShadow": "2px 2px rgba(147,125,127,.7)"
+	},
+	{
+		"id": 19,
+		"name": "溶于黑暗",
+		"nameOriginal": "闇に溶けてく",
+		"nameRomanized": "Yami ni Toketeku",
+		"album": "棘ナシ",
+		"backgroundColor": "#3f3735",
+		"clockTextShadow": "3px 3px rgba(217,198,176,.7)",
+		"lineColor": "rgba(217,198,176,.9)",
+		"playerTextShadow": "2px 2px rgba(217,198,176,.7)"
+	},
+	{
+		"id": 20,
+		"name": "系在蝴蝶上的红线",
+		"nameOriginal": "蝶に結いた赤い糸",
+		"nameRomanized": "Chou ni Musuita Akai Ito",
+		"album": "棘ナシ",
+		"backgroundColor": "#3f3735",
+		"clockTextShadow": "3px 3px rgba(217,198,176,.7)",
+		"lineColor": "rgba(217,198,176,.9)",
+		"playerTextShadow": "2px 2px rgba(217,198,176,.7)"
+	}
+]

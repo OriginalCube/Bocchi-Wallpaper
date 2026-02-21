@@ -3,7 +3,6 @@ import Navigation from "./components/Navigation";
 import Clock from "./components/Clock";
 import Player from "./components/Player";
 import AudioVisualizer from "./components/AudioVisualizer";
-import SongData from "./components/SongData.json";
 import Playlist from "./components/Playlist";
 import TitleDisplay from "./TitleDisplay";
 import LyricsDisplay from "./LyricsDisplay";
@@ -34,37 +33,43 @@ const Main = () => {
   const [customLineColor, setCustomLineColor] = React.useState("#ffffff");
   const audioRef = React.useRef(new Audio());
 
-  const backgroundColor = overrideBackgroundColor ? customBackgroundColor : SongData[songIndex].backgroundColor;
-  const lineColor = overrideLineColor ? customLineColor : SongData[songIndex].lineColor;
+  const [songData, setSongData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("./SongData.json")
+      .then((r) => r.json())
+      .then((d) => setSongData(d))
+      .catch((e) => console.error(e));
+  }, []);
 
   const playerHandler = () => {
     //Changes and sets the music player
     setPlayer(player === "true" ? "false" : "true");
-    localStorage.setItem("player", player === "true" ? "false" : "true");
+    localStorage.setItem("GBCplayer", player === "true" ? "false" : "true");
   };
 
   const clockHandler = () => {
     //Changes and sets the clock
     setClock(clock === "true" ? "false" : "true");
-    localStorage.setItem("clock", clock === "true" ? "false" : "true");
+    localStorage.setItem("GBCclock", clock === "true" ? "false" : "true");
   };
 
   const visualizerHandler = () => {
     //Changes and sets the visualizer
     setAudioVis(audioVis === "true" ? "false" : "true");
-    localStorage.setItem("audioVis", audioVis === "true" ? "false" : "true");
+    localStorage.setItem("GBCaudioVis", audioVis === "true" ? "false" : "true");
   };
 
   const playlistHandler = () => {
     //Changes and sets the playlist
     setPlaylist(playlist === "true" ? "false" : "true");
-    localStorage.setItem("playlistH", playlist === "true" ? "false" : "true");
+    localStorage.setItem("GBCplaylistH", playlist === "true" ? "false" : "true");
   };
 
   const lyricsHandler = () => {
     //Toggles the lyrics
     setHasLyrics(hasLyrics === "true" ? "false" : "true");
-    localStorage.setItem("lyricsBocchi", hasLyrics === "true" ? "false" : "true");
+    localStorage.setItem("lyricsGBC", hasLyrics === "true" ? "false" : "true");
   };
 
   const reShuffle = (x, y) => {
@@ -72,11 +77,11 @@ const Main = () => {
     if (x === "shuffle") {
       setShuffle(y);
       setReplay(false);
-      localStorage.setItem("bocchi-14", `[${false}, ${y}]`);
+      localStorage.setItem("GBC-14", `[${false}, ${y}]`);
     } else {
       setReplay(y);
       setShuffle(false);
-      localStorage.setItem("bocchi-14", `[${y}, ${false}]`);
+      localStorage.setItem("GBC-14", `[${y}, ${false}]`);
     }
   };
 
@@ -90,7 +95,7 @@ const Main = () => {
         //Shuffle Scuffed mech
         if (e === true) {
           //Skip Button
-          if (songIndex + 1 < SongData.length) {
+          if (songIndex + 1 < songData.length) {
             setIndex(songIndex + 1);
           } else {
             setIndex(0);
@@ -98,13 +103,13 @@ const Main = () => {
         } else if (e === false) {
           //Prev Button
           if (songIndex - 1 < 0) {
-            setIndex(SongData.length - 1);
+            setIndex(songData.length - 1);
           } else {
             setIndex(songIndex - 1);
           }
         }
       } else {
-        setIndex(Math.floor(SongData.length * Math.random()));
+        setIndex(Math.floor(songData.length * Math.random()));
       }
     } else if (
       (mode === 1 || mode === 2) &&
@@ -123,7 +128,7 @@ const Main = () => {
         } else if (e === false) {
           if (key - 1 < 0) {
             const tempSong = songList[mode - 1];
-            const tempId = SongData.findIndex(
+            const tempId = songData.findIndex(
               (e) => e.id === tempSong[tempSong.length - 1],
             );
             setIndex(tempId);
@@ -149,14 +154,14 @@ const Main = () => {
       let tempArray = [...songList];
       tempArray[y - 1].push(x);
       setSongList(tempArray);
-      localStorage.setItem("playlistBocchi", JSON.stringify(tempArray));
+      localStorage.setItem("playlistGBC", JSON.stringify(tempArray));
     }
   };
 
   const removeSong = (y) => {
     songList[y - 1].splice(getKey(y), 1);
     setSongList([...songList]);
-    localStorage.setItem("playlistBocchi", JSON.stringify(songList));
+    localStorage.setItem("playlistGBC", JSON.stringify(songList));
   };
 
   const changeId = (e) => {
@@ -167,64 +172,68 @@ const Main = () => {
   const changeMode = (e) => {
     //Changes mode ~the playlist of what the user is using
     setMode(e);
-    localStorage.setItem("mode", e);
+    localStorage.setItem("GBCmode", e);
   };
 
   const [prevMode, setPrevMode] = React.useState();
 
-  if (mode !== prevMode) {
-    setPrevMode(mode);
-    if (mode === 0) {
-      setIndex(Math.floor(SongData.length * Math.random()));
-    } else if (Array.isArray(songList[mode - 1]) && songList[mode - 1].length) {
-      setIndex(
-        songList[mode - 1][
-        Math.floor(songList[mode - 1].length * Math.random())
-        ] - 1,
-      );
+  React.useEffect(() => {
+    //Changes song when mode changes
+    if (mode !== prevMode) {
+      setPrevMode(mode);
+      if (!songData) return;
+      if (mode === 0) {
+        setIndex(Math.floor(songData.length * Math.random()));
+      } else if (Array.isArray(songList[mode - 1]) && songList[mode - 1].length) {
+        setIndex(
+          songList[mode - 1][
+            Math.floor(songList[mode - 1].length * Math.random())
+          ] - 1,
+        );
+      }
     }
-  }
+  }, [mode, prevMode, songData, songList]);
 
   React.useEffect(() => {
     //Loads and sets data onstart
     try {
       setAudioVis(
-        localStorage.getItem("audioVis") !== null
-          ? localStorage.getItem("audioVis")
+        localStorage.getItem("GBCaudioVis") !== null
+          ? localStorage.getItem("GBCaudioVis")
           : "true",
       );
       setClock(
-        localStorage.getItem("clock") !== null
-          ? localStorage.getItem("clock")
+        localStorage.getItem("GBCclock") !== null
+          ? localStorage.getItem("GBCclock")
           : "true",
       );
       setPlayer(
-        localStorage.getItem("player") !== null
-          ? localStorage.getItem("player")
+        localStorage.getItem("GBCplayer") !== null
+          ? localStorage.getItem("GBCplayer")
           : "true",
       );
       setPlaylist(
-        localStorage.getItem("playlistH") !== null
-          ? localStorage.getItem("playlistH")
+        localStorage.getItem("GBCplaylistH") !== null
+          ? localStorage.getItem("GBCplaylistH")
           : "true",
       );
       setMode(
-        localStorage.getItem("mode") !== null
-          ? parseInt(localStorage.getItem("mode"))
+        localStorage.getItem("GBCmode") !== null
+          ? parseInt(localStorage.getItem("GBCmode"))
           : 0,
       );
       setSongList(
-        localStorage.getItem("playlistBocchi") !== null
-          ? JSON.parse(localStorage.getItem("playlistBocchi"))
+        localStorage.getItem("playlistGBC") !== null
+          ? JSON.parse(localStorage.getItem("playlistGBC"))
           : [[], []],
       );
       setHasLyrics(
-        localStorage.getItem("lyricsBocchi") !== null
-          ? localStorage.getItem("lyricsBocchi")
+        localStorage.getItem("lyricsGBC") !== null
+          ? localStorage.getItem("lyricsGBC")
           : "true",
       );
-      if (localStorage.getItem("bocchi-14") !== null) {
-        let temp14 = JSON.parse(localStorage.getItem("bocchi-14"));
+      if (localStorage.getItem("GBC-14") !== null) {
+        let temp14 = JSON.parse(localStorage.getItem("GBC-14"));
         setReplay(temp14[0]);
         setShuffle(temp14[1]);
       } else {
@@ -233,21 +242,21 @@ const Main = () => {
       }
     } catch (e) {
       setAudioVis("true");
-      localStorage.setItem("audioVis", "true");
+      localStorage.setItem("GBCaudioVis", "true");
       setClock("true");
-      localStorage.setItem("clock", "true");
+      localStorage.setItem("GBCclock", "true");
       setPlayer("true");
-      localStorage.setItem("player", "true");
+      localStorage.setItem("GBCplayer", "true");
       setPlaylist("true");
-      localStorage.setItem("playlistH", "true");
+      localStorage.setItem("GBCplaylistH", "true");
       setMode(0);
-      localStorage.setItem("mode", 0);
+      localStorage.setItem("GBCmode", 0);
       setSongList([[], []]);
-      localStorage.setItem("playlistBocchi", JSON.stringify([[], []]));
+      localStorage.setItem("playlistGBC", JSON.stringify([[], []]));
       setReplay(false);
       setShuffle(true);
-      localStorage.setItem("bocchi-14", JSON.stringify([true, false]));
-      localStorage.setItem("lyricsBocchi", "true");
+      localStorage.setItem("GBC-14", JSON.stringify([true, false]));
+      localStorage.setItem("lyricsGBC", "true");
     }
   }, []);
 
@@ -277,83 +286,85 @@ const Main = () => {
   }
 
   return (
-    <div
-      className="Main"
-      style={{ backgroundColor: backgroundColor }}
-    >
-      {audioVis === "true" ? (
-        <AudioVisualizer lineColor={lineColor} />
-      ) : null}
-      <img
-        className="mainImage"
-        src={`./assets/icons/${
-          toFilename(SongData[songIndex].album ?? SongData[songIndex].name)
-        }.jpg`}
-        alt=""
-        style={{ boxShadow: "1px 1px 12px #150625" }}
-      />
-      <Navigation
-        uiVolume={uiVolume}
-        playerHandler={playerHandler}
-        clockHandler={clockHandler}
-        playlistHandler={playlistHandler}
-        changeSong={changeSong}
-        visualizerHandler={visualizerHandler}
-        songIndex={songIndex}
-        lyricsHandler={lyricsHandler}
-      />
-      {playlist === "true" ? (
-        <Playlist
-          textSize={textSize}
-          uiVolume={uiVolume}
-          songIndex={songIndex}
-          changeId={changeId}
-          songList={songList}
-          changeMode={changeMode}
-          mode={mode}
-          addSong={addSong}
-          removeSong={removeSong}
-          titleDisplay={titleDisplay}
-          backgroundColor={backgroundColor}
-          lineColor={lineColor}
-        />
-      ) : null}
-      {clock === "true" ? (
-        <Clock
-          textShadow={SongData[songIndex].clockTextShadow}
-          textSize={textSize}
-          use24HourClock={use24HourClock}
-          showSeconds={showSeconds}
-        />
-      ) : null}
-      {player === "true" ? (
-        <Player
-          uiVolume={uiVolume}
-          playerTextShadow={SongData[songIndex].playerTextShadow}
-          songIndex={songIndex}
-          changeSong={changeSong}
-          shuffle={shuffle}
-          replay={replay}
-          reShuffle={reShuffle}
-          textSize={textSize}
-          titleDisplay={titleDisplay}
-          audioRef={audioRef}
-          wpePaused={wpePaused}
-        />
-      ) : null}
-      {
-        hasLyrics === "true" && (
-          <Lyrics
-            songIndex={songIndex}
-            audioRef={audioRef}
-            uiVolume={uiVolume}
-            lyricsDisplay={lyricsDisplay}
-            backgroundColor={backgroundColor}
-            lineColor={lineColor}
+    <>
+      {!songData ? (
+        <div className="Main" />
+      ) : (
+        <div className="Main" style={{ backgroundColor: overrideBackgroundColor ? customBackgroundColor : songData[songIndex].backgroundColor }}>
+          {audioVis === "true" ? (
+            <AudioVisualizer lineColor={overrideLineColor ? customLineColor : songData[songIndex].lineColor} />
+          ) : null}
+          <img
+            className="mainImage"
+            src={`./assets/icons/${toFilename(songData[songIndex].album ?? songData[songIndex].name)}.jpg`}
+            alt=""
+            style={{ boxShadow: "1px 1px 12px #150625" }}
           />
-        )
-      }
-   </div>
+          <Navigation
+            uiVolume={uiVolume}
+            playerHandler={playerHandler}
+            clockHandler={clockHandler}
+            playlistHandler={playlistHandler}
+            changeSong={changeSong}
+            visualizerHandler={visualizerHandler}
+            songIndex={songIndex}
+            lyricsHandler={lyricsHandler}
+          />
+          {playlist === "true" ? (
+            <Playlist
+              textSize={textSize}
+              uiVolume={uiVolume}
+              songIndex={songIndex}
+              changeId={changeId}
+              songList={songList}
+              changeMode={changeMode}
+              mode={mode}
+              addSong={addSong}
+              removeSong={removeSong}
+              titleDisplay={titleDisplay}
+              backgroundColor={overrideBackgroundColor ? customBackgroundColor : songData[songIndex].backgroundColor}
+              lineColor={overrideLineColor ? customLineColor : songData[songIndex].lineColor}
+              songData={songData}
+            />
+          ) : null}
+          {clock === "true" ? (
+            <Clock
+              textShadow={songData[songIndex].clockTextShadow}
+              textSize={textSize}
+              use24HourClock={use24HourClock}
+              showSeconds={showSeconds}
+            />
+          ) : null}
+          {player === "true" ? (
+            <Player
+              uiVolume={uiVolume}
+              playerTextShadow={songData[songIndex].playerTextShadow}
+              songIndex={songIndex}
+              changeSong={changeSong}
+              shuffle={shuffle}
+              replay={replay}
+              reShuffle={reShuffle}
+              textSize={textSize}
+              titleDisplay={titleDisplay}
+              audioRef={audioRef}
+              wpePaused={wpePaused}
+              songData={songData}
+            />
+          ) : null}
+          {hasLyrics === "true" && (
+            <Lyrics
+              songIndex={songIndex}
+              audioRef={audioRef}
+              uiVolume={uiVolume}
+              lyricsDisplay={lyricsDisplay}
+              backgroundColor={overrideBackgroundColor ? customBackgroundColor : songData[songIndex].backgroundColor}
+              lineColor={overrideLineColor ? customLineColor : songData[songIndex].lineColor}
+              songData={songData}
+            />
+          )}
+        </div>
+      )}
+    </>
   );
 };
 

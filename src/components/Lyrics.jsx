@@ -1,5 +1,5 @@
 import React from "react";
-import SongData from "./SongData.json";
+// songData is provided via props.songData
 import { MultipleLrc, useRecoverAutoScrollImmediately } from "react-lrc";
 import { toFilename } from "../helpers";
 import LyricsDisplay from "../LyricsDisplay";
@@ -24,11 +24,11 @@ const Lyrics = (props) => {
     const lrcFetches = [];
 
     if (props.lyricsDisplay === LyricsDisplay.Both) {
-      lrcFetches.push(fetch(`./assets/lyrics/original/${toFilename(SongData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
-      lrcFetches.push(fetch(`./assets/lyrics/romanized/${toFilename(SongData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
+      lrcFetches.push(fetch(`./assets/lyrics/original/${toFilename(props.songData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
+      lrcFetches.push(fetch(`./assets/lyrics/romanized/${toFilename(props.songData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
     }
     else {
-      lrcFetches.push(fetch(`./assets/lyrics/${props.lyricsDisplay}/${toFilename(SongData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
+      lrcFetches.push(fetch(`./assets/lyrics/${props.lyricsDisplay}/${toFilename(props.songData[props.songIndex].name)}.lrc`, { signal: abortController.signal }));
     }
 
     Promise.all(lrcFetches)
@@ -38,13 +38,15 @@ const Lyrics = (props) => {
         setLyrics(newLyrics);
       })
       .catch(function (err) {
-        if (err.name !== "AbortError")
+        if (err.name !== "AbortError") {
           console.error(` Err: ${err}`);
+          setLyrics(["", ""]);
+        }
       });
     return () => {
       abortController.abort();
     };
-  }, [props.songIndex, props.lyricsDisplay])
+  }, [props.songIndex, props.lyricsDisplay, props.songData])
 
   const onLineClicked = (startMillisecond) => {
     // Nudge value to fix floating-point issue
