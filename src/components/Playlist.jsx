@@ -97,6 +97,8 @@ const Playlist = (props) => {
     return () => window.removeEventListener("resize", updateTitleSize);
   }, []);
 
+  const songIds = props.mode === 0 ? SongData.map(e => e.id) : props.songList[props.mode - 1];
+
   return (
     <div
       className="playlist"
@@ -139,64 +141,21 @@ const Playlist = (props) => {
       </div>
       <div className="playlist-container" style={{ height: "80%" }}>
         <div className="playlist-item-container">
-          {props.mode === 0
-            ? SongData.slice(playlistPages * 5, playlistPages * 5 + 5).map(
-                (e, index) => (
-                  <PlaylistItem
-                    uiVolume={props.uiVolume}
-                    key={index}
-                    id={e.id}
-                    index={playlistPages * 5 + index + 1}
-                    songIndex={props.songIndex}
-                    changeId={props.changeId}
-                    mode={props.mode}
-                    titleDisplay={props.titleDisplay}
-                    backgroundColor={props.backgroundColor}
-                    lineColor={props.lineColor}
-                  />
-                ),
-              )
-            : null}
-
-          {props.mode === 1
-            ? props.songList[0] !== null
-              ? props.songList[0]
-                  .slice(playlistPages * 5, playlistPages * 5 + 5)
-                  .map((e, index) => (
-                    <PlaylistItem
-                      uiVolume={props.uiVolume}
-                      key={index}
-                      id={e}
-                      addSong={props.addSong}
-                      songIndex={props.songIndex}
-                      index={playlistPages * 5 + index + 1}
-                      changeId={props.changeId}
-                      mode={props.mode}
-                      titleDisplay={props.titleDisplay}
-                    />
-                  ))
-              : null
-            : null}
-
-          {props.mode === 2
-            ? props.songList[1] !== null
-              ? props.songList[1]
-                  .slice(playlistPages * 5, playlistPages * 5 + 5)
-                  .map((e, index) => (
-                    <PlaylistItem
-                      uiVolume={props.uiVolume}
-                      key={index}
-                      id={e}
-                      addSong={props.addSong}
-                      songIndex={props.songIndex}
-                      index={playlistPages * 5 + index + 1}
-                      changeId={props.changeId}
-                      mode={props.mode}
-                      titleDisplay={props.titleDisplay}
-                    />
-                  ))
-              : null
-            : null}
+          {songIds.slice(playlistPages * 5, playlistPages * 5 + 5).map(
+            (e, index) => (
+              <PlaylistItem
+                uiVolume={props.uiVolume}
+                key={index}
+                id={e}
+                index={playlistPages * 5 + index + 1}
+                songIndex={props.songIndex}
+                changeId={props.changeId}
+                titleDisplay={props.titleDisplay}
+                backgroundColor={props.backgroundColor}
+                lineColor={props.lineColor}
+              />
+            ),
+          )}
         </div>
         <div
           className="playlist-sroll"
