@@ -4,11 +4,13 @@ import Clock from "./components/Clock";
 import Player from "./components/Player";
 import AudioVisualizer from "./components/AudioVisualizer";
 import SongData from "./components/SongData.json";
+import Localization from "./components/Localization.json";
 import Playlist from "./components/Playlist";
 import TitleDisplay from "./TitleDisplay";
 import LyricsDisplay from "./LyricsDisplay";
 import { convertWPEColorToCSS, toFilename } from "./helpers";
 import Lyrics from "./components/Lyrics";
+import util from "util";
 
 const Main = () => {
   const [songIndex, setIndex] = React.useState(0);
@@ -32,10 +34,18 @@ const Main = () => {
   const [customBackgroundColor, setCustomBackgroundColor] = React.useState("#000000");
   const [overrideLineColor, setOverrideLineColor] = React.useState(false);
   const [customLineColor, setCustomLineColor] = React.useState("#ffffff");
+  const [language, setLanguage] = React.useState("en-us");
   const audioRef = React.useRef(new Audio());
 
   const backgroundColor = overrideBackgroundColor ? customBackgroundColor : SongData[songIndex].backgroundColor;
   const lineColor = overrideLineColor ? customLineColor : SongData[songIndex].lineColor;
+
+  const translate = (key, ...args) => {
+    const fallbackLanguage = Localization["en-us"];
+    const currentLanguage = Localization[language] ?? fallbackLanguage;
+    const translation = currentLanguage[key] ?? fallbackLanguage[key];
+    return util.format(translation, ...args);
+  }
 
   const playerHandler = () => {
     //Changes and sets the music player
@@ -268,6 +278,9 @@ const Main = () => {
         if (properties.overrideaccentcolor) setOverrideLineColor(properties.overrideaccentcolor.value)
         if (properties.customaccentcolor) setCustomLineColor(convertWPEColorToCSS(properties.customaccentcolor.value, .9))
       },
+      applyGeneralProperties: function (properties) {
+        if (properties.language) setLanguage(properties.language);
+      },
       setPaused: function (isPaused) {
         setWPEPaused(isPaused);
       },
@@ -316,6 +329,7 @@ const Main = () => {
           titleDisplay={titleDisplay}
           backgroundColor={backgroundColor}
           lineColor={lineColor}
+          translate={translate}
         />
       ) : null}
       {clock === "true" ? (
