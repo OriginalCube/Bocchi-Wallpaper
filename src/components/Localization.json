@@ -1,0 +1,10 @@
+{
+    "en-us": {
+        "default": "Default",
+        "playlistNumber": "Playlist %d"
+    },
+    "zh-chs": {
+        "default": "默认歌单",
+        "playlistNumber": "歌单 %d"
+    }
+}
