@@ -117,7 +117,7 @@ const Playlist = (props) => {
             borderRight: `3px solid ${props.lineColor}`,
           }}
         >
-          Default
+          {props.translate("default")}
         </button>
         <button
           className="h-full w-1/3"
@@ -127,7 +127,7 @@ const Playlist = (props) => {
             borderRight: `3px solid ${props.lineColor}`,
           }}
         >
-          Playlist 1
+          {props.translate("playlistNumber", 1)}
         </button>
         <button
           className="w-1/3 h-full"
@@ -136,7 +136,7 @@ const Playlist = (props) => {
             borderBottom: `3px solid ${props.lineColor}`,
           }}
         >
-          Playlist 2
+          {props.translate("playlistNumber", 2)}
         </button>
       </div>
       <div className="playlist-container" style={{ height: "80%" }}>
@@ -197,10 +197,10 @@ const Playlist = (props) => {
                 height: "100%",
               }}
             >
-              {includedInPlaylist(1) ? "-" : "+"} Playlist 1
+              {includedInPlaylist(1) ? "-" : "+"} {props.translate("playlistNumber", 1)}
             </button>
             <button className="w-1/2 h-full" onClick={() => onFooter(!includedInPlaylist(2), 2)}>
-              {includedInPlaylist(2) ? "-" : "+"} Playlist 2
+              {includedInPlaylist(2) ? "-" : "+"} {props.translate("playlistNumber", 2)}
             </button>
           </>
         ) : (

@@ -29,6 +29,9 @@ dependencies:
   react-scripts:
     specifier: 5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.26.0)(@babel/plugin-transform-react-jsx@7.25.9)(eslint@8.57.1)(react@18.2.0)(typescript@5.7.2)
+  util:
+    specifier: ^0.12.5
+    version: 0.12.5
   web-vitals:
     specifier: ^2.1.4
     version: 2.1.4
@@ -10287,6 +10290,16 @@ packages:
       es-abstract: 1.23.5
       has-symbols: 1.1.0
       object.getownpropertydescriptors: 2.1.8
+    dev: false
+
+  /util@0.12.5:
+    resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
+    dependencies:
+      inherits: 2.0.4
+      is-arguments: 1.1.1
+      is-generator-function: 1.0.10
+      is-typed-array: 1.1.13
+      which-typed-array: 1.1.16
     dev: false
 
   /utila@0.4.0:
