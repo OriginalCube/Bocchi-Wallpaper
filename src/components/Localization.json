@@ -7,12 +7,12 @@
         "default": "Por defecto",
         "playlistNumber": "Playlist %d"
     },
-    "zh-chs": {
-        "default": "默认歌单",
-        "playlistNumber": "歌单 %d"
-    }
     "ja-jp": {
         "default": "既定のプレイリスト",
         "playlistNumber": "プレイリスト %d"
+    },
+    "zh-chs": {
+        "default": "默认歌单",
+        "playlistNumber": "歌单 %d"
     }
 }
