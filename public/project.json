@@ -37,6 +37,21 @@
 				"ui_title_display" : "Mostrar título",
 				"ui_volume" : "Volumen de interfaz"
 			},
+			"ja-jp" : 
+			{
+				"ui_24_hour_clock" : "24 時間制の時計",
+				"ui_both" : "原文とローマ字表記",
+				"ui_english" : "英語",
+				"ui_lyrics_display" : "歌詞を表示",
+				"ui_original" : "オリジナル",
+				"ui_override_accent_color" : "アクセントの色を上書き",
+				"ui_override_background_color" : "背景の色を上書き",
+				"ui_romanized" : "ローマ字表記",
+				"ui_show_seconds" : "秒を表示",
+				"ui_text_size" : "テキストのサイズ",
+				"ui_title_display" : "タイトルを表示",
+				"ui_volume" : "UI の音量"
+			},
 			"zh-chs" : 
 			{
 				"ui_24_hour_clock" : "24小时制时钟",
