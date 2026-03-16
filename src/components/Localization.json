@@ -1,7 +1,8 @@
 {
     "en-us": {
         "default": "Default",
-        "playlistNumber": "Playlist %d"
+        "playlistNumber": "Playlist %d",
+        "removeCurrentSong": "Remove Current Song"
     },
     "es-es": {
         "default": "Por defecto",
