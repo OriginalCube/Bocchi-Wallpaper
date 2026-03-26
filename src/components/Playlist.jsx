@@ -212,7 +212,7 @@ const Playlist = (props) => {
                 padding: "0px",
               }}
             >
-              Remove Current Song
+              {props.translate("removeCurrentSong")}
             </button>
           </>
         )}
