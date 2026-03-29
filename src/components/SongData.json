@@ -36,6 +36,7 @@
     "name": "Secret base",
     "nameOriginal": "ひみつ基地",
     "nameRomanized": "Himitsu Kichi",
+    "album": "Kessoku Band",
     "backgroundColor": "#40292F",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -60,6 +61,7 @@
     "name": "I can't sing a love song",
     "nameOriginal": "ラブソングが歌えない",
     "nameRomanized": "Love Song ga Utaenai",
+    "album": "Kessoku Band",
     "backgroundColor": "#40292F",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -75,6 +77,7 @@
     "name": "The Little Sea",
     "nameOriginal": "小さな海",
     "nameRomanized": "Chiisana Umi",
+    "album": "Kessoku Band",
     "backgroundColor": "#40292F",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -82,6 +85,8 @@
     "id": 11,
     "name": "Seisyun Complex",
     "nameOriginal": "青春コンプレックス",
+    "album": "Kessoku Band",
+    "single": "Seisyun Complex",
     "backgroundColor": "#4D2E2C",
     "lineColor": "rgba(255, 255, 255,.9)"
   },
@@ -95,6 +100,7 @@
     "id": 13,
     "name": "Flashbacker",
     "nameOriginal": "フラッシュバッカ",
+    "album": "Kessoku Band",
     "backgroundColor": "#40292F",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -102,6 +108,8 @@
     "id": 14,
     "name": "Hitoribocchi Tokyo",
     "nameOriginal": "ひとりぼっち東京",
+    "album": "Kessoku Band",
+    "single": "Seisyun Complex",
     "backgroundColor": "#4D2E2C",
     "lineColor": "rgba(255, 255, 255, .9)"
   },
@@ -118,6 +126,7 @@
     "name": "Into the Light",
     "nameOriginal": "光の中へ",
     "nameRomanized": "Hikari no Naka e",
+    "album": "Into the Light",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -126,6 +135,7 @@
     "name": "Blue Spring and Western Sky",
     "nameOriginal": "青い春と西の空",
     "nameRomanized": "Aoi Haru to Nishi no Sora", 
+    "album": "Into the Light",
     "backgroundColor": "#4E441A",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -135,7 +145,8 @@
     "name": "Now, I'm going from underground",
     "nameOriginal": "今、僕、アンダーグラウンドから",
     "nameRomanized": "Ima, Boku, Underground Kara",
-    "album": "shine",
+    "album": "Re:Kessoku Band",
+    "single": "Shine as usual / Now, I'm going from underground",
     "backgroundColor": "#0e0e0e",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
@@ -144,7 +155,8 @@
     "name": "Shine as usual",
     "nameOriginal": "月並みに輝け",
     "nameRomanized": "Tsukinami ni Kagayake",
-    "album": "shine",
+    "album": "Re:Kessoku Band",
+    "single": "Shine as usual / Now, I'm going from underground",
     "backgroundColor": "#0e0e0e",
     "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
