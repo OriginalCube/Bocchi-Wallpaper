@@ -177,8 +177,9 @@
     "nameOriginal": "ドッペルゲンガー",
     "audioType": ".mp3",
     "album": "Re:Kessoku Band",
-    "backgroundColor": "#4C2633",
-    "lineColor": "rgba(237, 112 ,154 ,.9)"
+    "single": "Doppelganger / Re:Re:",
+    "backgroundColor": "#0e0e0e",
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 22,
@@ -195,8 +196,9 @@
     "name": "Re:Re:",
     "audioType": ".mp3",
     "album": "Re:Kessoku Band",
-    "backgroundColor": "#4C2633",
-    "lineColor": "rgba(237, 112 ,154 ,.9)"
+    "single": "Doppelganger / Re:Re:",
+    "backgroundColor": "#0e0e0e",
+    "lineColor": "rgba(255, 255 ,255 ,.9)"
   },
   {
     "id": 24,
