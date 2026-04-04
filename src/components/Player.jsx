@@ -12,6 +12,8 @@ const Player = (props) => {
       ? +localStorage.getItem("volume")
       : 0.2,
   );
+  const [volumeBarOpacity, setVolumeBarOpacity] = React.useState(0);
+  const volumeBarFadeTimeoutId = React.useRef(null);
   const [duration, setDuration] = React.useState(0);
 
   const audioRef = React.useRef(props.audioRef.current);
@@ -68,6 +70,9 @@ const Player = (props) => {
       setVolume(0);
     }
     clickAudio();
+    setVolumeBarOpacity(1);
+    clearTimeout(volumeBarFadeTimeoutId.current);
+    volumeBarFadeTimeoutId.current = setTimeout(() => setVolumeBarOpacity(0), 2000);
   };
 
   const addVolume = () => {
@@ -75,6 +80,9 @@ const Player = (props) => {
       setVolume(volume + 0.1);
     }
     clickAudio();
+    setVolumeBarOpacity(1);
+    clearTimeout(volumeBarFadeTimeoutId.current);
+    volumeBarFadeTimeoutId.current = setTimeout(() => setVolumeBarOpacity(0), 2000);
   };
 
   const onReplay = () => {
@@ -187,7 +195,7 @@ const Player = (props) => {
   return (
     <div className="player ">
       <div className="h-full w-full flex-col">
-        <div className="w-full" style={{ height: "30%" }}>
+        <div className="w-full">
           <p
             className="playerText"
             style={{
@@ -199,7 +207,7 @@ const Player = (props) => {
         </div>{" "}
         <div
           className="w-full flex items-center justify-center"
-          style={{ height: "25%" }}
+          style={{ marginTop: "10px" }}
         >
           {toReadableTime(trackProgress)}
           <input
@@ -217,7 +225,7 @@ const Player = (props) => {
         </div>
         <div
           className="flex items-center justify-evenly"
-          style={{ height: "45%" }}
+          style={{ marginTop: "10px" }}
         >
           <img
             className="audioIcon"
@@ -280,6 +288,21 @@ const Player = (props) => {
                 : "./assets/icons/shuffle.png"
             }
           />{" "}
+        </div>
+        <div
+            className="flex items-center justify-center"
+            style={{ opacity: volumeBarOpacity, transition: "opacity 0.5s ease-out", marginTop: "10px" }}
+        >
+          <div style={{ width: "50px"}}></div>
+          <div className="volume-bar">
+            <div
+              className="volume-bar-current"
+              style={{width: `${volume * 100}%`}}>
+            </div>
+          </div>
+          <div style={{ width: "50px"}}>
+            {Math.round(volume * 100)}%
+          </div>
         </div>
       </div>
     </div>

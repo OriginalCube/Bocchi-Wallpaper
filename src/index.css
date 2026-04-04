@@ -103,7 +103,7 @@ code {
   width: 25%;
   height: 10%;
   left: 37.5%;
-  top: 83%;
+  top: 82%;
   text-align: center;
 }
 
@@ -221,6 +221,22 @@ code {
 .lrc::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.volume-bar {
+  width: 50%;
+  overflow: hidden;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.volume-bar-current {
+  transition: width 0.3s ease-out;
+  height: 10px;
+  border-radius: 5px;
+  /* roughly match track progress bar color for now */
+  background-color: #0075ff;
 }
 
 @media screen and (min-width: 1px) and (max-width: 1360px) {
