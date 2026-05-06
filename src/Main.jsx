@@ -8,7 +8,7 @@ import Localization from "./components/Localization.json";
 import Playlist from "./components/Playlist";
 import TitleDisplay from "./TitleDisplay";
 import LyricsDisplay from "./LyricsDisplay";
-import { convertWPEColorToCSS, toFilename } from "./helpers";
+import { convertWPEColorToCSS, randomExcluded, toFilename } from "./helpers";
 import Lyrics from "./components/Lyrics";
 import util from "util";
 
@@ -102,7 +102,7 @@ const Main = () => {
       if (shuffle === false) {
         setIndex((songIndex + direction + SongData.length) % SongData.length);
       } else {
-        setIndex(Math.floor(SongData.length * Math.random()));
+        setIndex(randomExcluded(0, SongData.length - 1, songIndex));
       }
     } else if (
       //Check if array is empty
@@ -111,12 +111,8 @@ const Main = () => {
       if (shuffle === false) {
         setIndex(songList[mode - 1][(getKey(mode) + direction + songList[mode - 1].length) % songList[mode - 1].length] - 1);
       } else {
-        //Shuffle, it won't need a key because it's random :>
-        setIndex(
-          songList[mode - 1][
-            Math.floor(songList[mode - 1].length * Math.random())
-          ] - 1,
-        );
+        const randomIndex = randomExcluded(0, songList[mode - 1].length - 1, getKey(mode));
+        setIndex(songList[mode - 1][randomIndex] - 1);
       }
     }
   };
