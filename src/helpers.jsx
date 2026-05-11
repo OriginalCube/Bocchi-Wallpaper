@@ -22,3 +22,12 @@ export const useEffectEvent = (callback) => {
     return fnRef.current.apply(null, args)
   }
 }
+
+// Source - https://stackoverflow.com/a/34184614
+// Posted by Marco Bonelli, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-05-05, License - CC BY-SA 3.0
+export const randomExcluded = (min, max, excluded) => {
+    var n = Math.floor(Math.random() * (max-min) + min);
+    if (n >= excluded) n++;
+    return n;
+}

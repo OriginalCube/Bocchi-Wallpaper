@@ -8,7 +8,7 @@ import Localization from "./components/Localization.json";
 import Playlist from "./components/Playlist";
 import TitleDisplay from "./TitleDisplay";
 import LyricsDisplay from "./LyricsDisplay";
-import { convertWPEColorToCSS, toFilename } from "./helpers";
+import { convertWPEColorToCSS, randomExcluded, toFilename } from "./helpers";
 import Lyrics from "./components/Lyrics";
 import util from "util";
 
@@ -94,60 +94,25 @@ const Main = () => {
 
   const changeSong = (e) => {
     //Changes the song using conditions ~from player
-    if (mode === 0) {
+    const direction = e === true ? 1 : -1;
+    if (
       //Default Playlist
+      mode === 0
+    ) {
       if (shuffle === false) {
-        //Shuffle Scuffed mech
-        if (e === true) {
-          //Skip Button
-          if (songIndex + 1 < SongData.length) {
-            setIndex(songIndex + 1);
-          } else {
-            setIndex(0);
-          }
-        } else if (e === false) {
-          //Prev Button
-          if (songIndex - 1 < 0) {
-            setIndex(SongData.length - 1);
-          } else {
-            setIndex(songIndex - 1);
-          }
-        }
+        setIndex((songIndex + direction + SongData.length) % SongData.length);
       } else {
-        setIndex(Math.floor(SongData.length * Math.random()));
+        setIndex(randomExcluded(0, SongData.length - 1, songIndex));
       }
     } else if (
-      (mode === 1 || mode === 2) &&
-      Array.isArray(songList[mode - 1]) &&
+      //Check if array is empty
       songList[mode - 1].length
     ) {
-      //Check if array is empty
       if (shuffle === false) {
-        const key = getKey(mode);
-        if (e === true) {
-          if (key + 1 < songList[mode - 1].length) {
-            setIndex(songList[mode - 1][key + 1] - 1);
-          } else {
-            setIndex(songList[mode - 1][0] - 1);
-          }
-        } else if (e === false) {
-          if (key - 1 < 0) {
-            const tempSong = songList[mode - 1];
-            const tempId = SongData.findIndex(
-              (e) => e.id === tempSong[tempSong.length - 1],
-            );
-            setIndex(tempId);
-          } else {
-            setIndex(songList[mode - 1][key - 1] - 1);
-          }
-        }
+        setIndex(songList[mode - 1][(getKey(mode) + direction + songList[mode - 1].length) % songList[mode - 1].length] - 1);
       } else {
-        //Shuffle, it won't need a key because it's random :>
-        setIndex(
-          songList[mode - 1][
-            Math.floor(songList[mode - 1].length * Math.random())
-          ] - 1,
-        );
+        const randomIndex = randomExcluded(0, songList[mode - 1].length - 1, getKey(mode));
+        setIndex(songList[mode - 1][randomIndex] - 1);
       }
     }
   };
