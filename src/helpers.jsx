@@ -31,3 +31,19 @@ export const randomExcluded = (min, max, excluded) => {
     if (n >= excluded) n++;
     return n;
 }
+
+export const toReadableTime = (seconds) => {
+  if (isNaN(seconds)) return;
+  const totalMinutes = seconds / 60;
+  const totalHours = totalMinutes / 60;
+  const hoursPart = Math.floor(totalHours).toString();
+  const minutesPart = Math.floor(totalMinutes % 60).toString();
+  const secondsPart = Math.floor(seconds % 60).toString().padStart(2, "0");
+  let time = "";
+  if (totalHours >= 1)
+    time += `${hoursPart}:${minutesPart.padStart(2, "0")}:`;
+  else
+    time += `${minutesPart}:`;
+  time += secondsPart;
+  return time;
+};
