@@ -232,7 +232,7 @@ code {
 }
 
 .volume-bar {
-  width: 50%;
+  width: 225px;
   overflow: hidden;
   height: 10px;
   border-radius: 5px;
