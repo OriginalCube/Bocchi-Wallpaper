@@ -1,7 +1,7 @@
 import React from "react";
 import SongData from "./SongData.json";
 import TitleDisplay from "../TitleDisplay";
-import { toFilename, useEffectEvent } from "../helpers";
+import { toFilename, useEffectEvent, toReadableTime } from "../helpers";
 
 const Player = (props) => {
   let keypress = new Audio();
@@ -93,13 +93,6 @@ const Player = (props) => {
   const shuffle = () => {
     props.reShuffle("shuffle", props.shuffle === true ? false : true);
     clickAudio();
-  };
-
-  const toReadableTime = (seconds) => {
-    if (isNaN(seconds)) return;
-    const date = new Date(0);
-    date.setSeconds(seconds);
-    return date.toISOString().substring(15, 19);
   };
 
   React.useEffect(() => {
@@ -209,7 +202,7 @@ const Player = (props) => {
           className="w-full flex items-center justify-center"
           style={{ marginTop: "10px" }}
         >
-          {toReadableTime(trackProgress)}
+          <div className="text-right flex-1">{toReadableTime(trackProgress)}</div>
           <input
             type="range"
             step="1"
@@ -221,12 +214,9 @@ const Player = (props) => {
             onClick={onScrubEnd}
             onKeyUp={onScrubEnd}
           />
-          {toReadableTime(duration)}
+          <div className="text-left flex-1">{toReadableTime(duration)}</div>
         </div>
-        <div
-          className="flex items-center justify-evenly"
-          style={{ marginTop: "10px" }}
-        >
+        <div className="audioControls flex items-center justify-between">
           <img
             className="audioIcon"
             onClick={() => onReplay()}

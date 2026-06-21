@@ -100,18 +100,26 @@ code {
   position: absolute;
   color: white;
   overflow: visible;
-  width: 25%;
-  height: 10%;
-  left: 37.5%;
   top: 82%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 .audio-progress {
   position: relative;
-  width: 100%;
+  width: 450px;
   margin: 0 5px;
   outline: none;
+}
+
+.audioControls {
+  margin-top: 10px;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .audioIcon {
@@ -224,7 +232,7 @@ code {
 }
 
 .volume-bar {
-  width: 50%;
+  width: 225px;
   overflow: hidden;
   height: 10px;
   border-radius: 5px;
