@@ -7,6 +7,7 @@ import LyricsDisplay from "../LyricsDisplay";
 const Lyrics = (props) => {
   const [lyrics, setLyrics] = React.useState(["", ""]);
   const [currentTime, setCurrentTime] = React.useState(0);
+  const [windowTextSize, setWindowTextSize] = React.useState(1);
   const { signal, recoverAutoScrollImmediately } = useRecoverAutoScrollImmediately();
   const audioRef = React.useRef(props.audioRef.current);
   let keyPress = new Audio();
@@ -46,6 +47,19 @@ const Lyrics = (props) => {
     };
   }, [props.songIndex, props.lyricsDisplay])
 
+  React.useLayoutEffect(() => {
+    const updateWindowTextSize = () => {
+      if (window.innerWidth <= 1370) {
+        setWindowTextSize(0.875); //0.875
+      } else {
+        setWindowTextSize(1);
+      }
+    }
+    updateWindowTextSize();
+    window.addEventListener("resize", updateWindowTextSize);
+    return () => window.removeEventListener("resize", updateWindowTextSize);
+  }, []);
+
   const onLineClicked = (startMillisecond) => {
     // Nudge value to fix floating-point issue
     audioRef.current.currentTime = (startMillisecond + 1) / 1000;
@@ -66,6 +80,7 @@ const Lyrics = (props) => {
         color: active ? props.backgroundColor : `white`,
         fontWeight: active ? "500" : "normal",
         borderRadius: active ? "5px" : "0px",
+        fontSize: `${windowTextSize * props.textSize}rem`,
       }}
       onClick={() => onLineClicked(startMillisecond)}
     >

@@ -329,6 +329,7 @@ const Main = () => {
             lyricsDisplay={lyricsDisplay}
             backgroundColor={backgroundColor}
             lineColor={lineColor}
+            textSize={textSize}
           />
         )
       }
